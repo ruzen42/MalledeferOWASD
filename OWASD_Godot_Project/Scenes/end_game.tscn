@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsxpc1hurkxe6"]
+
+[ext_resource type="Script" path="res://Code/EndGame.cs" id="1_ef38g"]
+[ext_resource type="FontFile" uid="uid://dx66s8b6cr5fi" path="res://Fonts/agat-8.ttf" id="1_y3tfo"]
+[ext_resource type="PackedScene" uid="uid://boklucnk7vuii" path="res://Nodes/color_rect_2.tscn" id="2_6ik3w"]
+
+[node name="EndGame" type="Node2D"]
+position = Vector2(960, 540)
+script = ExtResource("1_ef38g")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -270.0
+offset_top = -67.0
+offset_right = 657.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.593119, 0.593119)
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_y3tfo")
+theme_override_font_sizes/font_size = 250
+text = "6:00 am"
+
+[node name="ColorRect2" parent="." instance=ExtResource("2_6ik3w")]
+offset_left = -962.0
+offset_top = -541.0
+offset_right = 960.0
+offset_bottom = 544.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

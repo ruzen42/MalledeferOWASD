@@ -1,0 +1,345 @@
+[gd_scene load_steps=23 format=3 uid="uid://c77mel3ucbbbu"]
+
+[ext_resource type="FontFile" uid="uid://dx66s8b6cr5fi" path="res://Fonts/agat-8.ttf" id="1_d3pxi"]
+[ext_resource type="Script" path="res://Code/Main_Menu_Buttons.cs" id="3_q3n2f"]
+[ext_resource type="Script" path="res://Code/Night_Menu_selector.cs" id="4_q1pns"]
+[ext_resource type="AudioStream" uid="uid://bguwtakopxdhb" path="res://Music/buttons-main-menu-sound.mp3" id="5_bgael"]
+[ext_resource type="Script" path="res://Code/Options_Menu.cs" id="5_sgbwa"]
+[ext_resource type="Texture2D" uid="uid://c4r4lu10uit1g" path="res://Sprites/photo_2024-05-01_09-52-21.jpg" id="6_g5i2g"]
+[ext_resource type="Script" path="res://Code/Camera2d.cs" id="7_w4yyh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_woaoh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fenls"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1j8wr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5x2um"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gtdy2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_moknh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wott4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hke1f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4siej"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_038rs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x6pei"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ierln"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xcav4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_av4is"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ufra7"]
+
+[node name="Main_menu" type="Node2D"]
+texture_filter = 1
+
+[node name="Game_Name" type="Label" parent="."]
+z_index = 1
+offset_left = 74.0
+offset_top = 82.0
+offset_right = 1233.0
+offset_bottom = 287.0
+scale = Vector2(0.810796, 0.810796)
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 100
+text = "Одна неделя с 
+Шампунем Жумайсынба"
+
+[node name="Game_Version" type="Label" parent="."]
+z_index = 3
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 1446.0
+offset_top = 1030.0
+offset_right = 1902.0
+offset_bottom = 1069.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.913725, 0.913725, 0.913725, 1)
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 35
+text = "Malledefer Studio  2019-2024 v0.1.2.4u"
+
+[node name="Main_Menu_Buttons" type="VBoxContainer" parent="."]
+offset_left = 71.0
+offset_top = 304.0
+offset_right = 485.0
+offset_bottom = 600.0
+scale = Vector2(0.732553, 0.732553)
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+script = ExtResource("3_q3n2f")
+
+[node name="PlayButton" type="Button" parent="Main_Menu_Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxEmpty_woaoh")
+text = "Играть"
+flat = true
+alignment = 0
+
+[node name="OptionsButton" type="Button" parent="Main_Menu_Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fenls")
+text = "Параметры"
+flat = true
+
+[node name="QuitButton" type="Button" parent="Main_Menu_Buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1j8wr")
+text = "Выйти"
+flat = true
+alignment = 0
+
+[node name="Night_Menu_selector" type="VBoxContainer" parent="."]
+visible = false
+offset_left = 73.0
+offset_top = 306.0
+offset_right = 562.0
+offset_bottom = 923.0
+scale = Vector2(0.760869, 0.760869)
+theme_override_constants/separation = 10
+script = ExtResource("4_q1pns")
+
+[node name="Night_Label" type="Label" parent="Night_Menu_selector"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 75
+text = "Выбор ночи"
+
+[node name="GridContainer" type="GridContainer" parent="Night_Menu_selector"]
+layout_mode = 2
+
+[node name="Night_1_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5x2um")
+text = "Ночь 1"
+flat = true
+alignment = 0
+
+[node name="Night_2_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gtdy2")
+disabled = true
+text = "Ночь 2"
+flat = true
+alignment = 0
+
+[node name="Night_3_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_moknh")
+disabled = true
+text = "Ночь 3"
+flat = true
+alignment = 0
+
+[node name="Night_4_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wott4")
+disabled = true
+text = "Ночь 4"
+flat = true
+alignment = 0
+
+[node name="Night_5_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hke1f")
+disabled = true
+text = "Ночь 5"
+flat = true
+alignment = 0
+
+[node name="Night_6_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4siej")
+disabled = true
+text = "Ночь 6"
+flat = true
+alignment = 0
+
+[node name="Night_7_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_038rs")
+disabled = true
+text = "Ночь 7"
+flat = true
+alignment = 0
+
+[node name="BackButton" type="Button" parent="Night_Menu_selector"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x6pei")
+text = "Назад в меню"
+flat = true
+alignment = 0
+text_direction = 1
+
+[node name="Options_Menu" type="VBoxContainer" parent="."]
+visible = false
+offset_left = 73.0
+offset_top = 308.0
+offset_right = 419.0
+offset_bottom = 662.0
+scale = Vector2(0.736499, 0.736499)
+theme_override_constants/separation = 10
+script = ExtResource("5_sgbwa")
+
+[node name="Options_Label" type="Label" parent="Options_Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 85
+text = "Параметры"
+
+[node name="GridContainer" type="GridContainer" parent="Options_Menu"]
+layout_mode = 2
+theme_override_constants/v_separation = 10
+
+[node name="Res" type="Label" parent="Options_Menu/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 50
+text = "Разрешение"
+
+[node name="Resolution_Button" type="OptionButton" parent="Options_Menu/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ierln")
+button_pressed = true
+flat = true
+selected = 1
+item_count = 6
+popup/item_0/text = "16:9"
+popup/item_0/separator = true
+popup/item_1/text = "1920x1080"
+popup/item_1/id = 1
+popup/item_2/text = "1152x648"
+popup/item_2/id = 2
+popup/item_2/disabled = true
+popup/item_3/text = "4:3"
+popup/item_3/id = 3
+popup/item_3/separator = true
+popup/item_4/text = "800x600"
+popup/item_4/id = 5
+popup/item_4/disabled = true
+popup/item_5/text = "1440sх1080"
+popup/item_5/id = 6
+popup/item_5/disabled = true
+
+[node name="Fullscreen_Button" type="CheckButton" parent="Options_Menu/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xcav4")
+button_pressed = true
+text = "На весь экран"
+flat = true
+
+[node name="HelpUs" type="Button" parent="Options_Menu/GridContainer"]
+self_modulate = Color(0.33924, 0.746065, 0.974796, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_av4is")
+text = "Наш Telegram"
+flat = true
+alignment = 0
+
+[node name="HelpUs2" type="Button" parent="Options_Menu/GridContainer"]
+self_modulate = Color(0.643609, 0.686335, 0.898431, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_av4is")
+text = "Наш Discord"
+flat = true
+alignment = 0
+
+[node name="Back" type="Button" parent="Options_Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ufra7")
+text = "Назад в меню"
+flat = true
+alignment = 0
+
+[node name="Buttons_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_bgael")
+volume_db = -20.0
+bus = &"Sound"
+
+[node name="Music_Menu" type="AudioStreamPlayer" parent="."]
+volume_db = -12.505
+bus = &"Music"
+
+[node name="Shampoo" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+position = Vector2(1275, 541)
+texture = ExtResource("6_g5i2g")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+limit_left = -10
+limit_top = -10
+limit_right = 1930
+limit_bottom = 1090
+limit_smoothed = true
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+script = ExtResource("7_w4yyh")
+
+[connection signal="button_up" from="Main_Menu_Buttons/PlayButton" to="Main_Menu_Buttons" method="_on_play_button_button_up"]
+[connection signal="button_up" from="Main_Menu_Buttons/PlayButton" to="Night_Menu_selector" method="_on_play_button_button_up"]
+[connection signal="button_up" from="Main_Menu_Buttons/OptionsButton" to="Main_Menu_Buttons" method="_on_options_button_button_up"]
+[connection signal="button_up" from="Main_Menu_Buttons/OptionsButton" to="Options_Menu" method="_on_options_button_button_up"]
+[connection signal="button_up" from="Main_Menu_Buttons/QuitButton" to="Main_Menu_Buttons" method="_on_quit_button_button_up"]
+[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_1_Button" to="Night_Menu_selector" method="_on_night_1_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_2_Button" to="Night_Menu_selector" method="_on_night_2_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_3_Button" to="Night_Menu_selector" method="_on_night_3_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_4_Button" to="Night_Menu_selector" method="_on_night_4_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_5_Button" to="Night_Menu_selector" method="_on_night_5_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_6_Button" to="Night_Menu_selector" method="_on_night_6_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_7_Button" to="Night_Menu_selector" method="_on_night_7_button_button_down"]
+[connection signal="button_up" from="Night_Menu_selector/BackButton" to="Main_Menu_Buttons" method="_on_back_button_button_up"]
+[connection signal="button_up" from="Night_Menu_selector/BackButton" to="Night_Menu_selector" method="_on_back_button_button_up"]
+[connection signal="item_selected" from="Options_Menu/GridContainer/Resolution_Button" to="Options_Menu" method="_on_option_button_item_selected"]
+[connection signal="button_down" from="Options_Menu/GridContainer/Fullscreen_Button" to="Options_Menu" method="_on_fullscreen_button_button_down"]
+[connection signal="button_up" from="Options_Menu/GridContainer/Fullscreen_Button" to="Options_Menu" method="_on_fullscreen_button_button_up"]
+[connection signal="pressed" from="Options_Menu/GridContainer/HelpUs" to="Options_Menu" method="_on_help_us_pressed"]
+[connection signal="pressed" from="Options_Menu/GridContainer/HelpUs2" to="Options_Menu" method="_on_help_us_2_pressed"]
+[connection signal="button_up" from="Options_Menu/Back" to="Main_Menu_Buttons" method="_on_back_button_up"]
+[connection signal="button_up" from="Options_Menu/Back" to="Options_Menu" method="_on_back_button_up"]
