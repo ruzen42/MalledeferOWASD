@@ -15,6 +15,7 @@ config/name_localized={
 "ru_KZ": "Одна неделя с Демоном Жумайсынба"
 }
 config/version="0.1.2.4u"
+config/tags=PackedStringArray("c#")
 run/main_scene="res://Scenes/game_load.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 run/max_fps=540

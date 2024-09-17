@@ -36,11 +36,3 @@ public partial class Main_Menu_Buttons : VBoxContainer
 	public void HideMainMenuButtons(){Visible = false;}
 	public void ShowMainMenuButtons(){Visible = true;}
 }
-
-
-
-
-
-
-
-
