@@ -19,22 +19,25 @@ public partial class zhumaysynba : Sprite2D
 	public int ZhumaysynbaCamera = 0;
 	public ColorRect Door;
 
+		
 	public override void _Ready()
 	{
-		Door = GetNode<ColorRect>("../../../Door");
-		// Для теста работаспособности я отключаю функцию WaitTimeMath(); и использую следуещие дле строки
 		//WaitTimeMath();
-		min = 2;
-		max = 3;
-		// Создаю таймер
+		min = 1;
+		max = 2;
 		_delayTimer = new Timer();
 		_delayTimer.Autostart = true;
 		_delayTimer.WaitTime = _rand.Next(min, max);
 		_delayTimer.OneShot = false;
 		_delayTimer.Connect("timeout", new Callable(this, nameof(OnTimerTimeout)));
+		Door = GetNode<ColorRect>("../../../Door");
+		// Для теста работаспособности я отключаю функцию WaitTimeMath(); и использую следуещие дле строки
+		
+		// Создаю таймер
 		AddChild(_delayTimer);
 		// Начинаю отсчет
-		StartDelay();
+		_isWaiting = true;
+		_delayTimer.Start();
 
 		LoadTextures();
 		PositionMath();
@@ -122,12 +125,13 @@ public partial class zhumaysynba : Sprite2D
 	{
 		if (!Door.Visible)
 		{
-			_delayTimer.Stop();
+			RemoveChild(_delayTimer);
+			_delayTimer.QueueFree();
 			ChangeScene("res://Scenes/main_menu.tscn");
 		}
 		else
 		{
-			GD.Print("fuck you");
+			GD.Print("стук стук");
 		}
 	}
 
@@ -185,7 +189,8 @@ public partial class zhumaysynba : Sprite2D
 		// Изменение Position чтобы он отображался правильно 
 		PositionMath();
 		Texture = _zhumaysynbaTextures[ZhumaysynbaCamera];
-		StartDelay();
+		_isWaiting = true;
+		_delayTimer.Start();
 		_delayTimer.WaitTime = _rand.Next(min, max);
 	}
 
@@ -205,11 +210,5 @@ public partial class zhumaysynba : Sprite2D
 	private void OnTimerTimeout()
 	{
 		_isWaiting = false;
-	}
-
-	private void StartDelay()
-	{
-		_isWaiting = true;
-		_delayTimer.Start();
 	}
 }

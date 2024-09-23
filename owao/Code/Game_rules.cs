@@ -2,7 +2,6 @@ using Godot;
 
 public partial class Game_rules : Node2D
 {
-
 	public override void _Process(double delta)
 	{
 		// При нажатии на Esc вас выкинет из игры 
