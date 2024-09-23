@@ -143,7 +143,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_gtdy2")
-disabled = true
 text = "Ночь 2"
 flat = true
 alignment = 0
