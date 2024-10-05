@@ -71,7 +71,7 @@ size_flags_vertical = 8
 theme_override_colors/font_color = Color(0.913725, 0.913725, 0.913725, 1)
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 35
-text = "Malledefer Studio  2019-2024 v0.1.2.5u"
+text = "Malledefer Studio  2019-2024 v0.1.2.6"
 
 [node name="Main_Menu_Buttons" type="VBoxContainer" parent="."]
 offset_left = 71.0
@@ -126,10 +126,10 @@ theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 75
 text = "Выбор ночи"
 
-[node name="GridContainer" type="GridContainer" parent="Night_Menu_selector"]
+[node name="NightContainer" type="GridContainer" parent="Night_Menu_selector"]
 layout_mode = 2
 
-[node name="Night_1_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+[node name="Night_1_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
@@ -138,16 +138,17 @@ text = "Ночь 1"
 flat = true
 alignment = 0
 
-[node name="Night_2_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+[node name="Night_2_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_gtdy2")
+disabled = true
 text = "Ночь 2"
 flat = true
 alignment = 0
 
-[node name="Night_3_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+[node name="Night_3_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
@@ -157,7 +158,7 @@ text = "Ночь 3"
 flat = true
 alignment = 0
 
-[node name="Night_4_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+[node name="Night_4_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
@@ -167,7 +168,7 @@ text = "Ночь 4"
 flat = true
 alignment = 0
 
-[node name="Night_5_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+[node name="Night_5_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
@@ -177,7 +178,7 @@ text = "Ночь 5"
 flat = true
 alignment = 0
 
-[node name="Night_6_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+[node name="Night_6_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
@@ -187,7 +188,7 @@ text = "Ночь 6"
 flat = true
 alignment = 0
 
-[node name="Night_7_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+[node name="Night_7_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
@@ -337,13 +338,13 @@ offset_bottom = 1083.0
 [connection signal="button_up" from="Main_Menu_Buttons/OptionsButton" to="Main_Menu_Buttons" method="_on_options_button_button_up"]
 [connection signal="button_up" from="Main_Menu_Buttons/OptionsButton" to="Options_Menu" method="_on_options_button_button_up"]
 [connection signal="button_up" from="Main_Menu_Buttons/QuitButton" to="Main_Menu_Buttons" method="_on_quit_button_button_up"]
-[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_1_Button" to="Night_Menu_selector" method="_on_night_1_button_button_down"]
-[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_2_Button" to="Night_Menu_selector" method="_on_night_2_button_button_down"]
-[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_3_Button" to="Night_Menu_selector" method="_on_night_3_button_button_down"]
-[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_4_Button" to="Night_Menu_selector" method="_on_night_4_button_button_down"]
-[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_5_Button" to="Night_Menu_selector" method="_on_night_5_button_button_down"]
-[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_6_Button" to="Night_Menu_selector" method="_on_night_6_button_button_down"]
-[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_7_Button" to="Night_Menu_selector" method="_on_night_7_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_1_Button" to="Night_Menu_selector" method="_on_night_1_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_2_Button" to="Night_Menu_selector" method="_on_night_2_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_3_Button" to="Night_Menu_selector" method="_on_night_3_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_4_Button" to="Night_Menu_selector" method="_on_night_4_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_5_Button" to="Night_Menu_selector" method="_on_night_5_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_6_Button" to="Night_Menu_selector" method="_on_night_6_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_7_Button" to="Night_Menu_selector" method="_on_night_7_button_button_down"]
 [connection signal="button_up" from="Night_Menu_selector/BackButton" to="Main_Menu_Buttons" method="_on_back_button_button_up"]
 [connection signal="button_up" from="Night_Menu_selector/BackButton" to="Night_Menu_selector" method="_on_back_button_button_up"]
 [connection signal="item_selected" from="Options_Menu/GridContainer/Resolution_Button" to="Options_Menu" method="_on_option_button_item_selected"]

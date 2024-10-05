@@ -22,9 +22,7 @@ public partial class zhumaysynba : Sprite2D
 		
 	public override void _Ready()
 	{
-		//WaitTimeMath();
-		min = 1;
-		max = 2;
+		WaitTimeMath();
 		_delayTimer = new Timer();
 		_delayTimer.Autostart = true;
 		_delayTimer.WaitTime = _rand.Next(min, max);
@@ -32,7 +30,7 @@ public partial class zhumaysynba : Sprite2D
 		_delayTimer.Connect("timeout", new Callable(this, nameof(OnTimerTimeout)));
 		Door = GetNode<ColorRect>("../../../Door");
 		// Для теста работаспособности я отключаю функцию WaitTimeMath(); и использую следуещие дле строки
-		
+
 		// Создаю таймер
 		AddChild(_delayTimer);
 		// Начинаю отсчет
@@ -131,7 +129,7 @@ public partial class zhumaysynba : Sprite2D
 		}
 		else
 		{
-			GD.Print("стук стук");
+			GD.Print("Zhumaysynba been reload");
 		}
 	}
 

@@ -10,15 +10,15 @@ public partial class Br3500 : Sprite2D
 	private byte max;
 	private Random rand = new Random();
 	private bool isWaiting = true;
-	
+
 	private Control UI; 
 	private Sprite2D background; 
-	
+
 	public override void _Ready()
 	{
 		UI = GetNode<Control>("../..");
 		background = GetNode<Sprite2D>("../../../Real_background");
-		
+
 		WaitTimeMath();
 		timer = new Timer();
 		timer.Autostart = true;
@@ -38,12 +38,12 @@ public partial class Br3500 : Sprite2D
 		if (isWaiting) return;
 		else NextPhase();
 	}
-	
+
 	private void OnTimerTimeout()
 	{
 		isWaiting = false;
 	}
-	
+
 	private void Camera()
 	{
 		if (saves.SelectedCamera == 0) 
@@ -55,23 +55,29 @@ public partial class Br3500 : Sprite2D
 			Visible = false;
 		}
 	}
-	
+
 	private void NextPhase()
 	{
-		phase += 1;
-		if (phase == 2) GeneratorOff(); 
+		if (phase == 3) 
+		{
+			GeneratorOff();
+			phase = 0;
+		}
+		phase += 1; 
 		ChangeTexture(phase);
 		isWaiting = true;
 		timer.Start();
 	}
-	
+
 	private void GeneratorOff()
 	{
 		GD.Print("generator off");
 	}
-	
+
 	private void ChangeTexture(byte index)
 	{
+		if (index >= 3) return;
+
 		try 
 		{
 			Texture = Textures[index];
