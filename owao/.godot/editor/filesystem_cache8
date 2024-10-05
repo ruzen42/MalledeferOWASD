@@ -1,26 +1,26 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1728127875
+::res://::1728132723
 default_bus_layout.tres::AudioBusLayout::8675544407459648158::1725888321::0::1::::<><>::
-export_presets.cfg::TextFile::-1::1727109551::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1728132253::0::1::::<><>::
 README.md::TextFile::-1::1725888321::0::1::::<><>::
 ::res://android/::1727017661
-::res://Autoload/::1725888321
+::res://Autoload/::1728132711
 options_save.cs::CSharpScript::-1::1725888321::0::1::::<>Node<>::
-saves.cs::CSharpScript::-1::1725888321::0::1::::<>Node<>::
-::res://Code/::1727098683
+saves.cs::CSharpScript::-1::1728132711::0::1::::<>Node<>::
+::res://Code/::1728132638
 Camera2d.cs::CSharpScript::-1::1726668908::0::1::::<>Camera2D<>::
 Camera.cs::CSharpScript::-1::1726993236::0::1::::<>Camera2D<>::
 Camera_Output.cs::CSharpScript::-1::1726993234::0::1::::<>Sprite2D<>::
-ColorRect.cs::CSharpScript::-1::1727096922::0::1::::<>ColorRect<>::
+ColorRect.cs::CSharpScript::-1::1728132638::0::1::::<>ColorRect<>::
 Door.cs::CSharpScript::-1::1726993223::0::1::::<>ColorRect<>::
 EndGame.cs::CSharpScript::-1::1726993212::0::1::::<>Node2D<>::
 GameLoad.cs::CSharpScript::-1::1726992860::0::1::::<>Control<>::
 Game_rules.cs::CSharpScript::-1::1727096922::0::1::::<>Node2D<>::
 Main_Menu_Buttons.cs::CSharpScript::-1::1726993206::0::1::::<>VBoxContainer<>::
-Night_Menu_selector.cs::CSharpScript::-1::1726993204::0::1::::<>VBoxContainer<>::
+Night_Menu_selector.cs::CSharpScript::-1::1728131999::0::1::::<>VBoxContainer<>::
 Options_Menu.cs::CSharpScript::-1::1726993201::0::1::::<>VBoxContainer<>::
 UI.cs::CSharpScript::-1::1727096922::0::1::::<>Control<>::
-zhumaysynba.cs::CSharpScript::-1::1727098683::0::1::::<>Sprite2D<>::
+zhumaysynba.cs::CSharpScript::-1::1728129328::0::1::::<>Sprite2D<>::
 ::res://Fonts/::1726589346
 agat-8.ttf::FontFile::8839517272423182578::1725888321::1726589346::1::::<><>::
 COPYRIGHT.txt::TextFile::-1::1725888321::0::1::::<><>::
@@ -41,14 +41,14 @@ tyajeloe-dyihanie-muj-33754.mp3::AudioStreamMP3::6136471783110058198::1725888321
 zloveschiy-smeh-15.mp3::AudioStreamMP3::4680507389435817563::1725888321::1726589346::1::::<><>::
 zvuk11.mp3::AudioStreamMP3::3697886930953208680::1725888321::1726589346::1::::<><>::
 ШАМПУНСКИЙ ДЕМОН.mp3::AudioStreamMP3::1629950786259430741::1725888321::1726589346::1::::<><>::
-::res://Nodes/::1727018836
-color_rect_2.tscn::PackedScene::3390412000591804688::1725888321::0::1::::<><>::res://Code/ColorRect.cs
-::res://Scenes/::1727108976
-Br3500.cs::CSharpScript::-1::1727108794::0::1::::<>Sprite2D<>::
+::res://Nodes/::1728132677
+color_rect_2.tscn::PackedScene::3390412000591804688::1728132677::0::1::::<><>::res://Code/ColorRect.cs
+::res://Scenes/::1728132711
+Br3500.cs::CSharpScript::-1::1728128469::0::1::::<>Sprite2D<>::
 end_game.tscn::PackedScene::3698216261352946211::1725888321::0::1::::<><>::res://Code/EndGame.cs<>uid://dx66s8b6cr5fi::::res://Fonts/agat-8.ttf<>uid://boklucnk7vuii::::res://Nodes/color_rect_2.tscn
-game.tscn::PackedScene::2005717982808904990::1727108781::0::1::::<><>::res://Code/Game_rules.cs<>uid://c2bk7nv21toty::::res://Sprites/newoffice.jpg<>uid://dpdjsfwfotv27::::res://Music/rabotayuschiy-generator-loop-23668.mp3<>uid://b2tqumjca0hkv::::res://Sprites/CameraButtonSprite.jpg<>res://Code/Camera.cs<>res://Code/UI.cs<>uid://bjyrymafl45vr::::res://Sprites/Камеры/camera 1.jpg<>uid://dqt3r4y8stsxl::::res://Sprites/laptop_anim/планшет_1_frame.png<>uid://cskkqoe7ewva3::::res://Sprites/laptop_anim/планшет_2_frame.png<>res://Code/Camera_Output.cs<>uid://dckby3o1wh3ip::::res://Sprites/Камеры/3434_negate-removebg-preview.png<>uid://dbr3t8knncx2e::::res://Sprites/laptop_anim/планшет_3_frame.png<>uid://bglmvotoka0wt::::res://Music/minidv-camera-menu-beep-x2.mp3<>res://Code/zhumaysynba.cs<>uid://b0vw4a2thd044::::res://Sprites/laptop_anim/планшет_4_frame.png<>uid://bsxjwmb1syq3q::::res://Music/zvuk11.mp3<>uid://bfxs3gfgt5d7w::::res://Sprites/Помехи/помеха1.png<>uid://ce8dgoqj23fiv::::res://Sprites/laptop_anim/планшет_5_frame.png<>uid://qcjjjhoxx6ig::::res://Sprites/laptop_anim/планшет_6_frame.png<>uid://dx66s8b6cr5fi::::res://Fonts/agat-8.ttf<>uid://5m5cv3uuaugu::::res://Sprites/Помехи/помеха2.png<>uid://3j12da72ijl3::::res://Sprites/laptop_anim/планшет_7_frame.png<>uid://de5v5p7pl3e3b::::res://Sprites/Помехи/помеха3.png<>uid://5hv60em4xou7::::res://Sprites/laptop_anim/планшет_8_frame.png<>uid://d3h6fwtibr4r1::::res://Sprites/Помехи/помеха4.png<>uid://cwfqxxywa3wuk::::res://Sprites/Помехи/помеха5.png<>uid://3c3dculxi0sl::::res://Sprites/Помехи/помеха6.png<>uid://dkfrkoi76hij1::::res://Sprites/Помехи/помеха7.png<>uid://bixp6p0ldykql::::res://Sprites/br/бр1.png<>uid://ct3mwdgi2jpbg::::res://Sprites/Помехи/помеха8.png<>res://Scenes/Br3500.cs<>uid://j2gdoo7plbhk::::res://Music/camera-video-load.mp3<>uid://boklucnk7vuii::::res://Nodes/color_rect_2.tscn<>res://Code/Door.cs
-game_load.tscn::PackedScene::3411946728215668867::1727098688::0::1::::<><>::res://Code/GameLoad.cs<>uid://boklucnk7vuii::::res://Nodes/color_rect_2.tscn<>uid://b50anyq4cs6nb::::res://Sprites/company_logo.png
-main_menu.tscn::PackedScene::7085680820944765282::1727108976::0::1::::<><>::uid://dx66s8b6cr5fi::::res://Fonts/agat-8.ttf<>res://Code/Main_Menu_Buttons.cs<>res://Code/Night_Menu_selector.cs<>uid://bguwtakopxdhb::::res://Music/buttons-main-menu-sound.mp3<>res://Code/Options_Menu.cs<>uid://deec2ku4swrw0::::res://Music/shampoo.mp3<>uid://c4r4lu10uit1g::::res://Sprites/photo_2024-05-01_09-52-21.jpg<>res://Code/Camera2d.cs<>uid://boklucnk7vuii::::res://Nodes/color_rect_2.tscn
+game.tscn::PackedScene::2005717982808904990::1728132677::0::1::::<><>::res://Code/Game_rules.cs<>uid://c2bk7nv21toty::::res://Sprites/newoffice.jpg<>uid://dpdjsfwfotv27::::res://Music/rabotayuschiy-generator-loop-23668.mp3<>uid://b2tqumjca0hkv::::res://Sprites/CameraButtonSprite.jpg<>res://Code/Camera.cs<>res://Code/UI.cs<>uid://bjyrymafl45vr::::res://Sprites/Камеры/camera 1.jpg<>uid://dqt3r4y8stsxl::::res://Sprites/laptop_anim/планшет_1_frame.png<>uid://cskkqoe7ewva3::::res://Sprites/laptop_anim/планшет_2_frame.png<>res://Code/Camera_Output.cs<>uid://dckby3o1wh3ip::::res://Sprites/Камеры/3434_negate-removebg-preview.png<>uid://dbr3t8knncx2e::::res://Sprites/laptop_anim/планшет_3_frame.png<>uid://bglmvotoka0wt::::res://Music/minidv-camera-menu-beep-x2.mp3<>res://Code/zhumaysynba.cs<>uid://b0vw4a2thd044::::res://Sprites/laptop_anim/планшет_4_frame.png<>uid://bsxjwmb1syq3q::::res://Music/zvuk11.mp3<>uid://bfxs3gfgt5d7w::::res://Sprites/Помехи/помеха1.png<>uid://ce8dgoqj23fiv::::res://Sprites/laptop_anim/планшет_5_frame.png<>uid://qcjjjhoxx6ig::::res://Sprites/laptop_anim/планшет_6_frame.png<>uid://dx66s8b6cr5fi::::res://Fonts/agat-8.ttf<>uid://5m5cv3uuaugu::::res://Sprites/Помехи/помеха2.png<>uid://3j12da72ijl3::::res://Sprites/laptop_anim/планшет_7_frame.png<>uid://de5v5p7pl3e3b::::res://Sprites/Помехи/помеха3.png<>uid://5hv60em4xou7::::res://Sprites/laptop_anim/планшет_8_frame.png<>uid://d3h6fwtibr4r1::::res://Sprites/Помехи/помеха4.png<>uid://cwfqxxywa3wuk::::res://Sprites/Помехи/помеха5.png<>uid://3c3dculxi0sl::::res://Sprites/Помехи/помеха6.png<>uid://dkfrkoi76hij1::::res://Sprites/Помехи/помеха7.png<>uid://bixp6p0ldykql::::res://Sprites/br/бр1.png<>uid://ct3mwdgi2jpbg::::res://Sprites/Помехи/помеха8.png<>res://Scenes/Br3500.cs<>uid://j2gdoo7plbhk::::res://Music/camera-video-load.mp3<>uid://boklucnk7vuii::::res://Nodes/color_rect_2.tscn<>res://Code/Door.cs
+game_load.tscn::PackedScene::3411946728215668867::1728132711::0::1::::<><>::res://Code/GameLoad.cs<>uid://boklucnk7vuii::::res://Nodes/color_rect_2.tscn<>uid://b50anyq4cs6nb::::res://Sprites/company_logo.png
+main_menu.tscn::PackedScene::7085680820944765282::1728132676::0::1::::<><>::uid://dx66s8b6cr5fi::::res://Fonts/agat-8.ttf<>res://Code/Main_Menu_Buttons.cs<>res://Code/Night_Menu_selector.cs<>uid://bguwtakopxdhb::::res://Music/buttons-main-menu-sound.mp3<>res://Code/Options_Menu.cs<>uid://deec2ku4swrw0::::res://Music/shampoo.mp3<>uid://c4r4lu10uit1g::::res://Sprites/photo_2024-05-01_09-52-21.jpg<>res://Code/Camera2d.cs<>uid://boklucnk7vuii::::res://Nodes/color_rect_2.tscn
 ::res://Sprites/::1727022753
 5.png::CompressedTexture2D::1809669772639156039::1725888321::1726589346::1::::<><>::
 Black_BG.png::CompressedTexture2D::6861679390966373989::1725888321::1726589346::1::::<><>::

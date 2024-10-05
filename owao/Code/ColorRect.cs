@@ -10,7 +10,7 @@ public partial class ColorRect : Godot.ColorRect
 	// Придание стандартных свойств
 	public override void _Ready()
 	{
-		Visible = false;
+		Visible = true;
 		Modulate = new Color(1, 1, 1, 255);
 	}
 	// Сам эффект

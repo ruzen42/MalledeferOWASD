@@ -21,7 +21,7 @@ scale = Vector2(1.98511, 1.98511)
 texture = ExtResource("3_lucye")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 2.5
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
