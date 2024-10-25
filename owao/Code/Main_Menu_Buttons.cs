@@ -17,8 +17,8 @@ public partial class Main_Menu_Buttons : VBoxContainer
 
 	public void _on_quit_button_button_up()
 	{
-		GetTree().Quit();
 		GetNode<AudioStreamPlayer>($"../Buttons_Sound").Play();
+		GetTree().Quit();
 	}
 
 	public void _on_back_button_button_up()

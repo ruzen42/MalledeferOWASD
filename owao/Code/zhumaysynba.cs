@@ -17,7 +17,7 @@ public partial class zhumaysynba : Sprite2D
 	private byte SelectedShampoo;
 
 	public int ZhumaysynbaCamera = 0;
-	public ColorRect Door;
+	//public ColorRect Door;
 
 		
 	public override void _Ready()
@@ -28,7 +28,7 @@ public partial class zhumaysynba : Sprite2D
 		_delayTimer.WaitTime = _rand.Next(min, max);
 		_delayTimer.OneShot = false;
 		_delayTimer.Connect("timeout", new Callable(this, nameof(OnTimerTimeout)));
-		Door = GetNode<ColorRect>("../../../Door");
+		//Door = GetNode<ColorRect>("../../../Door");
 		// Для теста работаспособности я отключаю функцию WaitTimeMath(); и использую следуещие дле строки
 
 		// Создаю таймер
@@ -121,7 +121,7 @@ public partial class zhumaysynba : Sprite2D
 
 	private void TryToKill()
 	{
-		if (!Door.Visible)
+		if (true)
 		{
 			RemoveChild(_delayTimer);
 			_delayTimer.QueueFree();
