@@ -1,12 +1,14 @@
-[gd_scene load_steps=23 format=3 uid="uid://c77mel3ucbbbu"]
+[gd_scene load_steps=25 format=3 uid="uid://c77mel3ucbbbu"]
 
 [ext_resource type="FontFile" uid="uid://dx66s8b6cr5fi" path="res://Fonts/agat-8.ttf" id="1_d3pxi"]
 [ext_resource type="Script" path="res://Code/Main_Menu_Buttons.cs" id="3_q3n2f"]
 [ext_resource type="Script" path="res://Code/Night_Menu_selector.cs" id="4_q1pns"]
 [ext_resource type="AudioStream" uid="uid://bguwtakopxdhb" path="res://Music/buttons-main-menu-sound.mp3" id="5_bgael"]
 [ext_resource type="Script" path="res://Code/Options_Menu.cs" id="5_sgbwa"]
+[ext_resource type="AudioStream" uid="uid://deec2ku4swrw0" path="res://Music/shampoo.mp3" id="6_6e1ar"]
 [ext_resource type="Texture2D" uid="uid://c4r4lu10uit1g" path="res://Sprites/photo_2024-05-01_09-52-21.jpg" id="6_g5i2g"]
 [ext_resource type="Script" path="res://Code/Camera2d.cs" id="7_w4yyh"]
+[ext_resource type="PackedScene" uid="uid://boklucnk7vuii" path="res://Nodes/color_rect_2.tscn" id="8_0a5y1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_woaoh"]
 
@@ -54,7 +56,7 @@ text = "Одна неделя с
 Шампунем Жумайсынба"
 
 [node name="Game_Version" type="Label" parent="."]
-z_index = 3
+z_index = 2
 anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -69,7 +71,7 @@ size_flags_vertical = 8
 theme_override_colors/font_color = Color(0.913725, 0.913725, 0.913725, 1)
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 35
-text = "Malledefer Studio  2019-2024 v0.1.2.4u"
+text = "Malledefer Studio  2019-2024 v0.1.2.6"
 
 [node name="Main_Menu_Buttons" type="VBoxContainer" parent="."]
 offset_left = 71.0
@@ -124,10 +126,10 @@ theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 75
 text = "Выбор ночи"
 
-[node name="GridContainer" type="GridContainer" parent="Night_Menu_selector"]
+[node name="NightContainer" type="GridContainer" parent="Night_Menu_selector"]
 layout_mode = 2
 
-[node name="Night_1_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+[node name="Night_1_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
@@ -136,7 +138,7 @@ text = "Ночь 1"
 flat = true
 alignment = 0
 
-[node name="Night_2_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+[node name="Night_2_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
@@ -146,7 +148,7 @@ text = "Ночь 2"
 flat = true
 alignment = 0
 
-[node name="Night_3_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+[node name="Night_3_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
@@ -156,7 +158,7 @@ text = "Ночь 3"
 flat = true
 alignment = 0
 
-[node name="Night_4_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+[node name="Night_4_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
@@ -166,7 +168,7 @@ text = "Ночь 4"
 flat = true
 alignment = 0
 
-[node name="Night_5_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+[node name="Night_5_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
@@ -176,7 +178,7 @@ text = "Ночь 5"
 flat = true
 alignment = 0
 
-[node name="Night_6_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+[node name="Night_6_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
@@ -186,7 +188,7 @@ text = "Ночь 6"
 flat = true
 alignment = 0
 
-[node name="Night_7_Button" type="Button" parent="Night_Menu_selector/GridContainer"]
+[node name="Night_7_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
@@ -302,7 +304,9 @@ volume_db = -20.0
 bus = &"Sound"
 
 [node name="Music_Menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_6e1ar")
 volume_db = -12.505
+autoplay = true
 bus = &"Music"
 
 [node name="Shampoo" type="Sprite2D" parent="."]
@@ -322,18 +326,25 @@ position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 script = ExtResource("7_w4yyh")
 
+[node name="ColorRect2" parent="." instance=ExtResource("8_0a5y1")]
+visible = false
+offset_left = -15.0
+offset_top = -4.0
+offset_right = 1939.0
+offset_bottom = 1083.0
+
 [connection signal="button_up" from="Main_Menu_Buttons/PlayButton" to="Main_Menu_Buttons" method="_on_play_button_button_up"]
 [connection signal="button_up" from="Main_Menu_Buttons/PlayButton" to="Night_Menu_selector" method="_on_play_button_button_up"]
 [connection signal="button_up" from="Main_Menu_Buttons/OptionsButton" to="Main_Menu_Buttons" method="_on_options_button_button_up"]
 [connection signal="button_up" from="Main_Menu_Buttons/OptionsButton" to="Options_Menu" method="_on_options_button_button_up"]
 [connection signal="button_up" from="Main_Menu_Buttons/QuitButton" to="Main_Menu_Buttons" method="_on_quit_button_button_up"]
-[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_1_Button" to="Night_Menu_selector" method="_on_night_1_button_button_down"]
-[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_2_Button" to="Night_Menu_selector" method="_on_night_2_button_button_down"]
-[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_3_Button" to="Night_Menu_selector" method="_on_night_3_button_button_down"]
-[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_4_Button" to="Night_Menu_selector" method="_on_night_4_button_button_down"]
-[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_5_Button" to="Night_Menu_selector" method="_on_night_5_button_button_down"]
-[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_6_Button" to="Night_Menu_selector" method="_on_night_6_button_button_down"]
-[connection signal="button_down" from="Night_Menu_selector/GridContainer/Night_7_Button" to="Night_Menu_selector" method="_on_night_7_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_1_Button" to="Night_Menu_selector" method="_on_night_1_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_2_Button" to="Night_Menu_selector" method="_on_night_2_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_3_Button" to="Night_Menu_selector" method="_on_night_3_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_4_Button" to="Night_Menu_selector" method="_on_night_4_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_5_Button" to="Night_Menu_selector" method="_on_night_5_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_6_Button" to="Night_Menu_selector" method="_on_night_6_button_button_down"]
+[connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_7_Button" to="Night_Menu_selector" method="_on_night_7_button_button_down"]
 [connection signal="button_up" from="Night_Menu_selector/BackButton" to="Main_Menu_Buttons" method="_on_back_button_button_up"]
 [connection signal="button_up" from="Night_Menu_selector/BackButton" to="Night_Menu_selector" method="_on_back_button_button_up"]
 [connection signal="item_selected" from="Options_Menu/GridContainer/Resolution_Button" to="Options_Menu" method="_on_option_button_item_selected"]

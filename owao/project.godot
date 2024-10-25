@@ -34,6 +34,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="canvas_items"
+window/vsync/vsync_mode=0
 
 [dotnet]
 
@@ -124,4 +125,8 @@ pointing/android/enable_pan_and_scale_gestures=true
 
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
+shader_compiler/shader_cache/enabled=false
+shader_compiler/shader_cache/compress=false
+shader_compiler/shader_cache/use_zstd_compression=false
+shader_compiler/shader_cache/strip_debug.release=false
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
