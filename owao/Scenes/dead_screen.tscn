@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctuw0oia3t0tk"]
+
+[ext_resource type="Script" path="res://Code/DeadScreen.cs" id="1_awb5g"]
+[ext_resource type="PackedScene" uid="uid://boklucnk7vuii" path="res://Nodes/color_rect_2.tscn" id="1_lltmm"]
+
+[node name="dead_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_awb5g")
+
+[node name="Dead_Label" type="Label" parent="."]
+self_modulate = Color(0.57, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -316.0
+offset_top = -73.0
+offset_right = 310.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 150
+text = "you dead"
+uppercase = true
+
+[node name="ColorRect2" parent="." instance=ExtResource("1_lltmm")]
+layout_mode = 0

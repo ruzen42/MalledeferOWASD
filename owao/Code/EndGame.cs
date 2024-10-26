@@ -7,7 +7,6 @@ public partial class EndGame : Node2D
 	{
 		var sceneTree = GetTree();
 		var newScene = GD.Load<PackedScene>(scenePath);
-
 		sceneTree.ChangeSceneToPacked(newScene);
 	}
 	// Kы выходим в главное меню 

@@ -1,15 +1,16 @@
 using Godot;
-// Не отключать либу System она нужна Random
+// Не отключать либу System она нужна для Random
 using System;
 
 public partial class zhumaysynba : Sprite2D
 {
-	// Создаю объекты класса Random чтобы 
+	// Создаю объекты класса Random
 	private Random _rand = new Random();
 	// Этот рандом используйте для камер
 	private Random _randc = new Random();
 	private Texture2D[] _zhumaysynbaTextures = new Texture2D[4];
 	private Timer _delayTimer;
+	private Sprite2D Door;
 	private int min;
 	private int max;
 	private bool _isWaiting = true;
@@ -19,10 +20,10 @@ public partial class zhumaysynba : Sprite2D
 	public int ZhumaysynbaCamera = 0;
 	//public ColorRect Door;
 
-		
 	public override void _Ready()
 	{
 		WaitTimeMath();
+		Door = GetNode<Sprite2D>("../../../Door");
 		_delayTimer = new Timer();
 		_delayTimer.Autostart = true;
 		_delayTimer.WaitTime = _rand.Next(min, max);
@@ -121,11 +122,11 @@ public partial class zhumaysynba : Sprite2D
 
 	private void TryToKill()
 	{
-		if (true)
+		if (!Door.Visible)
 		{
 			RemoveChild(_delayTimer);
 			_delayTimer.QueueFree();
-			ChangeScene("res://Scenes/main_menu.tscn");
+			ChangeScene("res://Scenes/dead_screen.tscn");
 		}
 		else
 		{

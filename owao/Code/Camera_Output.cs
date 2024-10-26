@@ -3,15 +3,17 @@ using Godot;
 public partial class Camera_Output : Sprite2D
 {
 	// Массив из текстур, позже будет заполнен в функции _Ready 
-	public Texture2D[] cameraTextures = new Texture2D[7];
+	private Texture2D[] cameraTextures = new Texture2D[7];
 	// Через этот AudioStreamPlayer идет весь звук с камер
-	public AudioStreamPlayer soundPlayer;
+	private AudioStreamPlayer soundPlayer;
+	private Button TaserButton;
 
 	// Переменная для обозначения какую камеру выбрал игрок, не сбрасывается закрытии планшета
-	byte cameraSelected = 5;
+	public byte cameraSelected = 5;
 
 	public override void _Ready()
 	{
+		TaserButton = GetNode<Button>("Taser_Button");
 		// Заполнение массива cameraTextures для их смены при нажатии кнопок
 		cameraTextures[0] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera 1.jpg");
 		cameraTextures[1] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera 2.jpg");
@@ -27,7 +29,16 @@ public partial class Camera_Output : Sprite2D
 	}
 
 	public override void _Process(double delta)
-	{
+	{	
+		if (cameraSelected == 0) 
+		{
+			TaserButton.Visible = true;
+		}
+		else
+		{
+			TaserButton.Visible = false;
+		}
+		
 		if (Visible)
 		{
 			// Ввод с клавиатуры для смены камер (настройка в godot)
@@ -119,9 +130,12 @@ public partial class Camera_Output : Sprite2D
 
 	private void ChangeCameraTexture(int cameraIndex, bool Sound)
 	{
-		// Чтобы при старте сцены звука не было, я создал отдельную функцию, если вам кажется это не правельным подходом измените это
+		// Чтобы при старте сцены звука не было, я создал отдельную функцию, если вам кажется это
+		// не правильным подходом измените это
+		
 		if (Sound) soundPlayer.Play();
 		saves.SelectedCamera = cameraIndex;
+		
 		if (cameraIndex >= 0 && cameraIndex < cameraTextures.Length && cameraTextures[cameraIndex] != null)
 		{
 			Texture = cameraTextures[cameraIndex];
