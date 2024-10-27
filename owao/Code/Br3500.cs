@@ -57,6 +57,7 @@ public partial class Br3500 : Sprite2D
 
 	public override void _Process(double delta)
 	{
+		if (Input.IsActionJustPressed("taser")) _on_taser_used();
 		Camera();
 		if (isWaiting) return;
 		else NextPhase();

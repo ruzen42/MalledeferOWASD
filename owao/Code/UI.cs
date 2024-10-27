@@ -2,7 +2,6 @@ using Godot;
 
 public partial class UI : Control
 {
-	private Sprite2D Door;
 	private AnimatedSprite2D laptop;
 	private Sprite2D cameraOutput;
 	private CanvasItem changeCameraButton;
@@ -10,11 +9,18 @@ public partial class UI : Control
 
 	public override void _Ready()
 	{
-		Door = GetNode<Sprite2D>("../Door");
 		laptop = GetNode<AnimatedSprite2D>("LaptopAnimation");
 		cameraOutput = GetNode<Sprite2D>("Camera_Output");
 		changeCameraButton = GetNode<CanvasItem>("Change_Camera_Button");
 		soundPlayer = GetNode<AudioStreamPlayer>("Laptop_up");
+	}
+
+	public override void _Process(double delta)
+	{
+		if (Input.IsActionJustPressed("laptop"))
+		{
+			_on_cameras_button_mouse_entered();
+		}
 	}
 
 	private void _on_cameras_button_mouse_entered()
@@ -45,10 +51,5 @@ public partial class UI : Control
 			cameraOutput.Visible = true;
 			changeCameraButton.Visible = true;
 		}
-	}
-	
-	private void _on_door_reload()
-	{
-		Door.Visible = !Door.Visible;
 	}
 }

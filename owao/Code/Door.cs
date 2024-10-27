@@ -1,19 +1,118 @@
 using Godot;
+using System;
 
-// Не меняйте public на private это вызывает ошибку 
-public partial class Door : ColorRect
+public partial class Door : Sprite2D
 {
-	// Если нажать на кнопку (настраевается в Godot) то вызовется функция _on_door_button_pressed();
-	//public override void _Process(double delta)
-	//{
-		//if (Input.IsActionPressed("door"))
-		//{
-			//_on_door_button_pressed();
-		//}
-	//}
+	private byte waittime;
+	private Timer limer;
+	private Timer dimer;
+	private bool DoorIsBlocked;
+	private AudioStreamPlayer DieSound;
 
-	public void _on_door_button_button_down()
+	public override void _Ready()
 	{
-		Visible = !Visible;
+		WaitTimeMath();
+		DieSound = GetNode<AudioStreamPlayer>("DieSound");
+		// Initialize and configure the timers
+		limer = new Timer
+		{
+			Autostart = false,
+			WaitTime = waittime,
+			OneShot = false
+		};
+
+		dimer = new Timer
+		{
+			Autostart = false,
+			WaitTime = 88,
+			OneShot = false
+		};
+
+		// Add timers to the node tree so they function correctly
+		AddChild(limer);
+		limer.Connect("timeout", new Callable(this, nameof(OnLimerTimeout)));
+		AddChild(dimer);
+		dimer.Connect("timeout", new Callable(this, nameof(OnDimerTimeout)));
+	}
+	
+	private void WaitTimeMath()
+	{
+		switch (saves.NightSelected)
+		{
+			default:
+				waittime = 27;
+				break;
+			case 1:
+				waittime = 27;
+				break;
+			case 2:
+				waittime = 23;
+				break;
+			case 3:
+				waittime = 20;
+				break;
+			case 4:
+				waittime = 22;
+				break;
+			case 5:
+				waittime = 20;
+				break;
+			case 6:
+				waittime = 15;
+				break;
+			case 7:
+				waittime = 13;
+				break;
+		}
+	}
+
+	private void DoorBor()
+	{
+		if (!Visible)
+		{
+			if (DoorIsBlocked)
+			{
+				GD.Print("Door is blocked");
+			}
+			else
+			{
+				GD.Print("Door Closed");
+				Visible = true;
+				limer.Start();
+			}
+		}
+		else
+		{
+			GD.Print("Door Open");
+			Visible = false;
+			limer.Stop();
+		}
+	}
+	
+	public override void _Process(double delta)
+	{
+		if (Input.IsActionJustPressed("door"))
+		{
+			DoorBor();
+		}
+	}
+
+	private void OnLimerTimeout()
+	{
+		DieSound.Play();
+		Visible = false;
+		DoorIsBlocked = true;
+		dimer.Start();
+		limer.Stop();
+	}
+
+	private void OnDimerTimeout()
+	{
+		DoorIsBlocked = false;
+	}
+	
+	private void OnDoorReload()
+	{
+		DoorBor();
 	}
 }

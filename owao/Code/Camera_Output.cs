@@ -42,35 +42,15 @@ public partial class Camera_Output : Sprite2D
 		if (Visible)
 		{
 			// Ввод с клавиатуры для смены камер (настройка в godot)
-			if (Input.IsActionPressed("cam1"))
+			for (byte i = 0; i < 7; i++)
 			{
-				ChangeCameraTexture(0);
+				if (Input.IsActionJustPressed($"cam{i + 1}"))
+				{
+					cameraSelected = i;
+					ChangeCameraTexture(cameraSelected);
+					break;
+				}
 			}
-			if (Input.IsActionPressed("cam2"))
-			{
-				ChangeCameraTexture(1);
-			}
-			if (Input.IsActionPressed("cam3"))
-			{
-				ChangeCameraTexture(2);
-			}
-			if (Input.IsActionPressed("cam4"))
-			{
-				ChangeCameraTexture(3);
-			}
-			if (Input.IsActionPressed("cam5"))
-			{
-				ChangeCameraTexture(4);
-			}
-			if (Input.IsActionPressed("cam6"))
-			{
-				ChangeCameraTexture(5);
-			}
-			if (Input.IsActionPressed("cam7"))
-			{
-				ChangeCameraTexture(6);
-			}
-
 		}
 	}
 	// Каждая функция привязана в Godot и просто меняет камеру и вызывает функцию ChangeCameraTexture();
@@ -97,6 +77,7 @@ public partial class Camera_Output : Sprite2D
 		cameraSelected = 3;
 		ChangeCameraTexture(cameraSelected);
 	}
+
 	private void _on_fifth_camera_button_button_down()
 	{
 		cameraSelected = 4;
@@ -111,7 +92,6 @@ public partial class Camera_Output : Sprite2D
 
 	private void _on_seventh_camera_button_button_down()
 	{
-
 		cameraSelected = 6;
 		ChangeCameraTexture(cameraSelected);
 	}
@@ -132,7 +112,6 @@ public partial class Camera_Output : Sprite2D
 	{
 		// Чтобы при старте сцены звука не было, я создал отдельную функцию, если вам кажется это
 		// не правильным подходом измените это
-		
 		if (Sound) soundPlayer.Play();
 		saves.SelectedCamera = cameraIndex;
 		
