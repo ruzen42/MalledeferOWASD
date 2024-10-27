@@ -17,23 +17,23 @@ public partial class Br3500 : Sprite2D
 	private AudioStreamPlayer Sounds;
 
 	private Sprite2D background; 
-	private Sprite2D Door;
+	private AnimatedSprite2D Door;
 
 	private Control UI; 
 	private Timer TaserTimer;
 	private bool isTaserEnable = true;
-	private short WaitTaser;
+	private short WaitTaser = 1;
 
 	public override void _Ready()
 	{
 		UI = GetNode<Control>("../..");
 		
-		TaserSound = GetNode<AudioStreamPlayer>("../Taser_Button/Taser_Sound");
+		TaserSound = GetNode<AudioStreamPlayer>($"../Taser_Button/Taser_Sound");
 		FanSound = GetNode<AudioStreamPlayer>("../../../Fan_Sound");
 		GenOff = GetNode<AudioStreamPlayer>("../../../Generator_Off");
 		Sounds = GetNode<AudioStreamPlayer>("../../Sounds");
 		
-		Door = GetNode<Sprite2D>("../../../Door");
+		Door = GetNode<AnimatedSprite2D>("../../../Door");
 		background = GetNode<Sprite2D>("../../../Real_background");
 
 		WaitTimeMath();
@@ -101,7 +101,15 @@ public partial class Br3500 : Sprite2D
 
 	private void GeneratorOff()
 	{
-		Door.Visible = false;
+		if (Door.Animation == "Close")
+		{
+			Door.Animation = "Fuck";
+		}
+		else if (Door.Animation == "Open")
+		{
+			Door.Animation = "Null";
+		}
+		saves.Power = false;
 		UI.Visible = false;
 		FanSound.Playing = false;
 		GenOff.Playing = true;
@@ -160,7 +168,9 @@ public partial class Br3500 : Sprite2D
 				max = 25;
 				break;
 		}
-		WaitTaser = (short)(max * 2);
+		max/=(byte)2;
+		min/=(byte)2;
+		WaitTaser = (short)(max * 2.5);
 	}
 
 	private void _on_taser_used()

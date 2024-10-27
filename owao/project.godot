@@ -41,7 +41,10 @@ project/assembly_name="OWASDsharp"
 
 [editor]
 
+movie_writer/mjpeg_quality=0.69
 movie_writer/movie_file="/home/ruzen42/12f/Godot/owao/Videos/Movie.avi"
+naming/default_signal_callback_name="On{node_name}{signal_name}"
+naming/default_signal_callback_to_self_name="On{signal_name}"
 
 [file_customization]
 

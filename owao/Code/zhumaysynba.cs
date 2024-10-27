@@ -103,6 +103,10 @@ public partial class zhumaysynba : Sprite2D
 				max = 13;
 				break;
 		}
+		max/=(byte)3;
+		min/=(byte)3;
+		max*=(byte)2;
+		min*=(byte)2;
 	}
 
 	private void LoadTextures()
@@ -122,7 +126,7 @@ public partial class zhumaysynba : Sprite2D
 
 	private void TryToKill()
 	{
-		if (!Door.Visible)
+		if (Door.Animation == "Open" || Door.Animation == "Fuck" || Door.Animation == "Null")
 		{
 			RemoveChild(_delayTimer);
 			_delayTimer.QueueFree();

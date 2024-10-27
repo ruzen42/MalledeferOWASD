@@ -64,13 +64,13 @@ public partial class Door : AnimatedSprite2D
 				waittime = 13;
 				break;
 		}
-
-		waittime*=2;
 	}
 
 	private void DoorBor()
 	{
-		if (Animation == "Open")
+		if (!saves.Power) return;
+
+		if (Animation == "Open" || Animation == "Fuck" || Animation == "Null")
 		{
 			if (DoorIsBlocked)
 			{
@@ -86,13 +86,20 @@ public partial class Door : AnimatedSprite2D
 		}
 		else
 		{
-			GD.Print("Door Open");
-			Animation = "Open";
-			Play();
-			limer.Stop();
+			if (DoorIsBlocked)
+			{
+				GD.Print("Door is blocked");
+			}
+			else
+			{
+				GD.Print("Door Open");
+				Animation = "Open";
+				Play();
+				limer.Stop();
+			}
 		}
 	}
-	
+
 	public override void _Process(double delta)
 	{
 		if (Input.IsActionJustPressed("door"))
@@ -104,7 +111,7 @@ public partial class Door : AnimatedSprite2D
 	private void OnLimerTimeout()
 	{
 		DieSound.Play();
-		Animation = "Open";
+		Animation = "Fuck";
 		Play();
 		DoorIsBlocked = true;
 		dimer.Start();
