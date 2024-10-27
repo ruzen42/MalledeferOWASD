@@ -103,10 +103,6 @@ public partial class zhumaysynba : Sprite2D
 				max = 13;
 				break;
 		}
-		max/=(byte)3;
-		min/=(byte)3;
-		max*=(byte)2;
-		min*=(byte)2;
 	}
 
 	private void LoadTextures()
