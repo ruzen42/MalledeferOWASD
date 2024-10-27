@@ -10,7 +10,7 @@ public partial class zhumaysynba : Sprite2D
 	private Random _randc = new Random();
 	private Texture2D[] _zhumaysynbaTextures = new Texture2D[4];
 	private Timer _delayTimer;
-	private Sprite2D Door;
+	private AnimatedSprite2D Door;
 	private int min;
 	private int max;
 	private bool _isWaiting = true;
@@ -23,7 +23,7 @@ public partial class zhumaysynba : Sprite2D
 	public override void _Ready()
 	{
 		WaitTimeMath();
-		Door = GetNode<Sprite2D>("../../../Door");
+		Door = GetNode<AnimatedSprite2D>("../../../Door");
 		_delayTimer = new Timer();
 		_delayTimer.Autostart = true;
 		_delayTimer.WaitTime = _rand.Next(min, max);
@@ -130,6 +130,7 @@ public partial class zhumaysynba : Sprite2D
 		}
 		else
 		{
+			GetNode<AudioStreamPlayer>("Reload").Play();
 			GD.Print("Zhumaysynba been reload");
 		}
 	}

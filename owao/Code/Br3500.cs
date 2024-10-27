@@ -22,6 +22,7 @@ public partial class Br3500 : Sprite2D
 	private Control UI; 
 	private Timer TaserTimer;
 	private bool isTaserEnable = true;
+	private short WaitTaser;
 
 	public override void _Ready()
 	{
@@ -45,7 +46,7 @@ public partial class Br3500 : Sprite2D
 		
 		TaserTimer = new Timer();
 		TaserTimer.Autostart = false;
-		TaserTimer.WaitTime = 60;
+		TaserTimer.WaitTime = WaitTaser;
 		TaserTimer.OneShot = false;
 		AddChild(TaserTimer);
 		TaserTimer.Connect("timeout", new Callable(this, nameof(OnTaserTimerTimeout)));
@@ -159,6 +160,7 @@ public partial class Br3500 : Sprite2D
 				max = 25;
 				break;
 		}
+		WaitTaser = (short)(max * 2);
 	}
 
 	private void _on_taser_used()

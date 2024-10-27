@@ -34,7 +34,7 @@ public partial class Door : Sprite2D
 		AddChild(dimer);
 		dimer.Connect("timeout", new Callable(this, nameof(OnDimerTimeout)));
 	}
-	
+
 	private void WaitTimeMath()
 	{
 		switch (saves.NightSelected)
@@ -64,6 +64,8 @@ public partial class Door : Sprite2D
 				waittime = 13;
 				break;
 		}
+
+		waittime*=2;
 	}
 
 	private void DoorBor()
