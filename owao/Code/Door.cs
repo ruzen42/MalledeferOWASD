@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Door : Sprite2D
+public partial class Door : AnimatedSprite2D
 {
 	private byte waittime;
 	private Timer limer;
@@ -70,7 +70,7 @@ public partial class Door : Sprite2D
 
 	private void DoorBor()
 	{
-		if (!Visible)
+		if (Animation == "Open")
 		{
 			if (DoorIsBlocked)
 			{
@@ -79,14 +79,16 @@ public partial class Door : Sprite2D
 			else
 			{
 				GD.Print("Door Closed");
-				Visible = true;
+				Animation = "Close";
+				Play();
 				limer.Start();
 			}
 		}
 		else
 		{
 			GD.Print("Door Open");
-			Visible = false;
+			Animation = "Open";
+			Play();
 			limer.Stop();
 		}
 	}
@@ -102,7 +104,8 @@ public partial class Door : Sprite2D
 	private void OnLimerTimeout()
 	{
 		DieSound.Play();
-		Visible = false;
+		Animation = "Open";
+		Play();
 		DoorIsBlocked = true;
 		dimer.Start();
 		limer.Stop();
