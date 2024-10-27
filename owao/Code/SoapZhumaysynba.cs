@@ -18,7 +18,6 @@ public partial class SoapZhumaysynba : Sprite2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Camera();
 		WaitTimeMath();
 		Rand = new Random();
 		timer = new Timer
@@ -47,7 +46,7 @@ public partial class SoapZhumaysynba : Sprite2D
 		PleaseVent = GetNode<AudioStreamPlayer>("PleaseVent");
 		VentSound = GetNode<AudioStreamPlayer>("VentSound");
 
-		//if (saves.NightSelected == 1 || saves.NightSelected == 5) QueueFree();
+		if (saves.NightSelected == 1 || saves.NightSelected == 5) QueueFree();
 	}
 
 	private void OnSimerTimeout()
@@ -75,6 +74,7 @@ public partial class SoapZhumaysynba : Sprite2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		Camera();
 		Oxygen.Text = $"{og}%";
 		if (og < 13.35) 
 		{

@@ -26,7 +26,6 @@ public partial class Br3500 : Sprite2D
 
 	public override void _Ready()
 	{
-		Camera();
 		UI = GetNode<Control>("../..");
 
 		TaserSound = GetNode<AudioStreamPlayer>($"../Taser_Button/Taser_Sound");
@@ -59,6 +58,7 @@ public partial class Br3500 : Sprite2D
 
 	public override void _Process(double delta)
 	{
+		Camera();
 		if (Input.IsActionJustPressed("taser")) _on_taser_used();
 		if (isWaiting) return;
 		else NextPhase();
