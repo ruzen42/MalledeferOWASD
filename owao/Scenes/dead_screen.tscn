@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctuw0oia3t0tk"]
+[gd_scene load_steps=4 format=3 uid="uid://ctuw0oia3t0tk"]
 
 [ext_resource type="Script" path="res://Code/DeadScreen.cs" id="1_awb5g"]
 [ext_resource type="PackedScene" uid="uid://boklucnk7vuii" path="res://Nodes/color_rect_2.tscn" id="1_lltmm"]
+[ext_resource type="AudioStream" uid="uid://bugoi3cv4368k" path="res://Music/neizvestnyy-ispolnitel-a.mp3" id="3_freee"]
 
 [node name="dead_screen" type="Control"]
 layout_mode = 3
@@ -32,3 +33,10 @@ uppercase = true
 
 [node name="ColorRect2" parent="." instance=ExtResource("1_lltmm")]
 layout_mode = 0
+
+[node name="Scream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_freee")
+volume_db = 24.0
+autoplay = true
+mix_target = 1
+bus = &"Sound"

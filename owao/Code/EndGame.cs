@@ -14,4 +14,13 @@ public partial class EndGame : Node2D
 	{
 		ChangeScene("res://Scenes/main_menu.tscn");
 	}
+
+	public override void _Process(double delta)
+	{
+		// При нажатии на Esc вас выкинет из игры 
+		if (Input.IsActionPressed("exit"))
+		{
+			ChangeScene("res://Scenes/main_menu.tscn");
+		}
+	}
 }

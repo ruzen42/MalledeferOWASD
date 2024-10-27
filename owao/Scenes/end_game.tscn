@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsxpc1hurkxe6"]
+[gd_scene load_steps=5 format=3 uid="uid://bsxpc1hurkxe6"]
 
 [ext_resource type="Script" path="res://Code/EndGame.cs" id="1_ef38g"]
 [ext_resource type="FontFile" uid="uid://dx66s8b6cr5fi" path="res://Fonts/agat-8.ttf" id="1_y3tfo"]
 [ext_resource type="PackedScene" uid="uid://boklucnk7vuii" path="res://Nodes/color_rect_2.tscn" id="2_6ik3w"]
+[ext_resource type="AudioStream" uid="uid://bdahu2q022h25" path="res://Music/fnaf-6-am.mp3" id="4_fxqb0"]
 
 [node name="EndGame" type="Node2D"]
 position = Vector2(960, 540)
@@ -28,8 +29,14 @@ offset_right = 960.0
 offset_bottom = 544.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 10.0
 one_shot = true
 autostart = true
+
+[node name="OHYEAH" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fxqb0")
+volume_db = -0.84
+autoplay = true
+bus = &"Sound"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

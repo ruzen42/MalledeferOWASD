@@ -14,7 +14,7 @@ config/name="OWASD"
 config/name_localized={
 "ru_KZ": "Одна неделя с Демоном Жумайсынба"
 }
-config/version="0.1.2.7"
+config/version="0.1.2.7.1"
 run/main_scene="res://Scenes/game_load.tscn"
 config/features=PackedStringArray("4.3", "C#", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
