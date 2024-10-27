@@ -4,15 +4,15 @@ using System;
 public partial class Door : AnimatedSprite2D
 {
 	private byte waittime;
-	private Timer limer;
-	private Timer dimer;
+	private Timer limer, dimer;
 	private bool DoorIsBlocked;
-	private AudioStreamPlayer DieSound;
+	private AudioStreamPlayer DieSound, OpenSound;
 
 	public override void _Ready()
 	{
 		WaitTimeMath();
 		DieSound = GetNode<AudioStreamPlayer>("DieSound");
+		OpenSound = GetNode<AudioStreamPlayer>("OpenCloseSound");
 		// Initialize and configure the timers
 		limer = new Timer
 		{
@@ -81,6 +81,7 @@ public partial class Door : AnimatedSprite2D
 				GD.Print("Door Closed");
 				Animation = "Close";
 				Play();
+				OpenSound.Play();
 				limer.Start();
 			}
 		}
@@ -95,6 +96,7 @@ public partial class Door : AnimatedSprite2D
 				GD.Print("Door Open");
 				Animation = "Open";
 				Play();
+				OpenSound.Play();
 				limer.Stop();
 			}
 		}

@@ -26,8 +26,9 @@ public partial class Br3500 : Sprite2D
 
 	public override void _Ready()
 	{
+		Camera();
 		UI = GetNode<Control>("../..");
-		
+
 		TaserSound = GetNode<AudioStreamPlayer>($"../Taser_Button/Taser_Sound");
 		FanSound = GetNode<AudioStreamPlayer>("../../../Fan_Sound");
 		GenOff = GetNode<AudioStreamPlayer>("../../../Generator_Off");
@@ -43,14 +44,14 @@ public partial class Br3500 : Sprite2D
 		timer.OneShot = false;
 		AddChild(timer);
 		timer.Connect("timeout", new Callable(this, nameof(OnTimerTimeout)));
-		
+
 		TaserTimer = new Timer();
 		TaserTimer.Autostart = false;
 		TaserTimer.WaitTime = WaitTaser;
 		TaserTimer.OneShot = false;
 		AddChild(TaserTimer);
 		TaserTimer.Connect("timeout", new Callable(this, nameof(OnTaserTimerTimeout)));
-		
+
 		Textures[0] = (Texture2D)ResourceLoader.Load("res://Sprites/br/BR3500_1.png");
 		Textures[1] = (Texture2D)ResourceLoader.Load("res://Sprites/br/br3500_2.png");
 		Textures[2] = (Texture2D)ResourceLoader.Load("res://Sprites/br/br3500_3.png");
@@ -59,7 +60,6 @@ public partial class Br3500 : Sprite2D
 	public override void _Process(double delta)
 	{
 		if (Input.IsActionJustPressed("taser")) _on_taser_used();
-		Camera();
 		if (isWaiting) return;
 		else NextPhase();
 	}
@@ -68,7 +68,7 @@ public partial class Br3500 : Sprite2D
 	{
 		isWaiting = false;
 	}
-	
+
 	private void OnTaserTimerTimeout()
 	{
 		isTaserEnable = true;
@@ -182,6 +182,8 @@ public partial class Br3500 : Sprite2D
 			ChangeTexture(phase);
 			isTaserEnable = false;
 			TaserTimer.Start();
+			isWaiting = true;
+			timer.Start();
 		}
 		else
 		{
