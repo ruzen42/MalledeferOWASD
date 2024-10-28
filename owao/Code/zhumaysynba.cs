@@ -53,7 +53,7 @@ public partial class zhumaysynba : Sprite2D
 				break;
 
 			case 2:
-				Position = new Vector2(-316, 186);
+				Position = new Vector2(318, 187);
 				break;
 
 			case 3:

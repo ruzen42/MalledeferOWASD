@@ -2,11 +2,15 @@ using Godot;
 
 public partial class Night_Menu_selector : VBoxContainer
 {
+	public SceneTree sceneTree;
+	public PackedScene newScene;
 	private Button[] nights = new Button[6];
 
 	public override void _Ready()
 	{
-		 for (byte i = 2 ; i <= 7 ; ++i) nights[i-2] = GetNode<Button>($"NightContainer/Night_{i}_Button");
+		sceneTree = GetTree();
+		newScene = GD.Load<PackedScene>("res://Scenes/game.tscn");
+		for (byte i = 2 ; i <= 7 ; ++i) nights[i-2] = GetNode<Button>($"NightContainer/Night_{i}_Button");
 	}
 
 	public override void _Process(double delta)
@@ -56,9 +60,6 @@ public partial class Night_Menu_selector : VBoxContainer
 
 	private void ChangeScene(string scenePath)
 	{
-		var sceneTree = GetTree();
-		var newScene = GD.Load<PackedScene>(scenePath);
-
 		if (newScene != null)
 		{
 			sceneTree.ChangeSceneToPacked(newScene);
