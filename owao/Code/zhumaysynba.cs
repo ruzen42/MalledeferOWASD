@@ -175,6 +175,10 @@ public partial class zhumaysynba : Sprite2D
 				ZhumaysynbaCamera = _randc.Next(2, 4);
 				break;
 			case 2:
+				if (_randc.Next(0, 2) == 0)
+				{
+					ZhumaysynbaCamera = 3;
+				}
 				ZhumaysynbaCamera = 3;
 				break;
 			case 3:

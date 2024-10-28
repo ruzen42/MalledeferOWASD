@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://dx66s8b6cr5fi" path="res://Fonts/agat-8.ttf" id="1_d3pxi"]
 [ext_resource type="Script" path="res://Code/Main_Menu_Buttons.cs" id="3_q3n2f"]
 [ext_resource type="Script" path="res://Code/Night_Menu_selector.cs" id="4_q1pns"]
-[ext_resource type="Script" path="res://VBoxContainer2.cs" id="5_7abkr"]
+[ext_resource type="Script" path="res://Code/VBoxContainer2.cs" id="5_7abkr"]
 [ext_resource type="AudioStream" uid="uid://bguwtakopxdhb" path="res://Music/buttons-main-menu-sound.mp3" id="5_bgael"]
 [ext_resource type="Script" path="res://Code/Options_Menu.cs" id="5_sgbwa"]
 [ext_resource type="AudioStream" uid="uid://deec2ku4swrw0" path="res://Music/shampoo.mp3" id="6_6e1ar"]
@@ -295,7 +295,7 @@ text = "Общая"
 [node name="MasterSlider" type="HSlider" parent="Options_Menu/GridContainer/VBoxContainer2"]
 layout_mode = 2
 min_value = -20.0
-max_value = 24.0
+max_value = 6.0
 tick_count = 1
 ticks_on_borders = true
 
@@ -308,7 +308,7 @@ text = "Звуки"
 [node name="SoundsSlider" type="HSlider" parent="Options_Menu/GridContainer/VBoxContainer2"]
 layout_mode = 2
 min_value = -20.0
-max_value = 24.0
+max_value = 6.0
 tick_count = 1
 ticks_on_borders = true
 
@@ -321,7 +321,7 @@ text = "Музыка"
 [node name="MusicrSlider" type="HSlider" parent="Options_Menu/GridContainer/VBoxContainer2"]
 layout_mode = 2
 min_value = -20.0
-max_value = 24.0
+max_value = 6.0
 tick_count = 1
 ticks_on_borders = true
 
@@ -415,6 +415,9 @@ offset_bottom = 1083.0
 [connection signal="item_selected" from="Options_Menu/GridContainer/VBoxContainer/Resolution_Button" to="Options_Menu" method="_on_option_button_item_selected"]
 [connection signal="button_down" from="Options_Menu/GridContainer/VBoxContainer/Fullscreen_Button" to="Options_Menu" method="_on_fullscreen_button_button_down"]
 [connection signal="button_up" from="Options_Menu/GridContainer/VBoxContainer/Fullscreen_Button" to="Options_Menu" method="_on_fullscreen_button_button_up"]
+[connection signal="value_changed" from="Options_Menu/GridContainer/VBoxContainer2/MasterSlider" to="Options_Menu/GridContainer/VBoxContainer2" method="OnMasterValueChanged"]
+[connection signal="value_changed" from="Options_Menu/GridContainer/VBoxContainer2/SoundsSlider" to="Options_Menu/GridContainer/VBoxContainer2" method="OnSoundsValueChanged"]
+[connection signal="value_changed" from="Options_Menu/GridContainer/VBoxContainer2/MusicrSlider" to="Options_Menu/GridContainer/VBoxContainer2" method="OnMusicValueChanged"]
 [connection signal="pressed" from="Options_Menu/GridContainer/VBoxContainer3/HelpUs" to="Options_Menu" method="_on_help_us_pressed"]
 [connection signal="pressed" from="Options_Menu/GridContainer/VBoxContainer3/HelpUs2" to="Options_Menu" method="_on_help_us_2_pressed"]
 [connection signal="button_up" from="Options_Menu/Back" to="Main_Menu_Buttons" method="_on_back_button_up"]

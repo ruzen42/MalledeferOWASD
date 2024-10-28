@@ -24,7 +24,6 @@ config/icon="res://Sprites/Icon_game.png"
 
 [autoload]
 
-OptionsSave="*res://Autoload/options_save.cs"
 Saves="*res://Autoload/saves.cs"
 
 [display]

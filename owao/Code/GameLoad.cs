@@ -2,24 +2,30 @@ using Godot;
 
 public partial class GameLoad : Control
 {
+	SceneTree sceneTree;
+	PackedScene newScene;
+
 	private void _on_timer_timeout()
 	{
-		ChangeScene("res://Scenes/main_menu.tscn");
+		ChangeScene();
 	}
 
 	public override void _Process(double delta)
 	{
 		if (Input.IsActionPressed("exit"))
 		{
-			ChangeScene("res://Scenes/main_menu.tscn");
+			ChangeScene();
 		}
 	}
-	
-	private void ChangeScene(string scenePath)
-	{
-		var sceneTree = GetTree();
-		var newScene = GD.Load<PackedScene>(scenePath);
 
+	private void ChangeScene()
+	{
 		sceneTree.ChangeSceneToPacked(newScene);
+	}
+
+	public override void _Ready()
+	{
+		newScene = GD.Load<PackedScene>("res://Scenes/main_menu.tscn");
+		sceneTree = GetTree();
 	}
 }

@@ -5,6 +5,7 @@ public partial class Main_Menu_Buttons : VBoxContainer
 	// Этот класс по моему объективно понятен и не трубуется в объяснении
 	public void _on_play_button_button_up()
 	{
+		//saves.SaveGame();
 		HideMainMenuButtons();
 		GetNode<AudioStreamPlayer>($"../Buttons_Sound").Play();
 	}

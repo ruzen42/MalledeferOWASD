@@ -43,6 +43,7 @@ Binares
 *.su
 *.idb
 *.pdb
+*.py
 
 # Kernel Module Compile Results
 *.mod*

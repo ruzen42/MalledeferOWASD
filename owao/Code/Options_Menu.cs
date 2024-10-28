@@ -6,6 +6,20 @@ public partial class Options_Menu : VBoxContainer
 	private const string InviteTG = "https://t.me/OWASDMalledefer";
 	private const string InviteDS = "https://discord.gg/Sk4n9hJCBK";
 
+	public override void _Ready()
+	{
+		DisplayServer.WindowSetSize(saves.Resolution);
+
+		if (saves.FullScreen)
+		{
+			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen); 
+		}
+		else
+		{
+			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+		}
+	}
+
 	private void _on_options_button_button_up()
 	{
 		ShowOptionsMenuButtons();
@@ -15,6 +29,7 @@ public partial class Options_Menu : VBoxContainer
 	private void _on_back_button_up()
 	{
 		HideOptionsMenuButtons();
+		saves.SaveGame();
 		GetNode<AudioStreamPlayer>($"../Buttons_Sound").Play();
 	}
 
@@ -40,21 +55,20 @@ public partial class Options_Menu : VBoxContainer
 				DisplayServer.WindowSetSize(new Vector2I(1440, 1080));
 				break;
 		}
+		saves.Resolution = DisplayServer.WindowGetSize();
 	}
 
 	private void _on_fullscreen_button_button_up()
 	{
-		DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
-		DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
-		DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen); DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
+		DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen); 
 		GetNode<AudioStreamPlayer>($"../Buttons_Sound").Play();
+		saves.FullScreen = true;
 	}
 
 	private void _on_fullscreen_button_button_down()
 	{
 		DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
-		DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
-		DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+		saves.FullScreen = false;
 	}
 
 	private void _on_help_us_pressed()
