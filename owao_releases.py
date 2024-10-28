@@ -3,13 +3,7 @@ import requests
 
 # GitHub repository information
 GITHUB_REPO = "ruzen42/MalledeferOWASD"  # Replace with your GitHub repository in "username/repo" format
-GITHUB_API_URL = f"https://api.github.com/repos/{GITHUB_REPO}/releases"
-
-# Telegram client settings
-API_ID = 28719346                    # Replace with your Telegram API ID
-API_HASH = "1bedafb1bc24f9b33d80ad511cf7073a"        # Replace with your Telegram API hash
-PHONE_NUMBER = "+77769915522"       # Replace with your phone number in international format
-CHANNEL_USERNAME = "OWASDMalledefer"# Replace with your channel username (e.g., "@yourchannel")
+GITHUB_API_URL = f"# Replace with your channel username (e.g., "@yourchannel")
 
 # Function to get the latest GitHub release information
 def get_latest_release():
