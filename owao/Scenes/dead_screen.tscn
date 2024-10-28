@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctuw0oia3t0tk"]
+[gd_scene load_steps=5 format=3 uid="uid://ctuw0oia3t0tk"]
 
 [ext_resource type="Script" path="res://Code/DeadScreen.cs" id="1_awb5g"]
 [ext_resource type="PackedScene" uid="uid://boklucnk7vuii" path="res://Nodes/color_rect_2.tscn" id="1_lltmm"]
+[ext_resource type="Texture2D" uid="uid://cer4jyrotw2na" path="res://Sprites/BadEyes.png" id="2_ukrn2"]
 [ext_resource type="AudioStream" uid="uid://bugoi3cv4368k" path="res://Music/neizvestnyy-ispolnitel-a.mp3" id="3_freee"]
 
 [node name="dead_screen" type="Control"]
@@ -12,6 +13,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_awb5g")
+
+[node name="BadEyes" type="Sprite2D" parent="."]
+z_index = 6
+position = Vector2(950, 515)
+scale = Vector2(0.764583, 0.547222)
+texture = ExtResource("2_ukrn2")
 
 [node name="Dead_Label" type="Label" parent="."]
 self_modulate = Color(0.57, 0, 0, 1)
@@ -32,9 +39,11 @@ text = "you dead"
 uppercase = true
 
 [node name="ColorRect2" parent="." instance=ExtResource("1_lltmm")]
+visible = false
 layout_mode = 0
 
 [node name="Scream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_freee")
+autoplay = true
 mix_target = 1
 bus = &"Sound"

@@ -58,7 +58,7 @@ public partial class SoapZhumaysynba : Sprite2D
 	private void OnTimerTimeout()
 	{
 		og -= 0.001001f;
-		if (IsSoapActive)	og -= 0.5f;
+		if (IsSoapActive)	og -= 0.3f;
 
 		if (vent) og +=0.1f;
 
@@ -80,6 +80,8 @@ public partial class SoapZhumaysynba : Sprite2D
 		Oxygen.Text = $"{og}%";
 		if (og < 13.35) 
 		{
+			timer.QueueFree();
+			simer.QueueFree();
 			ChangeScene("res://Scenes/dead_screen.tscn");
 		}
 		else if (og < 16.4)
@@ -153,11 +155,15 @@ public partial class SoapZhumaysynba : Sprite2D
 		VentSound.Play();
 		IsSoapActive = false;
 		vent = true;
+		simer.WaitTime = Rand.Next(min, max);
+		simer.Start();
 	}
 
 	private void OnVentilSoundFinished()
 	{
-		IsSoapActive = true;
+		if (!VentSound.Playing)	IsSoapActive = true;
+		simer.WaitTime = Rand.Next(min, max);
+		simer.Start();
 	}
 
 	private void OxygenMath()

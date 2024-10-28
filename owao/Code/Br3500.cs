@@ -96,6 +96,7 @@ public partial class Br3500 : Sprite2D
 		phase += 1; 
 		ChangeTexture(phase);
 		isWaiting = true;
+		timer.WaitTime = rand.Next(min, max);
 		timer.Start();
 	}
 
@@ -114,6 +115,7 @@ public partial class Br3500 : Sprite2D
 		FanSound.Playing = false;
 		GenOff.Playing = true;
 		GD.Print("generator off");
+		timer.QueueFree();
 	}
 
 	private void ChangeTexture(byte index)
