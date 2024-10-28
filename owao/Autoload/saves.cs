@@ -25,7 +25,7 @@ public partial class saves : Node
 
 		try 
 		{
-			Config.Load(PathToSaveFile);
+			
 			LoadSave();
 			GD.Print("saves.cs загружен");
 		}
@@ -48,6 +48,7 @@ public partial class saves : Node
 
 	public static void LoadSave()
 	{
+		Config.LoadEncryptedPass(PathToSaveFile, "hui");
 		NightsCompleted = (byte)Config.GetValue(SectionName, "NightsCompleted");
 		FullScreen = (bool)Config.GetValue(OptionsName, "FullScreen", false);
 		GD.Print($"FullScreen Load {FullScreen}");
@@ -68,7 +69,7 @@ public partial class saves : Node
 		Config.SetValue(OptionsName, "MusicVolume", MusicVolume);
 		Config.SetValue(OptionsName, "SoundVolume", SoundVolume);
 
-		Config.Save(PathToSaveFile);
+		Config.SaveEncryptedPass(PathToSaveFile, "hui");
 		GD.Print("Игра Сохранена");
 	}
 }
