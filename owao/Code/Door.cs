@@ -1,18 +1,18 @@
 using Godot;
 using System;
 
-public partial class Door : Sprite2D
+public partial class Door : AnimatedSprite2D
 {
 	private byte waittime;
-	private Timer limer;
-	private Timer dimer;
+	private Timer limer, dimer;
 	private bool DoorIsBlocked;
-	private AudioStreamPlayer DieSound;
+	private AudioStreamPlayer DieSound, OpenSound;
 
 	public override void _Ready()
 	{
 		WaitTimeMath();
 		DieSound = GetNode<AudioStreamPlayer>("DieSound");
+		OpenSound = GetNode<AudioStreamPlayer>("OpenCloseSound");
 		// Initialize and configure the timers
 		limer = new Timer
 		{
@@ -34,7 +34,7 @@ public partial class Door : Sprite2D
 		AddChild(dimer);
 		dimer.Connect("timeout", new Callable(this, nameof(OnDimerTimeout)));
 	}
-	
+
 	private void WaitTimeMath()
 	{
 		switch (saves.NightSelected)
@@ -68,7 +68,9 @@ public partial class Door : Sprite2D
 
 	private void DoorBor()
 	{
-		if (!Visible)
+		if (!saves.Power) return;
+
+		if (Animation == "Open" || Animation == "Fuck" || Animation == "Null")
 		{
 			if (DoorIsBlocked)
 			{
@@ -77,18 +79,29 @@ public partial class Door : Sprite2D
 			else
 			{
 				GD.Print("Door Closed");
-				Visible = true;
+				Animation = "Close";
+				Play();
+				OpenSound.Play();
 				limer.Start();
 			}
 		}
 		else
 		{
-			GD.Print("Door Open");
-			Visible = false;
-			limer.Stop();
+			if (DoorIsBlocked)
+			{
+				GD.Print("Door is blocked");
+			}
+			else
+			{
+				GD.Print("Door Open");
+				Animation = "Open";
+				Play();
+				OpenSound.Play();
+				limer.Stop();
+			}
 		}
 	}
-	
+
 	public override void _Process(double delta)
 	{
 		if (Input.IsActionJustPressed("door"))
@@ -100,7 +113,8 @@ public partial class Door : Sprite2D
 	private void OnLimerTimeout()
 	{
 		DieSound.Play();
-		Visible = false;
+		Animation = "Fuck";
+		Play();
 		DoorIsBlocked = true;
 		dimer.Start();
 		limer.Stop();

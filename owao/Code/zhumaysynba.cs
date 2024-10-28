@@ -6,13 +6,11 @@ public partial class zhumaysynba : Sprite2D
 {
 	// Создаю объекты класса Random
 	private Random _rand = new Random();
-	// Этот рандом используйте для камер
 	private Random _randc = new Random();
 	private Texture2D[] _zhumaysynbaTextures = new Texture2D[4];
 	private Timer _delayTimer;
-	private Sprite2D Door;
-	private int min;
-	private int max;
+	private AnimatedSprite2D Door;
+	private int min, max;
 	private bool _isWaiting = true;
 	// Выбраная камера игроком относительно zhumaysynba, используется для получения
 	private byte SelectedShampoo;
@@ -23,7 +21,7 @@ public partial class zhumaysynba : Sprite2D
 	public override void _Ready()
 	{
 		WaitTimeMath();
-		Door = GetNode<Sprite2D>("../../../Door");
+		Door = GetNode<AnimatedSprite2D>("../../../Door");
 		_delayTimer = new Timer();
 		_delayTimer.Autostart = true;
 		_delayTimer.WaitTime = _rand.Next(min, max);
@@ -35,7 +33,6 @@ public partial class zhumaysynba : Sprite2D
 		// Создаю таймер
 		AddChild(_delayTimer);
 		// Начинаю отсчет
-		_isWaiting = true;
 		_delayTimer.Start();
 
 		LoadTextures();
@@ -48,19 +45,19 @@ public partial class zhumaysynba : Sprite2D
 		switch (ZhumaysynbaCamera)
 		{
 			case 0:
-				Position = new Vector2(-85, 93);
+				Position = new Vector2(7, 120);
 				break;
 
 			case 1:
-				Position = new Vector2(357, 130);
+				Position = new Vector2(-365, 119);
 				break;
 
 			case 2:
-				Position = new Vector2(177, -224);
+				Position = new Vector2(-316, 186);
 				break;
 
 			case 3:
-				Position = new Vector2(473, 204);
+				Position = new Vector2(117, 41);
 				break;
 		}
 	}
@@ -107,10 +104,10 @@ public partial class zhumaysynba : Sprite2D
 
 	private void LoadTextures()
 	{
-		_zhumaysynbaTextures[0] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/1.png");
-		_zhumaysynbaTextures[1] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/2.png");
-		_zhumaysynbaTextures[2] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/3.png");
-		_zhumaysynbaTextures[3] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/4.png");
+		_zhumaysynbaTextures[0] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/Zhumaysynba1.png");
+		_zhumaysynbaTextures[1] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/Zhumaysynba2.png");
+		_zhumaysynbaTextures[2] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/Zhumaysynba3.png");
+		_zhumaysynbaTextures[3] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/Zhumaysynba4.png");
 	}
 
 	public void ChangeScene(string scenePath)
@@ -122,14 +119,14 @@ public partial class zhumaysynba : Sprite2D
 
 	private void TryToKill()
 	{
-		if (!Door.Visible)
+		if (Door.Animation == "Open" || Door.Animation == "Fuck" || Door.Animation == "Null")
 		{
-			RemoveChild(_delayTimer);
 			_delayTimer.QueueFree();
 			ChangeScene("res://Scenes/dead_screen.tscn");
 		}
 		else
 		{
+			GetNode<AudioStreamPlayer>("Reload").Play();
 			GD.Print("Zhumaysynba been reload");
 		}
 	}
@@ -167,8 +164,8 @@ public partial class zhumaysynba : Sprite2D
 
 	private void Move()
 	{
+		GD.Print();
 		// Это функция описывает движение zhumaysynba по камерам
-		PositionMath();
 		switch (ZhumaysynbaCamera)
 		{
 			case 0:

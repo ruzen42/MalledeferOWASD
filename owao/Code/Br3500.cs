@@ -17,22 +17,23 @@ public partial class Br3500 : Sprite2D
 	private AudioStreamPlayer Sounds;
 
 	private Sprite2D background; 
-	private Sprite2D Door;
+	private AnimatedSprite2D Door;
 
 	private Control UI; 
 	private Timer TaserTimer;
 	private bool isTaserEnable = true;
+	private short WaitTaser = 1;
 
 	public override void _Ready()
 	{
 		UI = GetNode<Control>("../..");
-		
-		TaserSound = GetNode<AudioStreamPlayer>("../Taser_Button/Taser_Sound");
+
+		TaserSound = GetNode<AudioStreamPlayer>($"../Taser_Button/Taser_Sound");
 		FanSound = GetNode<AudioStreamPlayer>("../../../Fan_Sound");
 		GenOff = GetNode<AudioStreamPlayer>("../../../Generator_Off");
 		Sounds = GetNode<AudioStreamPlayer>("../../Sounds");
 		
-		Door = GetNode<Sprite2D>("../../../Door");
+		Door = GetNode<AnimatedSprite2D>("../../../Door");
 		background = GetNode<Sprite2D>("../../../Real_background");
 
 		WaitTimeMath();
@@ -42,14 +43,14 @@ public partial class Br3500 : Sprite2D
 		timer.OneShot = false;
 		AddChild(timer);
 		timer.Connect("timeout", new Callable(this, nameof(OnTimerTimeout)));
-		
+
 		TaserTimer = new Timer();
 		TaserTimer.Autostart = false;
-		TaserTimer.WaitTime = 60;
+		TaserTimer.WaitTime = WaitTaser;
 		TaserTimer.OneShot = false;
 		AddChild(TaserTimer);
 		TaserTimer.Connect("timeout", new Callable(this, nameof(OnTaserTimerTimeout)));
-		
+
 		Textures[0] = (Texture2D)ResourceLoader.Load("res://Sprites/br/BR3500_1.png");
 		Textures[1] = (Texture2D)ResourceLoader.Load("res://Sprites/br/br3500_2.png");
 		Textures[2] = (Texture2D)ResourceLoader.Load("res://Sprites/br/br3500_3.png");
@@ -57,8 +58,8 @@ public partial class Br3500 : Sprite2D
 
 	public override void _Process(double delta)
 	{
-		if (Input.IsActionJustPressed("taser")) _on_taser_used();
 		Camera();
+		if (Input.IsActionJustPressed("taser")) _on_taser_used();
 		if (isWaiting) return;
 		else NextPhase();
 	}
@@ -67,7 +68,7 @@ public partial class Br3500 : Sprite2D
 	{
 		isWaiting = false;
 	}
-	
+
 	private void OnTaserTimerTimeout()
 	{
 		isTaserEnable = true;
@@ -95,16 +96,26 @@ public partial class Br3500 : Sprite2D
 		phase += 1; 
 		ChangeTexture(phase);
 		isWaiting = true;
+		timer.WaitTime = rand.Next(min, max);
 		timer.Start();
 	}
 
 	private void GeneratorOff()
 	{
-		Door.Visible = false;
+		if (Door.Animation == "Close")
+		{
+			Door.Animation = "Fuck";
+		}
+		else if (Door.Animation == "Open")
+		{
+			Door.Animation = "Null";
+		}
+		saves.Power = false;
 		UI.Visible = false;
 		FanSound.Playing = false;
 		GenOff.Playing = true;
 		GD.Print("generator off");
+		timer.QueueFree();
 	}
 
 	private void ChangeTexture(byte index)
@@ -159,6 +170,7 @@ public partial class Br3500 : Sprite2D
 				max = 25;
 				break;
 		}
+		WaitTaser = (short)(max * 1.5);
 	}
 
 	private void _on_taser_used()
@@ -170,6 +182,8 @@ public partial class Br3500 : Sprite2D
 			ChangeTexture(phase);
 			isTaserEnable = false;
 			TaserTimer.Start();
+			isWaiting = true;
+			timer.Start();
 		}
 		else
 		{
