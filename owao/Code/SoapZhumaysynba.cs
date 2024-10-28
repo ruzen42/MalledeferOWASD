@@ -51,7 +51,7 @@ public partial class SoapZhumaysynba : Sprite2D
 
 	private void OnSimerTimeout()
 	{
-		IsSoapActive = true;
+		GetNode<AudioStreamPlayer>("VentilSound").Play();
 	}
 
 	private void OnTimerTimeout()
@@ -151,5 +151,10 @@ public partial class SoapZhumaysynba : Sprite2D
 		VentSound.Play();
 		IsSoapActive = false;
 		vent = true;
+	}
+
+	private void OnVentilSoundFinished()
+	{
+		IsSoapActive = true;
 	}
 }
