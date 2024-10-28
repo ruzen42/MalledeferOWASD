@@ -33,6 +33,8 @@ public partial class saves : Node
 		{
 			GD.PrintErr("Ошибка при загрузке игры");
 		}
+		
+		DisplayServer.WindowSetSize(saves.Resolution);
 
 		if (FullScreen)
 		{
@@ -49,7 +51,8 @@ public partial class saves : Node
 		NightsCompleted = (byte)Config.GetValue(SectionName, "NightsCompleted");
 		FullScreen = (bool)Config.GetValue(OptionsName, "FullScreen", false);
 		GD.Print($"FullScreen Load {FullScreen}");
-		Resolution = (Vector2I)Config.GetValue(OptionsName, "Resolution", new Vector2I(1920, 1080));
+		Resolution = (Vector2I)Config.GetValue(OptionsName, "Resolution");
+		GD.Print($"Load Resolution{Resolution}");
 		MasterVolume = (float)Config.GetValue(OptionsName, "MasterVolume", 0.0f);
 		MusicVolume = (float)Config.GetValue(OptionsName, "MusicVolume", 0.0f);
 		SoundVolume = (float)Config.GetValue(OptionsName, "SoundVolume", 0.0f);

@@ -57,8 +57,7 @@ public partial class SoapZhumaysynba : Sprite2D
 
 	private void OnTimerTimeout()
 	{
-		og -= 0.001001f;
-		if (IsSoapActive)	og -= 0.3f;
+		if (IsSoapActive)	og -= 0.45f;
 
 		if (vent) og +=0.1f;
 

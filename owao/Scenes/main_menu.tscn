@@ -75,6 +75,7 @@ theme_override_font_sizes/font_size = 35
 text = "Malledefer Studio  2019-2024 v0.1.2.9"
 
 [node name="Main_Menu_Buttons" type="VBoxContainer" parent="."]
+visible = false
 offset_left = 71.0
 offset_top = 304.0
 offset_right = 485.0
@@ -210,7 +211,6 @@ alignment = 0
 text_direction = 1
 
 [node name="Options_Menu" type="VBoxContainer" parent="."]
-visible = false
 offset_left = 62.0
 offset_top = 265.0
 offset_right = 1076.0
@@ -248,23 +248,22 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ierln")
 button_pressed = true
 flat = true
 selected = 1
-item_count = 6
+item_count = 7
 popup/item_0/text = "16:9"
 popup/item_0/separator = true
 popup/item_1/text = "1920x1080"
 popup/item_1/id = 1
-popup/item_2/text = "1152x648"
+popup/item_2/text = "1600x900"
 popup/item_2/id = 2
-popup/item_2/disabled = true
-popup/item_3/text = "4:3"
-popup/item_3/id = 3
-popup/item_3/separator = true
-popup/item_4/text = "800x600"
-popup/item_4/id = 5
-popup/item_4/disabled = true
-popup/item_5/text = "1440sх1080"
-popup/item_5/id = 6
-popup/item_5/disabled = true
+popup/item_3/text = "1366x786"
+popup/item_3/id = 6
+popup/item_4/text = "4:3"
+popup/item_4/id = 3
+popup/item_4/separator = true
+popup/item_5/text = "800x600"
+popup/item_5/id = 5
+popup/item_6/text = "1440sх1080"
+popup/item_6/id = 6
 
 [node name="Fullscreen_Button" type="CheckButton" parent="Options_Menu/GridContainer/VBoxContainer"]
 layout_mode = 2

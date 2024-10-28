@@ -6,20 +6,6 @@ public partial class Options_Menu : VBoxContainer
 	private const string InviteTG = "https://t.me/OWASDMalledefer";
 	private const string InviteDS = "https://discord.gg/Sk4n9hJCBK";
 
-	public override void _Ready()
-	{
-		DisplayServer.WindowSetSize(saves.Resolution);
-
-		if (saves.FullScreen)
-		{
-			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen); 
-		}
-		else
-		{
-			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
-		}
-	}
-
 	private void _on_options_button_button_up()
 	{
 		ShowOptionsMenuButtons();
@@ -43,15 +29,23 @@ public partial class Options_Menu : VBoxContainer
 				DisplayServer.WindowSetSize(new Vector2I(1920, 1080));
 				break;
 			case 2:
-				GD.Print("1152x648 set");
-				DisplayServer.WindowSetSize(new Vector2I(1152, 648));
+				GD.Print("1600x900 set");
+				DisplayServer.WindowSetSize(new Vector2I(1600, 900));
 				break;
 			case 5:
 				GD.Print("800x600 set");
 				DisplayServer.WindowSetSize(new Vector2I(800, 600));
 				break;
 			case 6:
-				GD.Print("1440x1080 set");
+				GD.Print("1366x786 set");
+				DisplayServer.WindowSetSize(new Vector2I(1366, 786));
+				break;
+			case 8:
+				GD.Print("800x600 set");
+				DisplayServer.WindowSetSize(new Vector2I(800, 600));
+				break;
+			case 7:
+				GD.Print("1440sх1080 set");
 				DisplayServer.WindowSetSize(new Vector2I(1440, 1080));
 				break;
 		}
