@@ -71,7 +71,7 @@ size_flags_vertical = 8
 theme_override_colors/font_color = Color(0.913725, 0.913725, 0.913725, 1)
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 35
-text = "Malledefer Studio  2019-2024 v0.1.2.8"
+text = "Malledefer Studio  2019-2024 v0.1.2.8u"
 
 [node name="Main_Menu_Buttons" type="VBoxContainer" parent="."]
 offset_left = 71.0
@@ -153,6 +153,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_moknh")
+disabled = true
 text = "Ночь 3"
 flat = true
 alignment = 0

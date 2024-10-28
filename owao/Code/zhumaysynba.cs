@@ -52,15 +52,15 @@ public partial class zhumaysynba : Sprite2D
 				break;
 
 			case 1:
-				Position = new Vector2(357, 130);
+				Position = new Vector2(-369, 125);
 				break;
 
 			case 2:
-				Position = new Vector2(177, -224);
+				Position = new Vector2(-66, 130);
 				break;
 
 			case 3:
-				Position = new Vector2(473, 204);
+				Position = new Vector2(117, 41);
 				break;
 		}
 	}
@@ -107,10 +107,10 @@ public partial class zhumaysynba : Sprite2D
 
 	private void LoadTextures()
 	{
-		_zhumaysynbaTextures[0] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/1.png");
-		_zhumaysynbaTextures[1] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/2.png");
+		_zhumaysynbaTextures[0] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/Zhumaysynba3.png");
+		_zhumaysynbaTextures[1] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/Zhumaysynba2.png");
 		_zhumaysynbaTextures[2] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/3.png");
-		_zhumaysynbaTextures[3] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/4.png");
+		_zhumaysynbaTextures[3] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/Zhumaysynba1.png");
 	}
 
 	public void ChangeScene(string scenePath)

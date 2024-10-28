@@ -9,7 +9,7 @@ public partial class SoapZhumaysynba : Sprite2D
 	private Sprite2D BadEyes;
 	private AudioStreamPlayer PleaseVent, VentSound;
 
-	private float og = 20.56f;
+	private float og;
 	private byte min, max;
 	private Random Rand;
 	private bool vent, IsSoapActive;
@@ -18,6 +18,7 @@ public partial class SoapZhumaysynba : Sprite2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		OxygenMath();
 		WaitTimeMath();
 		Rand = new Random();
 		timer = new Timer
@@ -56,10 +57,10 @@ public partial class SoapZhumaysynba : Sprite2D
 
 	private void OnTimerTimeout()
 	{
-		og -= 0.001f;
-		if (IsSoapActive)	og -= 0.2f;
+		og -= 0.001001f;
+		if (IsSoapActive)	og -= 0.5f;
 
-		if (vent) og +=0.3f;
+		if (vent) og +=0.1f;
 
 		if (og > 20.98f)
 		{
@@ -74,6 +75,7 @@ public partial class SoapZhumaysynba : Sprite2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		if (Input.IsActionJustPressed("vent"))	Onvent_powerpressed();
 		Camera();
 		Oxygen.Text = $"{og}%";
 		if (og < 13.35) 
@@ -156,5 +158,33 @@ public partial class SoapZhumaysynba : Sprite2D
 	private void OnVentilSoundFinished()
 	{
 		IsSoapActive = true;
+	}
+
+	private void OxygenMath()
+	{
+		switch (saves.NightSelected)
+		{
+			default:
+				og = 20.0f; // default value if none of the cases match
+				break;
+			case 1:
+				og = 20.56f;
+				break;
+			case 2:
+				og = 20.3f;
+				break;
+			case 3:
+				og = 20.0f;
+				break;
+			case 4:
+				og = 19.5f;
+				break;
+			case 6:
+				og = 19.0f;
+				break;
+			case 7:
+				og = 18.8f;
+				break;
+		}
 	}
 }
