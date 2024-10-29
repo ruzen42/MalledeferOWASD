@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c77mel3ucbbbu"]
+[gd_scene load_steps=29 format=3 uid="uid://c77mel3ucbbbu"]
 
 [ext_resource type="FontFile" uid="uid://dx66s8b6cr5fi" path="res://Fonts/agat-8.ttf" id="1_d3pxi"]
 [ext_resource type="Script" path="res://Code/Main_Menu_Buttons.cs" id="3_q3n2f"]
@@ -7,9 +7,12 @@
 [ext_resource type="AudioStream" uid="uid://bguwtakopxdhb" path="res://Music/buttons-main-menu-sound.mp3" id="5_bgael"]
 [ext_resource type="Script" path="res://Code/Options_Menu.cs" id="5_sgbwa"]
 [ext_resource type="AudioStream" uid="uid://deec2ku4swrw0" path="res://Music/shampoo.mp3" id="6_6e1ar"]
+[ext_resource type="Texture2D" uid="uid://c2a5nw6m2pk6f" path="res://Sprites/Contacts/juan-mendez-telegram.jpg" id="6_djuaw"]
 [ext_resource type="Texture2D" uid="uid://c4r4lu10uit1g" path="res://Sprites/photo_2024-05-01_09-52-21.jpg" id="6_g5i2g"]
+[ext_resource type="Texture2D" uid="uid://c0y1xoijynuhx" path="res://Sprites/Contacts/juan-mendez-discord.jpg" id="7_co8y4"]
 [ext_resource type="Script" path="res://Code/Camera2d.cs" id="7_w4yyh"]
 [ext_resource type="PackedScene" uid="uid://boklucnk7vuii" path="res://Nodes/color_rect_2.tscn" id="8_0a5y1"]
+[ext_resource type="Texture2D" uid="uid://b2sdarydf5tyi" path="res://Sprites/Contacts/juan-mendez-x.jpg" id="8_u1mpa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_woaoh"]
 
@@ -331,27 +334,40 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 65
-text = "Другое"
+text = "Другое                          "
 
 [node name="HelpUs" type="Button" parent="Options_Menu/GridContainer/VBoxContainer3"]
-self_modulate = Color(0.33924, 0.746065, 0.974796, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_av4is")
-text = "Наш Telegram"
+text = "    Наш Telegram"
+icon = ExtResource("6_djuaw")
 flat = true
 alignment = 0
+expand_icon = true
 
 [node name="HelpUs2" type="Button" parent="Options_Menu/GridContainer/VBoxContainer3"]
-self_modulate = Color(0.643609, 0.686335, 0.898431, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_av4is")
-text = "Наш Discord"
+text = "    Наш Discord"
+icon = ExtResource("7_co8y4")
 flat = true
 alignment = 0
+expand_icon = true
+
+[node name="HelpUs3" type="Button" parent="Options_Menu/GridContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_av4is")
+text = "    Наш Youtube"
+icon = ExtResource("8_u1mpa")
+flat = true
+alignment = 0
+expand_icon = true
 
 [node name="Back" type="Button" parent="Options_Menu"]
 layout_mode = 2
@@ -419,5 +435,6 @@ offset_bottom = 1083.0
 [connection signal="value_changed" from="Options_Menu/GridContainer/VBoxContainer2/MusicrSlider" to="Options_Menu/GridContainer/VBoxContainer2" method="OnMusicValueChanged"]
 [connection signal="pressed" from="Options_Menu/GridContainer/VBoxContainer3/HelpUs" to="Options_Menu" method="_on_help_us_pressed"]
 [connection signal="pressed" from="Options_Menu/GridContainer/VBoxContainer3/HelpUs2" to="Options_Menu" method="_on_help_us_2_pressed"]
+[connection signal="pressed" from="Options_Menu/GridContainer/VBoxContainer3/HelpUs3" to="Options_Menu" method="_on_help_us_2_pressed"]
 [connection signal="button_up" from="Options_Menu/Back" to="Main_Menu_Buttons" method="_on_back_button_up"]
 [connection signal="button_up" from="Options_Menu/Back" to="Options_Menu" method="_on_back_button_up"]

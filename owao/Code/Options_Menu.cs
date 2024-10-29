@@ -2,19 +2,19 @@ using Godot;
 
 public partial class Options_Menu : VBoxContainer
 {
-
 	private const string InviteTG = "https://t.me/OWASDMalledefer";
 	private const string InviteDS = "https://discord.gg/Sk4n9hJCBK";
+	private const string InviteYT = "https://www.youtube.com/@denyruzen42";
 
 	private void _on_options_button_button_up()
 	{
-		ShowOptionsMenuButtons();
+		Visible = true;
 		GetNode<AudioStreamPlayer>($"../Buttons_Sound").Play();
 	}
 
 	private void _on_back_button_up()
 	{
-		HideOptionsMenuButtons();
+		Visible = false;
 		saves.SaveGame();
 		GetNode<AudioStreamPlayer>($"../Buttons_Sound").Play();
 	}
@@ -74,7 +74,4 @@ public partial class Options_Menu : VBoxContainer
 	{
 		OS.ShellOpen(InviteDS);
 	}
-
-	void HideOptionsMenuButtons() { Visible = false; }
-	void ShowOptionsMenuButtons() { Visible = true; }
 }
