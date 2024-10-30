@@ -10,13 +10,7 @@ public partial class Mime : Sprite2D
 	{
 		sceneTree = GetTree();
 		newScene = GD.Load<PackedScene>("res://Scenes/dead_screen.tscn");
-		//if (saves.NightSelected < 3) QueueFree();
-		if (saves.Noise > 50.0f); dump();
-	}
-
-	public override void _Process(double delta)
-	{
-		
+		if (saves.NightSelected < 3) QueueFree();
 	}
 	
 	public void dump()
