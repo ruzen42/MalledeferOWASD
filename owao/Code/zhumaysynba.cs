@@ -110,7 +110,7 @@ public partial class zhumaysynba : Sprite2D
 		_zhumaysynbaTextures[3] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/Zhumaysynba4.png");
 	}
 
-	public void ChangeScene(string scenePath)
+	private void ChangeScene(string scenePath)
 	{
 		var sceneTree = GetTree();
 		var newScene = GD.Load<PackedScene>(scenePath);

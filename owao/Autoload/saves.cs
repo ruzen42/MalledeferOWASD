@@ -11,6 +11,7 @@ public partial class saves : Node
 	public static byte NightSelected = 1;
 	public static int SelectedCamera;
 	public static bool Power = true;
+	public static float Noise = 54.0f;
 
 	public static byte NightsCompleted ;
 

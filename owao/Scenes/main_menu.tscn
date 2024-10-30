@@ -78,7 +78,6 @@ theme_override_font_sizes/font_size = 35
 text = "Malledefer Studio  2019-2024 v0.1.2.9"
 
 [node name="Main_Menu_Buttons" type="VBoxContainer" parent="."]
-visible = false
 offset_left = 71.0
 offset_top = 304.0
 offset_right = 485.0
@@ -214,6 +213,7 @@ alignment = 0
 text_direction = 1
 
 [node name="Options_Menu" type="VBoxContainer" parent="."]
+visible = false
 offset_left = 62.0
 offset_top = 265.0
 offset_right = 1076.0
@@ -392,7 +392,7 @@ bus = &"Music"
 [node name="Shampoo" type="Sprite2D" parent="."]
 z_index = -2
 texture_filter = 1
-position = Vector2(1275, 541)
+position = Vector2(1403, 536)
 texture = ExtResource("6_g5i2g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
