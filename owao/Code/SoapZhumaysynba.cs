@@ -15,7 +15,6 @@ public partial class SoapZhumaysynba : Sprite2D
 	private bool vent, IsSoapActive;
 	private float mod;
 
-	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		OxygenMath();
@@ -47,7 +46,7 @@ public partial class SoapZhumaysynba : Sprite2D
 		PleaseVent = GetNode<AudioStreamPlayer>("PleaseVent");
 		VentSound = GetNode<AudioStreamPlayer>("VentSound");
 
-		//if (saves.NightSelected == 1 || saves.NightSelected == 5) QueueFree();
+		if (saves.NightSelected == 1 || saves.NightSelected == 5) QueueFree();
 	}
 
 	private void OnSimerTimeout()
