@@ -26,7 +26,6 @@ public partial class saves : Node
 
 		try 
 		{
-			
 			LoadSave();
 			GD.Print("saves.cs загружен");
 		}
@@ -49,7 +48,7 @@ public partial class saves : Node
 
 	public static void LoadSave()
 	{
-		Config.LoadEncryptedPass(PathToSaveFile, "hui");
+		Config.LoadEncryptedPass(PathToSaveFile, "govno");
 		NightsCompleted = (byte)Config.GetValue(SectionName, "NightsCompleted");
 		FullScreen = (bool)Config.GetValue(OptionsName, "FullScreen", false);
 		GD.Print($"FullScreen Load {FullScreen}");

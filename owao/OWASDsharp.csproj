@@ -8,4 +8,7 @@
   <ItemGroup>
     <Folder Include="Scenes\" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DotNetEnv" Version="3.1.1" />
+  </ItemGroup>
 </Project>
