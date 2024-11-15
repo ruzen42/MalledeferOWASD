@@ -46,7 +46,7 @@ public partial class SoapZhumaysynba : Sprite2D
 		PleaseVent = GetNode<AudioStreamPlayer>("PleaseVent");
 		VentSound = GetNode<AudioStreamPlayer>("VentSound");
 
-		//if (saves.NightSelected == 1 || saves.NightSelected == 5) QueueFree();
+		if (saves.NightSelected == 1 || saves.NightSelected == 5) QueueFree();
 	}
 
 	private void OnSimerTimeout()

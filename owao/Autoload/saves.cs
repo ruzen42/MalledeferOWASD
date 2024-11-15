@@ -7,7 +7,7 @@ public partial class saves : Node
 	static string PathToSaveFile = "user://OwASD_Save.cfg";
 	static string SectionName = "OWASD_Saves";
 	static string OptionsName = "OWASD_Options";
-	private static string pass = "cheatcode";
+	private static string pass = "cheatcode"; // Читирите
 
 	public static byte NightSelected = 1;
 	public static int SelectedCamera;
@@ -49,7 +49,7 @@ public partial class saves : Node
 
 	public static void LoadSave()
 	{
-		Config.Load(PathToSaveFile);
+		Config.LoadEncryptedPass(PathToSaveFile, pass);
 		NightsCompleted = (byte)Config.GetValue(SectionName, "NightsCompleted");
 		FullScreen = (bool)Config.GetValue(OptionsName, "FullScreen", false);
 		GD.Print($"FullScreen Load {FullScreen}");
@@ -70,7 +70,7 @@ public partial class saves : Node
 		Config.SetValue(OptionsName, "MusicVolume", MusicVolume);
 		Config.SetValue(OptionsName, "SoundVolume", SoundVolume);
 
-		Config.Save(PathToSaveFile);
+		Config.SaveEncryptedPass(PathToSaveFile, pass);
 		GD.Print("Игра Сохранена");
 	}
 }
