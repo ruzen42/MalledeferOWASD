@@ -15,13 +15,13 @@ public partial class Camera_Output : Sprite2D
 	{
 		TaserButton = GetNode<Button>("Taser_Button");
 		// Заполнение массива cameraTextures для их смены при нажатии кнопок
-		cameraTextures[0] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera 1.jpg");
-		cameraTextures[1] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera 2.jpg");
-		cameraTextures[2] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera 3.jpg");
-		cameraTextures[3] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera 4.jpg");
-		cameraTextures[4] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera 5.jpg");
-		cameraTextures[5] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera_remastered_6.jpg");
-		cameraTextures[6] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera 7.jpg");
+		cameraTextures[0] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera_1.jpg");
+		cameraTextures[1] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera_2.jpg");
+		cameraTextures[2] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera_3.jpg");
+		cameraTextures[3] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera_4.jpg");
+		cameraTextures[4] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera_5.jpg");
+		cameraTextures[5] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera_6.jpg");
+		cameraTextures[6] = (Texture2D)ResourceLoader.Load("res://Sprites/Камеры/camera_7.jpg");
 		// Получаем ноду Camera и ложим её в soundPlayer 
 		soundPlayer = GetNode<AudioStreamPlayer>("Camera");
 		// Текстура Camera_Output меняется на 4 камеру (cameraSelected)

@@ -9,7 +9,7 @@ public partial class SoapZhumaysynba : Sprite2D
 	private Sprite2D BadEyes;
 	private AudioStreamPlayer PleaseVent, VentSound;
 
-	private float og;
+	private float og; // Кислород
 	private byte min, max;
 	private Random Rand;
 	private bool vent, IsSoapActive;
@@ -46,7 +46,7 @@ public partial class SoapZhumaysynba : Sprite2D
 		PleaseVent = GetNode<AudioStreamPlayer>("PleaseVent");
 		VentSound = GetNode<AudioStreamPlayer>("VentSound");
 
-		if (saves.NightSelected == 1 || saves.NightSelected == 5) QueueFree();
+		//if (saves.NightSelected == 1 || saves.NightSelected == 5) QueueFree();
 	}
 
 	private void OnSimerTimeout()
@@ -56,7 +56,7 @@ public partial class SoapZhumaysynba : Sprite2D
 
 	private void OnTimerTimeout()
 	{
-		if (IsSoapActive)	og -= 0.45f;
+		if (IsSoapActive)	og -= 0.5f;
 
 		if (vent) og +=0.1f;
 
@@ -75,6 +75,7 @@ public partial class SoapZhumaysynba : Sprite2D
 	{
 		if (Input.IsActionJustPressed("vent"))	Onvent_powerpressed();
 		Camera();
+		og = (float)Math.Round(og, 3);
 		Oxygen.Text = $"{og}%";
 		if (og < 13.35) 
 		{
