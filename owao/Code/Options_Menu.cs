@@ -15,7 +15,14 @@ public partial class Options_Menu : VBoxContainer
 	private void _on_back_button_up()
 	{
 		Visible = false;
-		saves.SaveGame();
+		try
+		{
+			saves.SaveGame();
+		}
+		catch
+		{
+			GD.PrintErr("Ошибка при сохраненииs");
+		}
 		GetNode<AudioStreamPlayer>($"../Buttons_Sound").Play();
 	}
 
@@ -73,5 +80,10 @@ public partial class Options_Menu : VBoxContainer
 	private void _on_help_us_2_pressed()
 	{
 		OS.ShellOpen(InviteDS);
+	}
+
+	private void _on_help_us_3_pressed()
+	{
+		OS.ShellOpen(InviteYT);
 	}
 }

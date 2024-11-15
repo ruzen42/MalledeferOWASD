@@ -435,6 +435,6 @@ offset_bottom = 1083.0
 [connection signal="value_changed" from="Options_Menu/GridContainer/VBoxContainer2/MusicrSlider" to="Options_Menu/GridContainer/VBoxContainer2" method="OnMusicValueChanged"]
 [connection signal="pressed" from="Options_Menu/GridContainer/VBoxContainer3/HelpUs" to="Options_Menu" method="_on_help_us_pressed"]
 [connection signal="pressed" from="Options_Menu/GridContainer/VBoxContainer3/HelpUs2" to="Options_Menu" method="_on_help_us_2_pressed"]
-[connection signal="pressed" from="Options_Menu/GridContainer/VBoxContainer3/HelpUs3" to="Options_Menu" method="_on_help_us_2_pressed"]
+[connection signal="pressed" from="Options_Menu/GridContainer/VBoxContainer3/HelpUs3" to="Options_Menu" method="_on_help_us_3_pressed"]
 [connection signal="button_up" from="Options_Menu/Back" to="Main_Menu_Buttons" method="_on_back_button_up"]
 [connection signal="button_up" from="Options_Menu/Back" to="Options_Menu" method="_on_back_button_up"]
