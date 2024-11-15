@@ -4,7 +4,7 @@ using System;
 public partial class saves : Node 
 {
 	static ConfigFile Config;
-	static string PathToSaveFile = "user://OwASD_Save.cfg";
+	static string PathToSaveFile = "user://Save.cfg";
 	static string SectionName = "OWASD_Saves";
 	static string OptionsName = "OWASD_Options";
 	private static string pass = "cheatcode"; // Читирите
