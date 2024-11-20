@@ -17,6 +17,7 @@ public partial class SoapZhumaysynba : Sprite2D
 
 	public override void _Ready()
 	{
+		if (saves.NightSelected == 1 || saves.NightSelected == 5) QueueFree();
 		OxygenMath();
 		WaitTimeMath();
 		Rand = new Random();
@@ -45,8 +46,6 @@ public partial class SoapZhumaysynba : Sprite2D
 		BadEyes = GetNode<Sprite2D>("../../../BadEyes");
 		PleaseVent = GetNode<AudioStreamPlayer>("PleaseVent");
 		VentSound = GetNode<AudioStreamPlayer>("VentSound");
-
-		if (saves.NightSelected == 1 || saves.NightSelected == 5) QueueFree();
 	}
 
 	private void OnSimerTimeout()
