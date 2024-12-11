@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2a5nw6m2pk6f"
-path="res://.godot/imported/juan-mendez-telegram.jpg-cbc628684d36eb702338385c5206a893.ctex"
+uid="uid://c0y1xoijynuhx"
+path="res://.godot/imported/discord.jpg-a6ae51df1f53dd88712608c98f813793.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Contacts/juan-mendez-telegram.jpg"
-dest_files=["res://.godot/imported/juan-mendez-telegram.jpg-cbc628684d36eb702338385c5206a893.ctex"]
+source_file="res://Sprites/Contacts/discord.jpg"
+dest_files=["res://.godot/imported/discord.jpg-a6ae51df1f53dd88712608c98f813793.ctex"]
 
 [params]
 
