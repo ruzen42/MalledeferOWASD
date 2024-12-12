@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Code/VBoxContainer2.cs" id="5_7abkr"]
 [ext_resource type="AudioStream" uid="uid://bguwtakopxdhb" path="res://Music/buttons-main-menu-sound.mp3" id="5_bgael"]
 [ext_resource type="Script" path="res://Code/Options_Menu.cs" id="5_sgbwa"]
-[ext_resource type="AudioStream" uid="uid://deec2ku4swrw0" path="res://Music/shampoo.mp3" id="6_6e1ar"]
+[ext_resource type="AudioStream" uid="uid://deec2ku4swrw0" path="res://Music/Main_Menu_Music.mp3" id="6_6e1ar"]
 [ext_resource type="Texture2D" uid="uid://c2a5nw6m2pk6f" path="res://Sprites/Contacts/telegram.jpg" id="6_djuaw"]
 [ext_resource type="Texture2D" uid="uid://c4r4lu10uit1g" path="res://Sprites/photo_2024-05-01_09-52-21.jpg" id="6_g5i2g"]
 [ext_resource type="Texture2D" uid="uid://c0y1xoijynuhx" path="res://Sprites/Contacts/discord.jpg" id="7_co8y4"]

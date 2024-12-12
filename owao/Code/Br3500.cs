@@ -51,9 +51,9 @@ public partial class Br3500 : Sprite2D
 		AddChild(TaserTimer);
 		TaserTimer.Connect("timeout", new Callable(this, nameof(OnTaserTimerTimeout)));
 
-		Textures[0] = (Texture2D)ResourceLoader.Load("res://Sprites/br/BR3500_1.png");
-		Textures[1] = (Texture2D)ResourceLoader.Load("res://Sprites/br/br3500_2.png");
-		Textures[2] = (Texture2D)ResourceLoader.Load("res://Sprites/br/br3500_3.png");
+		for (int i = 1; i <=3; ++i) 
+		Textures[i-1] = (Texture2D)ResourceLoader.Load($"res://Sprites/BR3500Textures/BR3500_{i}.png");
+
 	}
 
 	public override void _Process(double delta)

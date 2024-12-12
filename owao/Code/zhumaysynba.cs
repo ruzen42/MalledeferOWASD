@@ -35,7 +35,8 @@ public partial class zhumaysynba : Sprite2D
 		// Начинаю отсчет
 		_delayTimer.Start();
 
-		LoadTextures();
+		for (byte i = 1; i <= 4; ++i) 
+			_zhumaysynbaTextures[i-1] = (Texture2D)ResourceLoader.Load($"res://Sprites/Zhumaysynba/Zhumaysynba{i}.png");
 		PositionMath();
 		Texture = _zhumaysynbaTextures[0];
 	}
@@ -102,14 +103,6 @@ public partial class zhumaysynba : Sprite2D
 		}
 	}
 
-	private void LoadTextures()
-	{
-		_zhumaysynbaTextures[0] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/Zhumaysynba1.png");
-		_zhumaysynbaTextures[1] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/Zhumaysynba2.png");
-		_zhumaysynbaTextures[2] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/Zhumaysynba3.png");
-		_zhumaysynbaTextures[3] = (Texture2D)ResourceLoader.Load("res://Sprites/zhumaysynba/Zhumaysynba4.png");
-	}
-
 	private void ChangeScene(string scenePath)
 	{
 		var sceneTree = GetTree();
@@ -172,18 +165,14 @@ public partial class zhumaysynba : Sprite2D
 				ZhumaysynbaCamera = _randc.Next(1, 3);
 				break;
 			case 1:
-				ZhumaysynbaCamera = _randc.Next(2, 4);
+				ZhumaysynbaCamera = _randc.Next(1, 4);
 				break;
 			case 2:
-				if (_randc.Next(0, 2) == 0)
-				{
-					ZhumaysynbaCamera = 3;
-				}
-				ZhumaysynbaCamera = 3;
+				ZhumaysynbaCamera = _randc.Next(0, 4);
 				break;
 			case 3:
+				ZhumaysynbaCamera = _randc.Next(1, 3);
 				TryToKill();
-				ZhumaysynbaCamera = 0;
 				break;
 		}
 		// Изменение Position чтобы он отображался правильно 

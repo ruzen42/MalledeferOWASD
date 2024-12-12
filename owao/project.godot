@@ -22,6 +22,10 @@ boot_splash/show_image=false
 boot_splash/use_filter=false
 config/icon="res://Sprites/Icon_game.png"
 
+[audio]
+
+buses/default_bus_layout="res://Sound_Parameters.tres"
+
 [autoload]
 
 Saves="*res://Autoload/saves.cs"

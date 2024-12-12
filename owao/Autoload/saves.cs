@@ -7,7 +7,7 @@ public partial class saves : Node
 	static string PathToSaveFile = "user://Save.cfg";
 	static string SectionName = "OWASD_Saves";
 	static string OptionsName = "OWASD_Options";
-	private static string pass = "cheatcode"; // Читирите
+	private static string pass = "cheatcode"; // Читиритеu
 
 	public static byte NightSelected = 1;
 	public static int SelectedCamera;
@@ -33,6 +33,7 @@ public partial class saves : Node
 		catch
 		{
 			GD.PrintErr("Ошибка при загрузке игры");
+			return;
 		}
 		
 		DisplayServer.WindowSetSize(saves.Resolution);
