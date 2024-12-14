@@ -369,6 +369,9 @@ flat = true
 alignment = 0
 expand_icon = true
 
+[node name="VBoxContainer4" type="VBoxContainer" parent="Options_Menu/GridContainer"]
+layout_mode = 2
+
 [node name="Back" type="Button" parent="Options_Menu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
