@@ -64,26 +64,16 @@ public partial class Br3500 : Sprite2D
 		else NextPhase();
 	}
 
-	private void OnTimerTimeout()
-	{
-		isWaiting = false;
-	}
+	private void OnTimerTimeout() { isWaiting = false; }
 
-	private void OnTaserTimerTimeout()
-	{
-		isTaserEnable = true;
-	}
+	private void OnTaserTimerTimeout() { isTaserEnable = true; }
 
 	private void Camera()
 	{
 		if (saves.SelectedCamera == 0) 
-		{
 			Visible = true;
-		}
 		else 
-		{
 			Visible = false;
-		}
 	}
 
 	private void NextPhase()
@@ -103,13 +93,10 @@ public partial class Br3500 : Sprite2D
 	private void GeneratorOff()
 	{
 		if (Door.Animation == "Close")
-		{
 			Door.Animation = "Fuck";
-		}
 		else if (Door.Animation == "Open")
-		{
 			Door.Animation = "Null";
-		}
+		
 		saves.Power = false;
 		UI.Visible = false;
 		FanSound.Playing = false;
@@ -120,7 +107,8 @@ public partial class Br3500 : Sprite2D
 
 	private void ChangeTexture(byte index)
 	{
-		if (index >= 3) return;
+		if (index >= 3) 
+			return;
 
 		try 
 		{
