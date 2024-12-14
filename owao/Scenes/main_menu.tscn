@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c77mel3ucbbbu"]
+[gd_scene load_steps=30 format=3 uid="uid://c77mel3ucbbbu"]
 
 [ext_resource type="FontFile" uid="uid://dx66s8b6cr5fi" path="res://Fonts/agat-8.ttf" id="1_d3pxi"]
 [ext_resource type="Script" path="res://Code/Main_Menu_Buttons.cs" id="3_q3n2f"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Code/Camera2d.cs" id="7_w4yyh"]
 [ext_resource type="PackedScene" uid="uid://boklucnk7vuii" path="res://Nodes/color_rect_2.tscn" id="8_0a5y1"]
 [ext_resource type="Texture2D" uid="uid://b2sdarydf5tyi" path="res://Sprites/Contacts/youtube.jpg" id="8_u1mpa"]
+[ext_resource type="Texture2D" uid="uid://6mh58ywkiakb" path="res://Sprites/Contacts/itch.io.png" id="9_ene7p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_woaoh"]
 
@@ -36,11 +37,11 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x6pei"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_av4is"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ierln"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xcav4"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_av4is"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ufra7"]
 
@@ -157,7 +158,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_moknh")
-disabled = true
 text = "Ночь 3"
 flat = true
 alignment = 0
@@ -232,50 +232,7 @@ text = "Параметры"
 layout_mode = 2
 theme_override_constants/h_separation = 100
 theme_override_constants/v_separation = 50
-columns = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Options_Menu/GridContainer"]
-layout_mode = 2
-
-[node name="Res" type="Label" parent="Options_Menu/GridContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_d3pxi")
-theme_override_font_sizes/font_size = 65
-text = "Разрешение"
-
-[node name="Resolution_Button" type="OptionButton" parent="Options_Menu/GridContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_d3pxi")
-theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ierln")
-button_pressed = true
-flat = true
-selected = 1
-item_count = 7
-popup/item_0/text = "16:9"
-popup/item_0/separator = true
-popup/item_1/text = "1920x1080"
-popup/item_1/id = 1
-popup/item_2/text = "1600x900"
-popup/item_2/id = 2
-popup/item_3/text = "1366x786"
-popup/item_3/id = 6
-popup/item_4/text = "4:3"
-popup/item_4/id = 3
-popup/item_4/separator = true
-popup/item_5/text = "800x600"
-popup/item_5/id = 5
-popup/item_6/text = "1440sх1080"
-popup/item_6/id = 6
-
-[node name="Fullscreen_Button" type="CheckButton" parent="Options_Menu/GridContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_d3pxi")
-theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxEmpty_xcav4")
-button_pressed = true
-text = "На весь экран"
-flat = true
+columns = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Options_Menu/GridContainer"]
 layout_mode = 2
@@ -369,8 +326,70 @@ flat = true
 alignment = 0
 expand_icon = true
 
+[node name="HelpUs4" type="Button" parent="Options_Menu/GridContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_av4is")
+text = "    Наш itch "
+icon = ExtResource("9_ene7p")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options_Menu/GridContainer"]
+layout_mode = 2
+
+[node name="Res" type="Label" parent="Options_Menu/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 65
+text = "Разрешение"
+
+[node name="Resolution_Button" type="OptionButton" parent="Options_Menu/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ierln")
+button_pressed = true
+flat = true
+selected = 1
+item_count = 7
+popup/item_0/text = "16:9"
+popup/item_0/separator = true
+popup/item_1/text = "1920x1080"
+popup/item_1/id = 1
+popup/item_2/text = "1600x900"
+popup/item_2/id = 2
+popup/item_3/text = "1366x786"
+popup/item_3/id = 6
+popup/item_4/text = "4:3"
+popup/item_4/id = 3
+popup/item_4/separator = true
+popup/item_5/text = "800x600"
+popup/item_5/id = 5
+popup/item_6/text = "1440sх1080"
+popup/item_6/id = 6
+
+[node name="Fullscreen_Button" type="CheckButton" parent="Options_Menu/GridContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3pxi")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xcav4")
+button_pressed = true
+text = "На весь экран"
+flat = true
+
 [node name="VBoxContainer4" type="VBoxContainer" parent="Options_Menu/GridContainer"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="Options_Menu/GridContainer/VBoxContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Разработчики:
+- Ruzen42
+- Zint Zero
+- Gigle Frigle"
 
 [node name="Back" type="Button" parent="Options_Menu"]
 layout_mode = 2
@@ -430,14 +449,15 @@ offset_bottom = 1083.0
 [connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_7_Button" to="Night_Menu_selector" method="_on_night_7_button_button_down"]
 [connection signal="button_up" from="Night_Menu_selector/BackButton" to="Main_Menu_Buttons" method="_on_back_button_button_up"]
 [connection signal="button_up" from="Night_Menu_selector/BackButton" to="Night_Menu_selector" method="_on_back_button_button_up"]
-[connection signal="item_selected" from="Options_Menu/GridContainer/VBoxContainer/Resolution_Button" to="Options_Menu" method="_on_option_button_item_selected"]
-[connection signal="button_down" from="Options_Menu/GridContainer/VBoxContainer/Fullscreen_Button" to="Options_Menu" method="_on_fullscreen_button_button_down"]
-[connection signal="button_up" from="Options_Menu/GridContainer/VBoxContainer/Fullscreen_Button" to="Options_Menu" method="_on_fullscreen_button_button_up"]
 [connection signal="value_changed" from="Options_Menu/GridContainer/VBoxContainer2/MasterSlider" to="Options_Menu/GridContainer/VBoxContainer2" method="OnMasterValueChanged"]
 [connection signal="value_changed" from="Options_Menu/GridContainer/VBoxContainer2/SoundsSlider" to="Options_Menu/GridContainer/VBoxContainer2" method="OnSoundsValueChanged"]
 [connection signal="value_changed" from="Options_Menu/GridContainer/VBoxContainer2/MusicrSlider" to="Options_Menu/GridContainer/VBoxContainer2" method="OnMusicValueChanged"]
 [connection signal="pressed" from="Options_Menu/GridContainer/VBoxContainer3/HelpUs" to="Options_Menu" method="_on_help_us_pressed"]
 [connection signal="pressed" from="Options_Menu/GridContainer/VBoxContainer3/HelpUs2" to="Options_Menu" method="_on_help_us_2_pressed"]
 [connection signal="pressed" from="Options_Menu/GridContainer/VBoxContainer3/HelpUs3" to="Options_Menu" method="_on_help_us_3_pressed"]
+[connection signal="pressed" from="Options_Menu/GridContainer/VBoxContainer3/HelpUs4" to="Options_Menu" method="on_help_us_4_pressed"]
+[connection signal="item_selected" from="Options_Menu/GridContainer/VBoxContainer/Resolution_Button" to="Options_Menu" method="_on_option_button_item_selected"]
+[connection signal="button_down" from="Options_Menu/GridContainer/VBoxContainer/Fullscreen_Button" to="Options_Menu" method="_on_fullscreen_button_button_down"]
+[connection signal="button_up" from="Options_Menu/GridContainer/VBoxContainer/Fullscreen_Button" to="Options_Menu" method="_on_fullscreen_button_button_up"]
 [connection signal="button_up" from="Options_Menu/Back" to="Main_Menu_Buttons" method="_on_back_button_up"]
 [connection signal="button_up" from="Options_Menu/Back" to="Options_Menu" method="_on_back_button_up"]

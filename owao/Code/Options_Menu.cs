@@ -5,6 +5,7 @@ public partial class Options_Menu : VBoxContainer
 	private const string InviteTG = "https://t.me/OWASDMalledefer";
 	private const string InviteDS = "https://discord.gg/Sk4n9hJCBK";
 	private const string InviteYT = "https://www.youtube.com/@denyruzen42";
+	private const string DownloadGame = "https://ruzen42.itch.io/one-week-at-shampoo-demon";
 
 	private void _on_options_button_button_up()
 	{
@@ -85,5 +86,10 @@ public partial class Options_Menu : VBoxContainer
 	private void _on_help_us_3_pressed()
 	{
 		OS.ShellOpen(InviteYT);
+	}
+	
+	private void _on_help_us_4_pressed()
+	{
+		OS.ShellOpen(DownloadGame);
 	}
 }

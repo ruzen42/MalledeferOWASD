@@ -8,18 +8,25 @@ public partial class Mime : Sprite2D
 
 	public override void _Ready()
 	{
-		sceneTree = GetTree();
-		newScene = GD.Load<PackedScene>("res://Scenes/dead_screen.tscn");
-		if (saves.NightSelected < 3) QueueFree();
+		//if (saves.NightSelected < 3) 
+			//QueueFree();
 	}
 	
-	public void dump()
+	public override void _Process(double delta)
+	{
+		if (saves.Noise > 60)
+			Kill();
+	}
+	
+	private void dump()
 	{
 		GetNode<AudioStreamPlayer>("../SoundForKill").Playing = true;
 	}
 
-	private void DIE()
+	private void Kill()
 	{
+		sceneTree = GetTree();
+		newScene = GD.Load<PackedScene>("res://Scenes/dead_screen.tscn");
 		sceneTree.ChangeSceneToPacked(newScene);
 	}
 }

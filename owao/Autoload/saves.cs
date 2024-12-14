@@ -7,7 +7,7 @@ public partial class saves : Node
 	static string PathToSaveFile = "user://Save.cfg";
 	static string SectionName = "OWASD_Saves";
 	static string OptionsName = "OWASD_Options";
-	private static string pass = "cheatcode"; // Читирите
+	private static string pass = "cheatcode"; // Читиритеsha
 
 	public static byte NightSelected = 1;
 	public static int SelectedCamera;
