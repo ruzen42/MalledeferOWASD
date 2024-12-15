@@ -8,14 +8,14 @@ public partial class Mime : Sprite2D
 
 	public override void _Ready()
 	{
-		//if (saves.NightSelected < 3) 
-			//QueueFree();
+		if (saves.NightSelected < 3) 
+			QueueFree();
 	}
 	
 	public override void _Process(double delta)
 	{
-		if (saves.Noise > 60)
-			Kill();
+		//if (saves.Noise > 60)
+			//Kill();
 	}
 	
 	private void dump()

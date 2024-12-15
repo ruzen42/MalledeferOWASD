@@ -17,9 +17,11 @@ public partial class SoapZhumaysynba : Sprite2D
 
 	public override void _Ready()
 	{
-		if (saves.NightSelected == 1 || saves.NightSelected == 5) QueueFree();
+		if (saves.NightSelected == 1 || saves.NightSelected == 5) 
+			QueueFree();
 		OxygenMath();
 		WaitTimeMath();
+		
 		Rand = new Random();
 		timer = new Timer
 		{

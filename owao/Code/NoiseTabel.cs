@@ -8,13 +8,15 @@ public partial class NoiseTabel : ProgressBar
 	
 	public override void _Ready()
 	{
-			DoorSound = GetNode<AudioStreamPlayer>("../../Door/OpenCloseSound");
+		if (saves.NightSelected <= 2) 
+			QueueFree();
+		DoorSound = GetNode<AudioStreamPlayer>("../../Door/OpenCloseSound");
 	}
 	
 	public override void _Process(double delta)
 	{
 		Value = saves.Noise;
-		if (DoorSound.Playing == true && door == false)
+		if ( ( DoorSound.Playing ) && ( !door ) )
 		{
 			saves.Noise += 20;
 			door = true;
