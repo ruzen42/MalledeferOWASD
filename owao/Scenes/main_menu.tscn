@@ -388,7 +388,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Разработчики:
 - Ruzen42
-- Zint Zero
 - Gigle Frigle"
 
 [node name="Back" type="Button" parent="Options_Menu"]
