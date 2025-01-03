@@ -9,6 +9,11 @@ public partial class Game_rules : Node2D
 		{
 			GetTree().Quit();
 		}
+		
+		if (Input.IsActionPressed("win"))
+		{
+			_on_timer_timeout();
+		}
 	}
 	
 	// Победный таймер 
@@ -22,45 +27,34 @@ public partial class Game_rules : Node2D
 				break;
 			case 1:
 				if (saves.NightSelected == 2)
-				{
 					++saves.NightsCompleted;
-				}
 				break;
 			case 2:
 				if (saves.NightSelected == 3)
-				{
 					++saves.NightsCompleted;
-				}
 				break;
 			case 3:
 				if (saves.NightSelected == 4)
-				{
 					++saves.NightsCompleted;
-				}
 				break;
 			case 4:
 				if (saves.NightSelected == 5)
-				{
 					++saves.NightsCompleted;
-				}
 				break;
 			case 5:
 				if (saves.NightSelected == 6)
-				{
 					++saves.NightsCompleted;
-				}
 				break;
 			case 6:
 				if (saves.NightSelected == 7) 
-				{
 					++saves.NightsCompleted;
-				}
 				break;
 			default:
 				// Optional: handle the case when all 7 nights are completed
 				GD.Print("Game Win");
 				break;
 		}
+		saves.SaveGame();
 		ChangeScene("res://Scenes/end_game.tscn");
 	}
 	

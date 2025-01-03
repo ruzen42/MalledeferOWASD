@@ -1,5 +1,6 @@
-[gd_scene load_steps=72 format=3 uid="uid://3tt480sq44fy"]
+[gd_scene load_steps=73 format=3 uid="uid://3tt480sq44fy"]
 
+[ext_resource type="Script" path="res://Code/Game_rules.cs" id="1_hqfnc"]
 [ext_resource type="Texture2D" uid="uid://dna01de68rt04" path="res://Sprites/newoffice.png" id="2_0ahtm"]
 [ext_resource type="Texture2D" uid="uid://cer4jyrotw2na" path="res://Sprites/BadEyes.png" id="2_jsi82"]
 [ext_resource type="AudioStream" uid="uid://dpdjsfwfotv27" path="res://Music/Generator_Sound.mp3" id="3_86l55"]
@@ -241,6 +242,7 @@ animations = [{
 }]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_hqfnc")
 metadata/_edit_vertical_guides_ = [89.0]
 
 [node name="Real_background" type="Sprite2D" parent="."]
