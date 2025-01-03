@@ -116,6 +116,7 @@ public partial class zhumaysynba : Sprite2D
 		{
 			_delayTimer.QueueFree();
 			ChangeScene("res://Scenes/dead_screen.tscn");
+			saves.Deaths++;
 		}
 		else
 		{

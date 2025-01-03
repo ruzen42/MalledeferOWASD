@@ -170,11 +170,12 @@ theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wott4")
 disabled = true
-text = "Ночь 4"
+text = "Скоро"
 flat = true
 alignment = 0
 
 [node name="Night_5_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
@@ -185,6 +186,7 @@ flat = true
 alignment = 0
 
 [node name="Night_6_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50
@@ -195,6 +197,7 @@ flat = true
 alignment = 0
 
 [node name="Night_7_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 50

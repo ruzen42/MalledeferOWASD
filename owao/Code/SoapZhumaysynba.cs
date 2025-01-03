@@ -3,18 +3,24 @@ using System;
 
 public partial class SoapZhumaysynba : Sprite2D
 {
-	private Button VentPower;
-	private Label Oxygen;
-	private Timer timer, simer;
-	private Sprite2D BadEyes;
-	private AudioStreamPlayer PleaseVent, VentSound;
-
-	private float og; // Кислород
-	private byte min, max;
-	private Random Rand;
-	private bool vent, IsSoapActive;
-	private float mod;
-
+	Button VentPower;
+	Label Oxygen;
+	Timer timer, simer;
+	AudioStreamPlayer PleaseVent, VentSound;
+	float og; // Кислород
+	byte min, max;
+	Random Rand;
+	bool vent, IsSoapActive;
+	float mod;
+	
+	private void Kill()
+	{
+		timer.QueueFree();
+		simer.QueueFree();
+		ChangeScene("res://Scenes/dead_screen.tscn");
+		saves.Deaths++;
+	}
+	
 	public override void _Ready()
 	{
 		if (saves.NightSelected == 1 || saves.NightSelected == 5) 
@@ -45,7 +51,6 @@ public partial class SoapZhumaysynba : Sprite2D
 
 		Oxygen = GetNode<Label>("Phone/Oxygen");
 		VentPower = GetNode<Button>("VentPower");
-		BadEyes = GetNode<Sprite2D>("../../../BadEyes");
 		PleaseVent = GetNode<AudioStreamPlayer>("PleaseVent");
 		VentSound = GetNode<AudioStreamPlayer>("VentSound");
 	}
@@ -80,9 +85,7 @@ public partial class SoapZhumaysynba : Sprite2D
 		Oxygen.Text = $"{og}%";
 		if (og < 13.35) 
 		{
-			timer.QueueFree();
-			simer.QueueFree();
-			ChangeScene("res://Scenes/dead_screen.tscn");
+			Kill();
 		}
 		else if (og < 16.4)
 		{

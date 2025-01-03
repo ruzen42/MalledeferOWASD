@@ -29,7 +29,7 @@ public partial class Night_Menu_selector : VBoxContainer
 					nights[3].SetDisabled(false);
 					goto case 3;
 				case 3:
-					nights[2].SetDisabled(false);
+					nights[2].SetDisabled(true);
 					goto case 2;
 				case 2:
 					nights[1].SetDisabled(false);

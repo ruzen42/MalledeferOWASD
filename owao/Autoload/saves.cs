@@ -75,6 +75,7 @@ public partial class saves : Node
 		Config.SetValue(SectionName, "NightsCompleted", NightsCompleted);
 		Config.SetValue(SectionName, "Deaths", Deaths);
 		Config.SetValue(SectionName, "Saves", Saves);
+		Config.SetValue(SectionName, "GameOpen", GameOpen);
 		GD.Print($"Statistic values save: \n\tNightsCompleted {NightsCompleted}, \n\tDeaths {Deaths}, \n\tSaves {Saves}");
 
 		Config.SetValue(OptionsName, "FullScreen", FullScreen);
