@@ -1,0 +1,657 @@
+[gd_scene load_steps=73 format=3 uid="uid://3tt480sq44fy"]
+
+[ext_resource type="Script" path="res://Code/Game_rules.cs" id="1_hqfnc"]
+[ext_resource type="Texture2D" uid="uid://dna01de68rt04" path="res://Sprites/newoffice.png" id="2_0ahtm"]
+[ext_resource type="Texture2D" uid="uid://cer4jyrotw2na" path="res://Sprites/BadEyes.png" id="2_jsi82"]
+[ext_resource type="AudioStream" uid="uid://dpdjsfwfotv27" path="res://Music/Generator_Sound.mp3" id="3_86l55"]
+[ext_resource type="AudioStream" uid="uid://b5h7ghh456eyt" path="res://Music/power-down-phase_4.mp3" id="3_v75ei"]
+[ext_resource type="Texture2D" uid="uid://b2tqumjca0hkv" path="res://Sprites/CameraButtonSprite.jpg" id="4_7ldn2"]
+[ext_resource type="Script" path="res://Code/Camera.cs" id="4_dfrym"]
+[ext_resource type="Script" path="res://Code/UI.cs" id="4_ycgao"]
+[ext_resource type="Texture2D" uid="uid://bjyrymafl45vr" path="res://Sprites/CameraTextures/camera_1.jpg" id="6_1yo0r"]
+[ext_resource type="Texture2D" uid="uid://dqt3r4y8stsxl" path="res://Sprites/LaptopAnimation/планшет_1_frame.png" id="6_faqun"]
+[ext_resource type="Texture2D" uid="uid://cskkqoe7ewva3" path="res://Sprites/LaptopAnimation/планшет_2_frame.png" id="7_8n1i1"]
+[ext_resource type="Script" path="res://Code/Camera_Output.cs" id="7_qi18e"]
+[ext_resource type="Texture2D" uid="uid://dckby3o1wh3ip" path="res://Sprites/CameraTextures/LaptopSelect.png" id="8_87s05"]
+[ext_resource type="Texture2D" uid="uid://dbr3t8knncx2e" path="res://Sprites/LaptopAnimation/планшет_3_frame.png" id="8_a1tgr"]
+[ext_resource type="AudioStream" uid="uid://bglmvotoka0wt" path="res://Music/Main_Menu_Seleted_Sound.mp3" id="9_2p54v"]
+[ext_resource type="Script" path="res://Code/zhumaysynba.cs" id="9_hwny4"]
+[ext_resource type="Texture2D" uid="uid://b0vw4a2thd044" path="res://Sprites/LaptopAnimation/планшет_4_frame.png" id="9_j40y1"]
+[ext_resource type="AudioStream" uid="uid://bsxjwmb1syq3q" path="res://Music/zvuk11.mp3" id="9_wp0hr"]
+[ext_resource type="Texture2D" uid="uid://bfxs3gfgt5d7w" path="res://Sprites/Interference/помеха1.png" id="10_md18g"]
+[ext_resource type="Texture2D" uid="uid://ce8dgoqj23fiv" path="res://Sprites/LaptopAnimation/планшет_5_frame.png" id="10_njpyn"]
+[ext_resource type="Texture2D" uid="uid://qcjjjhoxx6ig" path="res://Sprites/LaptopAnimation/планшет_6_frame.png" id="11_pyujr"]
+[ext_resource type="FontFile" uid="uid://dx66s8b6cr5fi" path="res://Fonts/agat-8.ttf" id="11_s757a"]
+[ext_resource type="Texture2D" uid="uid://5m5cv3uuaugu" path="res://Sprites/Interference/помеха2.png" id="11_skbxm"]
+[ext_resource type="Texture2D" uid="uid://3j12da72ijl3" path="res://Sprites/LaptopAnimation/планшет_7_frame.png" id="12_4n05e"]
+[ext_resource type="Texture2D" uid="uid://de5v5p7pl3e3b" path="res://Sprites/Interference/помеха3.png" id="12_jb0w1"]
+[ext_resource type="Texture2D" uid="uid://5hv60em4xou7" path="res://Sprites/LaptopAnimation/планшет_8_frame.png" id="13_vjrls"]
+[ext_resource type="Texture2D" uid="uid://d3h6fwtibr4r1" path="res://Sprites/Interference/помеха4.png" id="13_wlqod"]
+[ext_resource type="Texture2D" uid="uid://cwfqxxywa3wuk" path="res://Sprites/Interference/помеха5.png" id="14_4fra0"]
+[ext_resource type="Texture2D" uid="uid://3c3dculxi0sl" path="res://Sprites/Interference/помеха6.png" id="15_i1pyc"]
+[ext_resource type="Texture2D" uid="uid://dkfrkoi76hij1" path="res://Sprites/Interference/помеха7.png" id="16_g4moa"]
+[ext_resource type="Texture2D" uid="uid://b7x0vwibbkjo5" path="res://Sprites/taser_button_logo.png" id="17_4v2os"]
+[ext_resource type="Texture2D" uid="uid://bixp6p0ldykql" path="res://Sprites/BR3500Textures/BR3500_1.png" id="17_hbpf1"]
+[ext_resource type="Texture2D" uid="uid://ct3mwdgi2jpbg" path="res://Sprites/Interference/помеха8.png" id="17_iw1ql"]
+[ext_resource type="Texture2D" uid="uid://cw0chbm04jx88" path="res://Sprites/Zhumaysynba/Zhumaysynba3.png" id="18_h4k5w"]
+[ext_resource type="AudioStream" uid="uid://o41gmntxn1sf" path="res://Music/ZhumaysunbaReloaded.mp3" id="18_hslqf"]
+[ext_resource type="Script" path="res://Code/Br3500.cs" id="18_ieru2"]
+[ext_resource type="AudioStream" uid="uid://2u26xt5soo4l" path="res://Music/Taser_Sound=.ogg" id="19_27i3m"]
+[ext_resource type="AudioStream" uid="uid://j2gdoo7plbhk" path="res://Music/camera-video-load.mp3" id="23_vo5ql"]
+[ext_resource type="Script" path="res://Code/SoapZhumaysynba.cs" id="32_3y5jv"]
+[ext_resource type="Texture2D" uid="uid://djxdwckngnyii" path="res://Sprites/Soap.png" id="32_7rydq"]
+[ext_resource type="PackedScene" uid="uid://boklucnk7vuii" path="res://Nodes/color_rect_2.tscn" id="32_7whfx"]
+[ext_resource type="Texture2D" uid="uid://bvv67csdlp02h" path="res://Sprites/VentSprite.png" id="34_41fn7"]
+[ext_resource type="FontFile" uid="uid://dx41wl4cvdlyl" path="res://Fonts/Monocraft.otf" id="35_ipepd"]
+[ext_resource type="AudioStream" uid="uid://3hdhsvbnnf2e" path="res://Music/Please_Vent.mp3" id="37_n7vbb"]
+[ext_resource type="AudioStream" uid="uid://cpuhp2oj0wemw" path="res://Music/VentSound.mp3" id="38_eyahe"]
+[ext_resource type="AudioStream" uid="uid://c6k6diislwlwq" path="res://Music/Ventil.mp3" id="38_g2itr"]
+[ext_resource type="Script" path="res://Code/Door.cs" id="38_ma2kb"]
+[ext_resource type="Texture2D" uid="uid://b81w48hfdqpgr" path="res://Sprites/DoorAnimation/Door0.png" id="38_thjxh"]
+[ext_resource type="Texture2D" uid="uid://d4hrwonsm6tt0" path="res://Sprites/DoorAnimation/Door1.png" id="39_a7ixr"]
+[ext_resource type="Script" path="res://Code/Mime.cs" id="39_kj6cm"]
+[ext_resource type="Texture2D" uid="uid://qw4vyqr0yd5v" path="res://Sprites/DoorAnimation/Door2.png" id="40_yfu1p"]
+[ext_resource type="Texture2D" uid="uid://blyfhqe80w5xy" path="res://Sprites/DoorAnimation/Door3.png" id="41_hipxv"]
+[ext_resource type="AudioStream" uid="uid://2gaf50wulild" path="res://Music/Mime_Sound_For_Kill.mp3" id="41_nvqu7"]
+[ext_resource type="Texture2D" uid="uid://bfk0looqutaf8" path="res://Sprites/DoorAnimation/Door4.png" id="42_osr4t"]
+[ext_resource type="Texture2D" uid="uid://cbp01rykhv2uo" path="res://Sprites/DoorAnimation/Door5.png" id="43_maiv6"]
+[ext_resource type="Script" path="res://Code/NoiseTabel.cs" id="46_bcymg"]
+[ext_resource type="Script" path="res://Code/Grandmother.cs" id="47_o0a61"]
+[ext_resource type="AudioStream" uid="uid://bfbv117i24bc4" path="res://Music/Door_Is_Blocked.mp3" id="51_yl2us"]
+[ext_resource type="AudioStream" uid="uid://j4n5ntl7fht8" path="res://Music/DoorOpen.mp3" id="53_0c0pb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qvebb"]
+animations = [{
+"frames": [{
+"duration": 0.1,
+"texture": ExtResource("6_faqun")
+}, {
+"duration": 0.1,
+"texture": ExtResource("7_8n1i1")
+}, {
+"duration": 0.1,
+"texture": ExtResource("8_a1tgr")
+}, {
+"duration": 0.1,
+"texture": ExtResource("9_j40y1")
+}, {
+"duration": 0.1,
+"texture": ExtResource("10_njpyn")
+}, {
+"duration": 0.1,
+"texture": ExtResource("11_pyujr")
+}, {
+"duration": 0.1,
+"texture": ExtResource("12_4n05e")
+}, {
+"duration": 0.1,
+"texture": ExtResource("13_vjrls")
+}],
+"loop": false,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.1,
+"texture": ExtResource("13_vjrls")
+}, {
+"duration": 0.1,
+"texture": ExtResource("12_4n05e")
+}, {
+"duration": 0.1,
+"texture": ExtResource("11_pyujr")
+}, {
+"duration": 0.1,
+"texture": ExtResource("10_njpyn")
+}, {
+"duration": 0.1,
+"texture": ExtResource("9_j40y1")
+}, {
+"duration": 0.1,
+"texture": ExtResource("8_a1tgr")
+}, {
+"duration": 0.1,
+"texture": ExtResource("7_8n1i1")
+}, {
+"duration": 0.1,
+"texture": ExtResource("6_faqun")
+}],
+"loop": false,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tmmb4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sv442"]
+animations = [{
+"frames": [{
+"duration": 0.01,
+"texture": ExtResource("10_md18g")
+}, {
+"duration": 0.1,
+"texture": ExtResource("11_skbxm")
+}, {
+"duration": 0.1,
+"texture": ExtResource("12_jb0w1")
+}, {
+"duration": 0.1,
+"texture": ExtResource("13_wlqod")
+}, {
+"duration": 0.1,
+"texture": ExtResource("14_4fra0")
+}, {
+"duration": 0.1,
+"texture": ExtResource("15_i1pyc")
+}, {
+"duration": 0.1,
+"texture": ExtResource("16_g4moa")
+}, {
+"duration": 0.1,
+"texture": ExtResource("17_iw1ql")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u5ee3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vq267"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3etq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q7nbu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5f7vw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_27rjw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yo55o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7bml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cojxc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e5qm1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_thjxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_a7ixr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_yfu1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_hipxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_osr4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_maiv6")
+}],
+"loop": false,
+"name": &"Close",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_maiv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_osr4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_hipxv")
+}],
+"loop": false,
+"name": &"Fuck",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Null",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_maiv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_osr4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_hipxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_yfu1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_a7ixr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_thjxh")
+}],
+"loop": false,
+"name": &"Open",
+"speed": 30.0
+}]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_hqfnc")
+metadata/_edit_vertical_guides_ = [89.0]
+
+[node name="Real_background" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(953.778, 536.5)
+scale = Vector2(0.745139, 0.745139)
+texture = ExtResource("2_0ahtm")
+
+[node name="Generator_Off" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_v75ei")
+bus = &"Sound"
+
+[node name="Fan_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_86l55")
+volume_db = -27.71
+autoplay = true
+mix_target = 1
+bus = &"Music"
+
+[node name="WinTime" type="Timer" parent="."]
+wait_time = 180.0
+autostart = true
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(958, 549)
+scale = Vector2(1.56555, 1.56014)
+zoom = Vector2(1.1, 1.1)
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1040
+limit_smoothed = true
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource("4_dfrym")
+
+[node name="UI" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 84.0
+offset_top = 58.0
+offset_right = 1844.0
+offset_bottom = 1045.0
+script = ExtResource("4_ycgao")
+
+[node name="LaptopAnimation" type="AnimatedSprite2D" parent="UI"]
+z_index = 2
+position = Vector2(876, 480)
+sprite_frames = SubResource("SpriteFrames_qvebb")
+animation = &"up"
+
+[node name="Camera_Output" type="Sprite2D" parent="UI"]
+self_modulate = Color(0.772549, 0.772549, 0.772549, 1)
+top_level = true
+z_index = 2
+position = Vector2(960.5, 532)
+scale = Vector2(1.42578, 1.39167)
+texture = ExtResource("6_1yo0r")
+script = ExtResource("7_qi18e")
+
+[node name="zhumaysynba" type="Sprite2D" parent="UI/Camera_Output"]
+self_modulate = Color(0.791999, 0.791999, 0.791999, 1)
+z_index = 1
+texture_filter = 2
+position = Vector2(316, 187)
+scale = Vector2(0.241698, 0.240112)
+texture = ExtResource("18_h4k5w")
+script = ExtResource("9_hwny4")
+
+[node name="Reload" type="AudioStreamPlayer" parent="UI/Camera_Output/zhumaysynba"]
+stream = ExtResource("18_hslqf")
+volume_db = -9.0
+mix_target = 2
+bus = &"Sound"
+
+[node name="Taser_Button" type="Button" parent="UI/Camera_Output"]
+z_index = 1
+offset_left = -102.751
+offset_top = 244.311
+offset_right = 207.249
+offset_bottom = 328.311
+scale = Vector2(0.665537, 0.665537)
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tmmb4")
+text = "Шокер"
+icon = ExtResource("17_4v2os")
+flat = true
+expand_icon = true
+
+[node name="Taser_Sound" type="AudioStreamPlayer" parent="UI/Camera_Output/Taser_Button"]
+stream = ExtResource("19_27i3m")
+volume_db = -24.327
+pitch_scale = 0.75
+mix_target = 2
+bus = &"Sound"
+
+[node name="BR3500" type="Sprite2D" parent="UI/Camera_Output"]
+position = Vector2(227.595, 17.964)
+scale = Vector2(0.334378, 0.334378)
+texture = ExtResource("17_hbpf1")
+script = ExtResource("18_ieru2")
+
+[node name="Camera" type="AudioStreamPlayer" parent="UI/Camera_Output"]
+stream = ExtResource("9_2p54v")
+bus = &"Sound"
+
+[node name="Помехи" type="AnimatedSprite2D" parent="UI/Camera_Output"]
+self_modulate = Color(1, 1, 1, 0.384314)
+z_index = 1
+position = Vector2(0.325211, 0.359763)
+scale = Vector2(0.87037, 0.999001)
+sprite_frames = SubResource("SpriteFrames_sv442")
+autoplay = "default"
+frame = 7
+frame_progress = 1.0
+
+[node name="Помехи2" type="AnimatedSprite2D" parent="UI/Camera_Output"]
+self_modulate = Color(1, 0.309804, 0.321569, 0.207843)
+z_index = 1
+position = Vector2(0.325211, 3.60654)
+scale = Vector2(0.87037, 0.989982)
+sprite_frames = SubResource("SpriteFrames_sv442")
+autoplay = "default"
+frame = 7
+frame_progress = 1.0
+flip_h = true
+flip_v = true
+
+[node name="SoapZhumaysynba" type="Sprite2D" parent="UI/Camera_Output"]
+position = Vector2(379.483, 128.982)
+scale = Vector2(1.44554, 1.44554)
+texture = ExtResource("32_7rydq")
+script = ExtResource("32_3y5jv")
+
+[node name="VentPower" type="Button" parent="UI/Camera_Output/SoapZhumaysynba"]
+offset_left = -410.746
+offset_top = 75.8058
+offset_right = 1145.25
+offset_bottom = 284.806
+scale = Vector2(0.201124, 0.201124)
+theme_override_font_sizes/font_size = 200
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u5ee3")
+text = "Вентеляция"
+icon = ExtResource("34_41fn7")
+flat = true
+expand_icon = true
+
+[node name="ColorRect" type="ColorRect" parent="UI/Camera_Output/SoapZhumaysynba"]
+offset_left = -691.0
+offset_top = -326.0
+offset_right = -496.0
+offset_bottom = -246.0
+color = Color(0.32, 0.32, 0.32, 0.533333)
+
+[node name="Phone" type="VBoxContainer" parent="UI/Camera_Output/SoapZhumaysynba"]
+offset_left = -682.456
+offset_top = -314.905
+offset_right = 873.544
+offset_bottom = 241.095
+scale = Vector2(0.171326, 0.171326)
+theme_override_constants/separation = 50
+
+[node name="Name" type="Label" parent="UI/Camera_Output/SoapZhumaysynba/Phone"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Насыщенность 
+воздуха кислородом"
+
+[node name="Oxygen" type="Label" parent="UI/Camera_Output/SoapZhumaysynba/Phone"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("35_ipepd")
+theme_override_font_sizes/font_size = 100
+text = "20.56%"
+
+[node name="PleaseVent" type="AudioStreamPlayer" parent="UI/Camera_Output/SoapZhumaysynba"]
+stream = ExtResource("37_n7vbb")
+bus = &"Sound"
+
+[node name="VentSound" type="AudioStreamPlayer" parent="UI/Camera_Output/SoapZhumaysynba"]
+stream = ExtResource("38_eyahe")
+volume_db = -13.945
+bus = &"Sound"
+
+[node name="VentilSound" type="AudioStreamPlayer" parent="UI/Camera_Output/SoapZhumaysynba"]
+stream = ExtResource("38_g2itr")
+volume_db = -20.0
+bus = &"Sound"
+
+[node name="SoundForKill" type="AudioStreamPlayer" parent="UI/Camera_Output"]
+stream = ExtResource("41_nvqu7")
+bus = &"Sound"
+
+[node name="Mime" type="Sprite2D" parent="UI/Camera_Output"]
+visible = false
+script = ExtResource("39_kj6cm")
+
+[node name="Cameras_Button" type="Button" parent="UI"]
+self_modulate = Color(1, 1, 1, 0.686275)
+z_index = 4
+layout_mode = 0
+offset_left = 551.0
+offset_top = 939.0
+offset_right = 1159.0
+offset_bottom = 1007.0
+scale = Vector2(1.1036, 0.6299)
+theme_type_variation = &"FlatButton"
+theme_override_colors/icon_hover_color = Color(0.505344, 0.505344, 0.505344, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vq267")
+icon = ExtResource("4_7ldn2")
+flat = true
+
+[node name="Change_Camera_Button" type="Sprite2D" parent="UI"]
+visible = false
+z_index = 4
+position = Vector2(1411.58, 532.444)
+scale = Vector2(1.86128, 1.86128)
+texture = ExtResource("8_87s05")
+
+[node name="First_Camera_Button" type="Button" parent="UI/Change_Camera_Button"]
+offset_left = -91.0
+offset_top = 61.0
+offset_right = -22.0
+offset_bottom = 136.0
+scale = Vector2(0.813482, 0.85)
+theme_override_fonts/font = ExtResource("11_s757a")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p3etq")
+text = "Cam 1"
+flat = true
+
+[node name="Second_Camera_Button" type="Button" parent="UI/Change_Camera_Button"]
+offset_left = -124.0
+offset_top = -5.0
+offset_right = -55.0
+offset_bottom = 66.0
+scale = Vector2(0.816297, 0.816297)
+theme_override_fonts/font = ExtResource("11_s757a")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q7nbu")
+text = "Cam 2"
+flat = true
+
+[node name="Three_Camera_Button" type="Button" parent="UI/Change_Camera_Button"]
+offset_left = -109.0
+offset_top = -71.0
+offset_right = -56.0
+offset_bottom = 2.0
+scale = Vector2(0.816297, 0.816297)
+theme_override_fonts/font = ExtResource("11_s757a")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5f7vw")
+text = "Cam 3"
+flat = true
+
+[node name="Fourth_Camera_Button" type="Button" parent="UI/Change_Camera_Button"]
+offset_left = -61.0
+offset_top = -55.0
+offset_right = 85.0
+offset_bottom = 65.0
+scale = Vector2(0.816297, 0.816297)
+theme_override_fonts/font = ExtResource("11_s757a")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_27rjw")
+text = "Cam 4"
+flat = true
+
+[node name="Fifth_Camera_Button" type="Button" parent="UI/Change_Camera_Button"]
+offset_left = 31.0
+offset_top = -95.0
+offset_right = 105.0
+offset_bottom = -56.0
+scale = Vector2(0.816297, 0.816297)
+theme_override_fonts/font = ExtResource("11_s757a")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yo55o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c7bml")
+text = "Cam 5"
+flat = true
+
+[node name="Sixth_Camera_Button" type="Button" parent="UI/Change_Camera_Button"]
+offset_left = 65.0
+offset_top = 4.0
+offset_right = 114.0
+offset_bottom = 53.0
+scale = Vector2(0.816297, 0.816297)
+theme_override_fonts/font = ExtResource("11_s757a")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yo55o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c7bml")
+text = "Cam 6"
+flat = true
+
+[node name="Seventh_Camera_Button" type="Button" parent="UI/Change_Camera_Button"]
+offset_left = -4.0
+offset_top = 51.0
+offset_right = 93.0
+offset_bottom = 140.0
+scale = Vector2(0.816297, 0.816297)
+theme_override_fonts/font = ExtResource("11_s757a")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yo55o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c7bml")
+text = "Cam 7"
+flat = true
+
+[node name="Sounds" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("9_wp0hr")
+volume_db = -28.108
+bus = &"Sound"
+
+[node name="Laptop_up" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("23_vo5ql")
+bus = &"Sound"
+
+[node name="Door_Button" type="Button" parent="UI"]
+z_index = -1
+layout_mode = 0
+offset_left = 596.0
+offset_top = 60.0
+offset_right = 1194.0
+offset_bottom = 785.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cojxc")
+flat = true
+
+[node name="NoiseTabel" type="ProgressBar" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = -62.0
+offset_top = 903.0
+offset_right = 318.0
+offset_bottom = 956.0
+step = 0.1
+value = 20.0
+script = ExtResource("46_bcymg")
+
+[node name="NoiseLabel" type="Label" parent="UI/NoiseTabel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -51.0
+offset_right = 129.0
+theme_override_font_sizes/font_size = 50
+text = "Noise"
+
+[node name="Grandmother" type="Sprite2D" parent="UI"]
+position = Vector2(-84, -58)
+script = ExtResource("47_o0a61")
+
+[node name="BadEyes" type="Sprite2D" parent="UI"]
+self_modulate = Color(0, 0, 0, 0.266667)
+z_index = 6
+position = Vector2(876, 482)
+texture = ExtResource("2_jsi82")
+
+[node name="ColorRect2" parent="." instance=ExtResource("32_7whfx")]
+visible = false
+z_index = 4
+offset_left = -174.0
+offset_top = -104.0
+offset_right = 2125.0
+offset_bottom = 1165.0
+
+[node name="Door" type="AnimatedSprite2D" parent="."]
+z_index = -2
+position = Vector2(987, 487)
+scale = Vector2(0.674479, 0.664062)
+sprite_frames = SubResource("SpriteFrames_e5qm1")
+animation = &"Null"
+script = ExtResource("38_ma2kb")
+
+[node name="DieSound" type="AudioStreamPlayer" parent="Door"]
+stream = ExtResource("51_yl2us")
+volume_db = -8.0
+mix_target = 2
+bus = &"Sound"
+
+[node name="OpenCloseSound" type="AudioStreamPlayer" parent="Door"]
+stream = ExtResource("53_0c0pb")
+volume_db = -8.0
+mix_target = 2
+bus = &"Sound"
+
+[node name="TemperatureLabel" type="Label" parent="."]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 618.0
+offset_bottom = 257.0
+scale = Vector2(0.225882, 0.225882)
+theme_override_font_sizes/font_size = 200
+text = "18.0°C"
+
+[connection signal="timeout" from="WinTime" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="UI/LaptopAnimation" to="UI" method="_on_laptop_animation_finished"]
+[connection signal="pressed" from="UI/Camera_Output/Taser_Button" to="UI/Camera_Output/BR3500" method="_on_taser_used"]
+[connection signal="pressed" from="UI/Camera_Output/SoapZhumaysynba/VentPower" to="UI/Camera_Output/SoapZhumaysynba" method="Onvent_powerpressed"]
+[connection signal="finished" from="UI/Camera_Output/SoapZhumaysynba/VentilSound" to="UI/Camera_Output/SoapZhumaysynba" method="OnVentilSoundFinished"]
+[connection signal="finished" from="UI/Camera_Output/SoundForKill" to="UI/Camera_Output/Mime" method="DIE"]
+[connection signal="mouse_entered" from="UI/Cameras_Button" to="UI" method="_on_cameras_button_mouse_entered"]
+[connection signal="button_down" from="UI/Change_Camera_Button/First_Camera_Button" to="UI/Camera_Output" method="_on_first_camera_button_button_down"]
+[connection signal="button_down" from="UI/Change_Camera_Button/Second_Camera_Button" to="UI/Camera_Output" method="_on_second_camera_button_button_down"]
+[connection signal="button_down" from="UI/Change_Camera_Button/Three_Camera_Button" to="UI/Camera_Output" method="_on_three_camera_button_button_down"]
+[connection signal="button_down" from="UI/Change_Camera_Button/Fourth_Camera_Button" to="UI/Camera_Output" method="_on_fourth_camera_button_button_down"]
+[connection signal="button_down" from="UI/Change_Camera_Button/Fifth_Camera_Button" to="UI/Camera_Output" method="_on_fifth_camera_button_button_down"]
+[connection signal="button_down" from="UI/Change_Camera_Button/Sixth_Camera_Button" to="UI/Camera_Output" method="_on_sixth_camera_button_button_down"]
+[connection signal="button_down" from="UI/Change_Camera_Button/Seventh_Camera_Button" to="UI/Camera_Output" method="_on_seventh_camera_button_button_down"]
+[connection signal="pressed" from="UI/Door_Button" to="Door" method="OnDoorReload"]

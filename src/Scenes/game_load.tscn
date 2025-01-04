@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bou1i8lb2vfup"]
+
+[ext_resource type="Script" path="res://Code/GameLoad.cs" id="1_y5dje"]
+[ext_resource type="PackedScene" uid="uid://boklucnk7vuii" path="res://Nodes/color_rect_2.tscn" id="2_p2jr8"]
+[ext_resource type="Texture2D" uid="uid://b50anyq4cs6nb" path="res://Sprites/company_logo.png" id="3_lucye"]
+
+[node name="GameLoad" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_y5dje")
+
+[node name="ColorRect2" parent="." instance=ExtResource("2_p2jr8")]
+layout_mode = 0
+
+[node name="Malledefer" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(960, 540)
+scale = Vector2(1.98511, 1.98511)
+texture = ExtResource("3_lucye")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
