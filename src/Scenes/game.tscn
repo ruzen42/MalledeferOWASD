@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://3tt480sq44fy"]
+[gd_scene load_steps=74 format=3 uid="uid://3tt480sq44fy"]
 
 [ext_resource type="Script" path="res://Code/Game_rules.cs" id="1_hqfnc"]
 [ext_resource type="Texture2D" uid="uid://dna01de68rt04" path="res://Sprites/newoffice.png" id="2_0ahtm"]
@@ -57,6 +57,7 @@
 [ext_resource type="Texture2D" uid="uid://cbp01rykhv2uo" path="res://Sprites/DoorAnimation/Door5.png" id="43_maiv6"]
 [ext_resource type="Script" path="res://Code/NoiseTabel.cs" id="46_bcymg"]
 [ext_resource type="Script" path="res://Code/Grandmother.cs" id="47_o0a61"]
+[ext_resource type="Script" path="res://DiareyVirus.cs" id="50_mps8b"]
 [ext_resource type="AudioStream" uid="uid://bfbv117i24bc4" path="res://Music/Door_Is_Blocked.mp3" id="51_yl2us"]
 [ext_resource type="AudioStream" uid="uid://j4n5ntl7fht8" path="res://Music/DoorOpen.mp3" id="53_0c0pb"]
 
@@ -176,22 +177,22 @@ animations = [{
 [sub_resource type="SpriteFrames" id="SpriteFrames_e5qm1"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 1.1,
 "texture": ExtResource("38_thjxh")
 }, {
-"duration": 1.0,
+"duration": 1.1,
 "texture": ExtResource("39_a7ixr")
 }, {
-"duration": 1.0,
+"duration": 1.1,
 "texture": ExtResource("40_yfu1p")
 }, {
-"duration": 1.0,
+"duration": 1.1,
 "texture": ExtResource("41_hipxv")
 }, {
-"duration": 1.0,
+"duration": 1.1,
 "texture": ExtResource("42_osr4t")
 }, {
-"duration": 1.0,
+"duration": 1.1,
 "texture": ExtResource("43_maiv6")
 }],
 "loop": false,
@@ -218,22 +219,22 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 1.1,
 "texture": ExtResource("43_maiv6")
 }, {
-"duration": 1.0,
+"duration": 1.1,
 "texture": ExtResource("42_osr4t")
 }, {
-"duration": 1.0,
+"duration": 1.1,
 "texture": ExtResource("41_hipxv")
 }, {
-"duration": 1.0,
+"duration": 1.1,
 "texture": ExtResource("40_yfu1p")
 }, {
-"duration": 1.0,
+"duration": 1.1,
 "texture": ExtResource("39_a7ixr")
 }, {
-"duration": 1.0,
+"duration": 1.1,
 "texture": ExtResource("38_thjxh")
 }],
 "loop": false,
@@ -516,6 +517,7 @@ text = "Cam 4"
 flat = true
 
 [node name="Fifth_Camera_Button" type="Button" parent="UI/Change_Camera_Button"]
+visible = false
 offset_left = 31.0
 offset_top = -95.0
 offset_right = 105.0
@@ -602,6 +604,9 @@ z_index = 6
 position = Vector2(876, 482)
 texture = ExtResource("2_jsi82")
 
+[node name="DiareyVirus" type="Sprite2D" parent="UI"]
+script = ExtResource("50_mps8b")
+
 [node name="ColorRect2" parent="." instance=ExtResource("32_7whfx")]
 visible = false
 z_index = 4
@@ -615,7 +620,7 @@ z_index = -2
 position = Vector2(987, 487)
 scale = Vector2(0.674479, 0.664062)
 sprite_frames = SubResource("SpriteFrames_e5qm1")
-animation = &"Null"
+animation = &"Close"
 script = ExtResource("38_ma2kb")
 
 [node name="DieSound" type="AudioStreamPlayer" parent="Door"]
