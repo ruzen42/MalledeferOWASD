@@ -13,7 +13,7 @@ public partial class Camera_Output : Sprite2D
 
 	public override void _Ready()
 	{
-		TaserButton = GetNode<Button>("Taser_Button");
+		TaserButton = GetNode<Button>("TaserButton");
 		// Заполнение массива cameraTextures для их смены при нажатии кнопок
 		for (int i = 1; i <= 7; ++i) 
 			cameraTextures[i-1] = (Texture2D)ResourceLoader.Load($"res://Sprites/CameraTextures/camera_{i}.jpg");
@@ -26,13 +26,9 @@ public partial class Camera_Output : Sprite2D
 	public override void _Process(double delta)
 	{	
 		if (cameraSelected == 0) 
-		{
 			TaserButton.Visible = true;
-		}
 		else
-		{
 			TaserButton.Visible = false;
-		}
 		
 		if (Visible)
 		{
@@ -107,7 +103,8 @@ public partial class Camera_Output : Sprite2D
 	{
 		// Чтобы при старте сцены звука не было, я создал отдельную функцию, если вам кажется это
 		// не правильным подходом измените это
-		if (Sound) soundPlayer.Play();
+		if (Sound) 
+			soundPlayer.Play();
 		saves.SelectedCamera = cameraIndex;
 		
 		if (cameraIndex >= 0 && cameraIndex < cameraTextures.Length && cameraTextures[cameraIndex] != null)

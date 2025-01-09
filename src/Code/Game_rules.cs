@@ -1,21 +1,41 @@
 using Godot;
+using System;
 
 public partial class Game_rules : Node2D
 {
+	Timer Temp;
+	byte max;
+	Random Rand = new Random();
+
+	public void OnTempTimerTimeout()
+	{
+		saves.Temp += (float)Rand.NextDouble() * max;
+	}
+
+	public override void _Ready()
+	{
+		max = 2;
+		Temp = new Timer
+		{
+			Autostart = true,
+			WaitTime = Rand.Next(max*7)+0.1,
+			OneShot = false
+		};
+
+		Temp.Connect("timeout", new Callable(this, nameof(OnTempTimerTimeout)));
+		AddChild(Temp);
+	}
+
 	public override void _Process(double delta)
 	{
 		// При нажатии на Esc вас выкинет из игры 
 		if (Input.IsActionPressed("exit"))
-		{
 			GetTree().Quit();
-		}
-		
+
 		if (Input.IsActionPressed("win"))
-		{
 			_on_timer_timeout();
-		}
 	}
-	
+
 	// Победный таймер 
 	private void _on_timer_timeout()
 	{	
@@ -57,7 +77,7 @@ public partial class Game_rules : Node2D
 		saves.SaveGame();
 		ChangeScene("res://Scenes/end_game.tscn");
 	}
-	
+
 	private void ChangeScene(string scenePath)
 	{
 		var sceneTree = GetTree();

@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://3tt480sq44fy"]
+[gd_scene load_steps=75 format=3 uid="uid://3tt480sq44fy"]
 
 [ext_resource type="Script" path="res://Code/Game_rules.cs" id="1_hqfnc"]
 [ext_resource type="Texture2D" uid="uid://dna01de68rt04" path="res://Sprites/newoffice.png" id="2_0ahtm"]
@@ -60,6 +60,7 @@
 [ext_resource type="Script" path="res://DiareyVirus.cs" id="50_mps8b"]
 [ext_resource type="AudioStream" uid="uid://bfbv117i24bc4" path="res://Music/Door_Is_Blocked.mp3" id="51_yl2us"]
 [ext_resource type="AudioStream" uid="uid://j4n5ntl7fht8" path="res://Music/DoorOpen.mp3" id="53_0c0pb"]
+[ext_resource type="Script" path="res://Code/TemperatureLabel.cs" id="61_8cxx8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qvebb"]
 animations = [{
@@ -285,7 +286,6 @@ editor_draw_drag_margin = true
 script = ExtResource("4_dfrym")
 
 [node name="UI" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 84.0
@@ -300,7 +300,8 @@ position = Vector2(876, 480)
 sprite_frames = SubResource("SpriteFrames_qvebb")
 animation = &"up"
 
-[node name="Camera_Output" type="Sprite2D" parent="UI"]
+[node name="CameraOutput" type="Sprite2D" parent="UI"]
+visible = false
 self_modulate = Color(0.772549, 0.772549, 0.772549, 1)
 top_level = true
 z_index = 2
@@ -309,7 +310,17 @@ scale = Vector2(1.42578, 1.39167)
 texture = ExtResource("6_1yo0r")
 script = ExtResource("7_qi18e")
 
-[node name="zhumaysynba" type="Sprite2D" parent="UI/Camera_Output"]
+[node name="TemperatureLabel" type="Label" parent="UI/CameraOutput"]
+offset_left = 485.699
+offset_top = -338.442
+offset_right = 1095.7
+offset_bottom = -89.4423
+scale = Vector2(0.225882, 0.225882)
+theme_override_font_sizes/font_size = 200
+text = "18.0°C"
+script = ExtResource("61_8cxx8")
+
+[node name="zhumaysynba" type="Sprite2D" parent="UI/CameraOutput"]
 self_modulate = Color(0.791999, 0.791999, 0.791999, 1)
 z_index = 1
 texture_filter = 2
@@ -318,13 +329,13 @@ scale = Vector2(0.241698, 0.240112)
 texture = ExtResource("18_h4k5w")
 script = ExtResource("9_hwny4")
 
-[node name="Reload" type="AudioStreamPlayer" parent="UI/Camera_Output/zhumaysynba"]
+[node name="Reload" type="AudioStreamPlayer" parent="UI/CameraOutput/zhumaysynba"]
 stream = ExtResource("18_hslqf")
 volume_db = -9.0
 mix_target = 2
 bus = &"Sound"
 
-[node name="Taser_Button" type="Button" parent="UI/Camera_Output"]
+[node name="TaserButton" type="Button" parent="UI/CameraOutput"]
 z_index = 1
 offset_left = -102.751
 offset_top = 244.311
@@ -338,24 +349,24 @@ icon = ExtResource("17_4v2os")
 flat = true
 expand_icon = true
 
-[node name="Taser_Sound" type="AudioStreamPlayer" parent="UI/Camera_Output/Taser_Button"]
+[node name="TaserSound" type="AudioStreamPlayer" parent="UI/CameraOutput/TaserButton"]
 stream = ExtResource("19_27i3m")
 volume_db = -24.327
 pitch_scale = 0.75
 mix_target = 2
 bus = &"Sound"
 
-[node name="BR3500" type="Sprite2D" parent="UI/Camera_Output"]
+[node name="BR3500" type="Sprite2D" parent="UI/CameraOutput"]
 position = Vector2(227.595, 17.964)
 scale = Vector2(0.334378, 0.334378)
 texture = ExtResource("17_hbpf1")
 script = ExtResource("18_ieru2")
 
-[node name="Camera" type="AudioStreamPlayer" parent="UI/Camera_Output"]
+[node name="Camera" type="AudioStreamPlayer" parent="UI/CameraOutput"]
 stream = ExtResource("9_2p54v")
 bus = &"Sound"
 
-[node name="Помехи" type="AnimatedSprite2D" parent="UI/Camera_Output"]
+[node name="Interference" type="AnimatedSprite2D" parent="UI/CameraOutput"]
 self_modulate = Color(1, 1, 1, 0.384314)
 z_index = 1
 position = Vector2(0.325211, 0.359763)
@@ -365,7 +376,7 @@ autoplay = "default"
 frame = 7
 frame_progress = 1.0
 
-[node name="Помехи2" type="AnimatedSprite2D" parent="UI/Camera_Output"]
+[node name="Interference2" type="AnimatedSprite2D" parent="UI/CameraOutput"]
 self_modulate = Color(1, 0.309804, 0.321569, 0.207843)
 z_index = 1
 position = Vector2(0.325211, 3.60654)
@@ -377,13 +388,13 @@ frame_progress = 1.0
 flip_h = true
 flip_v = true
 
-[node name="SoapZhumaysynba" type="Sprite2D" parent="UI/Camera_Output"]
+[node name="SoapZhumaysynba" type="Sprite2D" parent="UI/CameraOutput"]
 position = Vector2(379.483, 128.982)
 scale = Vector2(1.44554, 1.44554)
 texture = ExtResource("32_7rydq")
 script = ExtResource("32_3y5jv")
 
-[node name="VentPower" type="Button" parent="UI/Camera_Output/SoapZhumaysynba"]
+[node name="VentPower" type="Button" parent="UI/CameraOutput/SoapZhumaysynba"]
 offset_left = -410.746
 offset_top = 75.8058
 offset_right = 1145.25
@@ -396,14 +407,14 @@ icon = ExtResource("34_41fn7")
 flat = true
 expand_icon = true
 
-[node name="ColorRect" type="ColorRect" parent="UI/Camera_Output/SoapZhumaysynba"]
+[node name="ColorRect" type="ColorRect" parent="UI/CameraOutput/SoapZhumaysynba"]
 offset_left = -691.0
 offset_top = -326.0
 offset_right = -496.0
 offset_bottom = -246.0
 color = Color(0.32, 0.32, 0.32, 0.533333)
 
-[node name="Phone" type="VBoxContainer" parent="UI/Camera_Output/SoapZhumaysynba"]
+[node name="Phone" type="VBoxContainer" parent="UI/CameraOutput/SoapZhumaysynba"]
 offset_left = -682.456
 offset_top = -314.905
 offset_right = 873.544
@@ -411,38 +422,37 @@ offset_bottom = 241.095
 scale = Vector2(0.171326, 0.171326)
 theme_override_constants/separation = 50
 
-[node name="Name" type="Label" parent="UI/Camera_Output/SoapZhumaysynba/Phone"]
+[node name="Name" type="Label" parent="UI/CameraOutput/SoapZhumaysynba/Phone"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "Насыщенность 
 воздуха кислородом"
 
-[node name="Oxygen" type="Label" parent="UI/Camera_Output/SoapZhumaysynba/Phone"]
+[node name="Oxygen" type="Label" parent="UI/CameraOutput/SoapZhumaysynba/Phone"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("35_ipepd")
 theme_override_font_sizes/font_size = 100
 text = "20.56%"
 
-[node name="PleaseVent" type="AudioStreamPlayer" parent="UI/Camera_Output/SoapZhumaysynba"]
+[node name="PleaseVent" type="AudioStreamPlayer" parent="UI/CameraOutput/SoapZhumaysynba"]
 stream = ExtResource("37_n7vbb")
 bus = &"Sound"
 
-[node name="VentSound" type="AudioStreamPlayer" parent="UI/Camera_Output/SoapZhumaysynba"]
+[node name="VentSound" type="AudioStreamPlayer" parent="UI/CameraOutput/SoapZhumaysynba"]
 stream = ExtResource("38_eyahe")
 volume_db = -13.945
 bus = &"Sound"
 
-[node name="VentilSound" type="AudioStreamPlayer" parent="UI/Camera_Output/SoapZhumaysynba"]
+[node name="VentilSound" type="AudioStreamPlayer" parent="UI/CameraOutput/SoapZhumaysynba"]
 stream = ExtResource("38_g2itr")
 volume_db = -20.0
 bus = &"Sound"
 
-[node name="SoundForKill" type="AudioStreamPlayer" parent="UI/Camera_Output"]
+[node name="SoundForKill" type="AudioStreamPlayer" parent="UI/CameraOutput"]
 stream = ExtResource("41_nvqu7")
 bus = &"Sound"
 
-[node name="Mime" type="Sprite2D" parent="UI/Camera_Output"]
-visible = false
+[node name="Mime" type="Sprite2D" parent="UI/CameraOutput"]
 script = ExtResource("39_kj6cm")
 
 [node name="Cameras_Button" type="Button" parent="UI"]
@@ -461,14 +471,14 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_vq267")
 icon = ExtResource("4_7ldn2")
 flat = true
 
-[node name="Change_Camera_Button" type="Sprite2D" parent="UI"]
+[node name="ChangeCameraButton" type="Sprite2D" parent="UI"]
 visible = false
 z_index = 4
 position = Vector2(1411.58, 532.444)
 scale = Vector2(1.86128, 1.86128)
 texture = ExtResource("8_87s05")
 
-[node name="First_Camera_Button" type="Button" parent="UI/Change_Camera_Button"]
+[node name="First_Camera_Button" type="Button" parent="UI/ChangeCameraButton"]
 offset_left = -91.0
 offset_top = 61.0
 offset_right = -22.0
@@ -480,7 +490,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_p3etq")
 text = "Cam 1"
 flat = true
 
-[node name="Second_Camera_Button" type="Button" parent="UI/Change_Camera_Button"]
+[node name="Second_Camera_Button" type="Button" parent="UI/ChangeCameraButton"]
 offset_left = -124.0
 offset_top = -5.0
 offset_right = -55.0
@@ -492,7 +502,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_q7nbu")
 text = "Cam 2"
 flat = true
 
-[node name="Three_Camera_Button" type="Button" parent="UI/Change_Camera_Button"]
+[node name="Three_Camera_Button" type="Button" parent="UI/ChangeCameraButton"]
 offset_left = -109.0
 offset_top = -71.0
 offset_right = -56.0
@@ -504,7 +514,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_5f7vw")
 text = "Cam 3"
 flat = true
 
-[node name="Fourth_Camera_Button" type="Button" parent="UI/Change_Camera_Button"]
+[node name="Fourth_Camera_Button" type="Button" parent="UI/ChangeCameraButton"]
 offset_left = -61.0
 offset_top = -55.0
 offset_right = 85.0
@@ -516,8 +526,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_27rjw")
 text = "Cam 4"
 flat = true
 
-[node name="Fifth_Camera_Button" type="Button" parent="UI/Change_Camera_Button"]
-visible = false
+[node name="Fifth_Camera_Button" type="Button" parent="UI/ChangeCameraButton"]
 offset_left = 31.0
 offset_top = -95.0
 offset_right = 105.0
@@ -530,7 +539,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_c7bml")
 text = "Cam 5"
 flat = true
 
-[node name="Sixth_Camera_Button" type="Button" parent="UI/Change_Camera_Button"]
+[node name="Sixth_Camera_Button" type="Button" parent="UI/ChangeCameraButton"]
 offset_left = 65.0
 offset_top = 4.0
 offset_right = 114.0
@@ -543,7 +552,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_c7bml")
 text = "Cam 6"
 flat = true
 
-[node name="Seventh_Camera_Button" type="Button" parent="UI/Change_Camera_Button"]
+[node name="Seventh_Camera_Button" type="Button" parent="UI/ChangeCameraButton"]
 offset_left = -4.0
 offset_top = 51.0
 offset_right = 93.0
@@ -561,7 +570,7 @@ stream = ExtResource("9_wp0hr")
 volume_db = -28.108
 bus = &"Sound"
 
-[node name="Laptop_up" type="AudioStreamPlayer" parent="UI"]
+[node name="LaptopUp" type="AudioStreamPlayer" parent="UI"]
 stream = ExtResource("23_vo5ql")
 bus = &"Sound"
 
@@ -576,12 +585,12 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_cojxc")
 flat = true
 
 [node name="NoiseTabel" type="ProgressBar" parent="UI"]
-visible = false
+z_index = 4
 layout_mode = 0
-offset_left = -62.0
-offset_top = 903.0
-offset_right = 318.0
-offset_bottom = 956.0
+offset_left = 34.0
+offset_top = 902.0
+offset_right = 414.0
+offset_bottom = 955.0
 step = 0.1
 value = 20.0
 script = ExtResource("46_bcymg")
@@ -592,19 +601,21 @@ offset_left = 1.0
 offset_top = -51.0
 offset_right = 129.0
 theme_override_font_sizes/font_size = 50
-text = "Noise"
+text = "Шум"
 
 [node name="Grandmother" type="Sprite2D" parent="UI"]
 position = Vector2(-84, -58)
 script = ExtResource("47_o0a61")
 
 [node name="BadEyes" type="Sprite2D" parent="UI"]
+visible = false
 self_modulate = Color(0, 0, 0, 0.266667)
 z_index = 6
 position = Vector2(876, 482)
 texture = ExtResource("2_jsi82")
 
 [node name="DiareyVirus" type="Sprite2D" parent="UI"]
+visible = false
 script = ExtResource("50_mps8b")
 
 [node name="ColorRect2" parent="." instance=ExtResource("32_7whfx")]
@@ -635,28 +646,18 @@ volume_db = -8.0
 mix_target = 2
 bus = &"Sound"
 
-[node name="TemperatureLabel" type="Label" parent="."]
-visible = false
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 618.0
-offset_bottom = 257.0
-scale = Vector2(0.225882, 0.225882)
-theme_override_font_sizes/font_size = 200
-text = "18.0°C"
-
 [connection signal="timeout" from="WinTime" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="UI/LaptopAnimation" to="UI" method="_on_laptop_animation_finished"]
-[connection signal="pressed" from="UI/Camera_Output/Taser_Button" to="UI/Camera_Output/BR3500" method="_on_taser_used"]
-[connection signal="pressed" from="UI/Camera_Output/SoapZhumaysynba/VentPower" to="UI/Camera_Output/SoapZhumaysynba" method="Onvent_powerpressed"]
-[connection signal="finished" from="UI/Camera_Output/SoapZhumaysynba/VentilSound" to="UI/Camera_Output/SoapZhumaysynba" method="OnVentilSoundFinished"]
-[connection signal="finished" from="UI/Camera_Output/SoundForKill" to="UI/Camera_Output/Mime" method="DIE"]
+[connection signal="pressed" from="UI/CameraOutput/TaserButton" to="UI/CameraOutput/BR3500" method="_on_taser_used"]
+[connection signal="pressed" from="UI/CameraOutput/SoapZhumaysynba/VentPower" to="UI/CameraOutput/SoapZhumaysynba" method="Onvent_powerpressed"]
+[connection signal="finished" from="UI/CameraOutput/SoapZhumaysynba/VentilSound" to="UI/CameraOutput/SoapZhumaysynba" method="OnVentilSoundFinished"]
+[connection signal="finished" from="UI/CameraOutput/SoundForKill" to="UI/CameraOutput/Mime" method="DIE"]
 [connection signal="mouse_entered" from="UI/Cameras_Button" to="UI" method="_on_cameras_button_mouse_entered"]
-[connection signal="button_down" from="UI/Change_Camera_Button/First_Camera_Button" to="UI/Camera_Output" method="_on_first_camera_button_button_down"]
-[connection signal="button_down" from="UI/Change_Camera_Button/Second_Camera_Button" to="UI/Camera_Output" method="_on_second_camera_button_button_down"]
-[connection signal="button_down" from="UI/Change_Camera_Button/Three_Camera_Button" to="UI/Camera_Output" method="_on_three_camera_button_button_down"]
-[connection signal="button_down" from="UI/Change_Camera_Button/Fourth_Camera_Button" to="UI/Camera_Output" method="_on_fourth_camera_button_button_down"]
-[connection signal="button_down" from="UI/Change_Camera_Button/Fifth_Camera_Button" to="UI/Camera_Output" method="_on_fifth_camera_button_button_down"]
-[connection signal="button_down" from="UI/Change_Camera_Button/Sixth_Camera_Button" to="UI/Camera_Output" method="_on_sixth_camera_button_button_down"]
-[connection signal="button_down" from="UI/Change_Camera_Button/Seventh_Camera_Button" to="UI/Camera_Output" method="_on_seventh_camera_button_button_down"]
+[connection signal="button_down" from="UI/ChangeCameraButton/First_Camera_Button" to="UI/CameraOutput" method="_on_first_camera_button_button_down"]
+[connection signal="button_down" from="UI/ChangeCameraButton/Second_Camera_Button" to="UI/CameraOutput" method="_on_second_camera_button_button_down"]
+[connection signal="button_down" from="UI/ChangeCameraButton/Three_Camera_Button" to="UI/CameraOutput" method="_on_three_camera_button_button_down"]
+[connection signal="button_down" from="UI/ChangeCameraButton/Fourth_Camera_Button" to="UI/CameraOutput" method="_on_fourth_camera_button_button_down"]
+[connection signal="button_down" from="UI/ChangeCameraButton/Fifth_Camera_Button" to="UI/CameraOutput" method="_on_fifth_camera_button_button_down"]
+[connection signal="button_down" from="UI/ChangeCameraButton/Sixth_Camera_Button" to="UI/CameraOutput" method="_on_sixth_camera_button_button_down"]
+[connection signal="button_down" from="UI/ChangeCameraButton/Seventh_Camera_Button" to="UI/CameraOutput" method="_on_seventh_camera_button_button_down"]
 [connection signal="pressed" from="UI/Door_Button" to="Door" method="OnDoorReload"]

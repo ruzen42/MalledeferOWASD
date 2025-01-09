@@ -28,7 +28,7 @@ public partial class Br3500 : Sprite2D
 	{
 		UI = GetNode<Control>("../..");
 
-		TaserSound = GetNode<AudioStreamPlayer>($"../Taser_Button/Taser_Sound");
+		TaserSound = GetNode<AudioStreamPlayer>($"../TaserButton/TaserSound");
 		FanSound = GetNode<AudioStreamPlayer>("../../../Fan_Sound");
 		GenOff = GetNode<AudioStreamPlayer>("../../../Generator_Off");
 		Sounds = GetNode<AudioStreamPlayer>("../../Sounds");
@@ -101,7 +101,7 @@ public partial class Br3500 : Sprite2D
 		UI.Visible = false;
 		FanSound.Playing = false;
 		GenOff.Playing = true;
-		GD.Print("generator off");
+		GD.Print("Generator off");
 		timer.QueueFree();
 	}
 
@@ -174,8 +174,6 @@ public partial class Br3500 : Sprite2D
 			timer.Start();
 		}
 		else
-		{
 			Sounds.Playing = true;
-		}
 	}
 }

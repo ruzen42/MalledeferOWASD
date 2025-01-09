@@ -52,12 +52,14 @@ naming/default_signal_callback_to_self_name="On{signal_name}"
 [file_customization]
 
 folder_colors={
+"res://Autoload/": "gray",
 "res://Code/": "teal",
 "res://Fonts/": "yellow",
 "res://Music/": "green",
 "res://Nodes/": "pink",
 "res://Scenes/": "red",
-"res://Sprites/": "orange"
+"res://Sprites/": "orange",
+"res://obj/": "blue"
 }
 
 [filesystem]

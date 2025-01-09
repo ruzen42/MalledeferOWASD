@@ -14,19 +14,19 @@ public partial class Mime : Sprite2D
 	
 	public override void _Process(double delta)
 	{
-		//if (saves.Noise > 60)
-			//Kill();
-	}
-	
-	private void dump()
-	{
-		GetNode<AudioStreamPlayer>("../SoundForKill").Playing = true;
+		if (saves.Noise > 60)
+			Kill();
 	}
 
 	private void Kill()
 	{
-		sceneTree = GetTree();
-		newScene = GD.Load<PackedScene>("res://Scenes/dead_screen.tscn");
-		sceneTree.ChangeSceneToPacked(newScene);
+		GetNode<AudioStreamPlayer>("../SoundForKill").Play();
+	}
+	
+	private void DIE()
+	{
+		var SceneTree = GetTree();
+		var Scene = GD.Load<PackedScene>("res://Scenes/dead_screen.tscn");
+		SceneTree.ChangeSceneToPacked(Scene);
 	}
 }
