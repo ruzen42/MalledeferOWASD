@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://3tt480sq44fy"]
+[gd_scene load_steps=76 format=3 uid="uid://3tt480sq44fy"]
 
 [ext_resource type="Script" path="res://Code/Game_rules.cs" id="1_hqfnc"]
 [ext_resource type="Texture2D" uid="uid://dna01de68rt04" path="res://Sprites/newoffice.png" id="2_0ahtm"]
@@ -54,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://blyfhqe80w5xy" path="res://Sprites/DoorAnimation/Door3.png" id="41_hipxv"]
 [ext_resource type="AudioStream" uid="uid://2gaf50wulild" path="res://Music/Mime_Sound_For_Kill.mp3" id="41_nvqu7"]
 [ext_resource type="Texture2D" uid="uid://bfk0looqutaf8" path="res://Sprites/DoorAnimation/Door4.png" id="42_osr4t"]
+[ext_resource type="Texture2D" uid="uid://bp0xmny7v2h1o" path="res://Sprites/Mime/MimeSprite0.png" id="42_vu88e"]
 [ext_resource type="Texture2D" uid="uid://cbp01rykhv2uo" path="res://Sprites/DoorAnimation/Door5.png" id="43_maiv6"]
 [ext_resource type="Script" path="res://Code/NoiseTabel.cs" id="46_bcymg"]
 [ext_resource type="Script" path="res://Code/Grandmother.cs" id="47_o0a61"]
@@ -301,7 +302,6 @@ sprite_frames = SubResource("SpriteFrames_qvebb")
 animation = &"up"
 
 [node name="CameraOutput" type="Sprite2D" parent="UI"]
-visible = false
 self_modulate = Color(0.772549, 0.772549, 0.772549, 1)
 top_level = true
 z_index = 2
@@ -453,6 +453,10 @@ stream = ExtResource("41_nvqu7")
 bus = &"Sound"
 
 [node name="Mime" type="Sprite2D" parent="UI/CameraOutput"]
+visible = false
+position = Vector2(7.65703, -4.31139)
+scale = Vector2(1.85101, 1.85101)
+texture = ExtResource("42_vu88e")
 script = ExtResource("39_kj6cm")
 
 [node name="Cameras_Button" type="Button" parent="UI"]
