@@ -41,13 +41,13 @@ public partial class NoiseTabel : ProgressBar
 		if (TaserSound.Playing && !taser )
 		{
 			DeltaFlag = delta; 
-			saves.Noise += 30;
+			saves.Noise += 31;
 			taser = true;
 		}
 		else if (!TaserSound.Playing && taser)
 		{
 			taser = false;
-			saves.Noise -= 30;
+			saves.Noise -= 31;
 		}
 		
 		if (VentSound.Playing && !vent )

@@ -5,28 +5,44 @@ public partial class Mime : Sprite2D
 {
 	SceneTree sceneTree;
 	PackedScene newScene;
-	Texture2D Petlu;
-
+	Sprite2D MimeSprite1;
+	bool killflag = true;
+	
 	public override void _Ready()
 	{
-		if (saves.NightSelected < 3) 
+		MimeSprite1 = GetNode<Sprite2D>($"../MimeSprite1");
+		if (saves.NightSelected < 3)
+		{ 
+			MimeSprite1.QueueFree();
 			QueueFree();
-		Petlu = (Texture2D)ResourceLoader.Load("res://Sprites/Mime/MimeSprite1.png");
+		}
 	}
 	
 	public override void _Process(double delta)
 	{
-		if (saves.SelectedCamera == 5)
+		if (saves.SelectedCamera == 5 && killflag)
+		{
+			MimeSprite1.Visible = true;
 			Visible = true;
+		}
+		else if (saves.SelectedCamera == 5)
+		{
+			MimeSprite1.Visible = true;
+		}
 		else 
+		{ 
+			MimeSprite1.Visible = false;
 			Visible = false;
+		}
+		
 		if (saves.Noise > 60)
 			Kill();
 	}
 
 	private void Kill()
 	{
-		Texture = Petlu;
+		killflag = false;
+		Visible = false;
 		GetNode<AudioStreamPlayer>("../SoundForKill").Play();
 	}
 	
