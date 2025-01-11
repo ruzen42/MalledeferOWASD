@@ -6,25 +6,26 @@ public partial class NoiseTabel : ProgressBar
 	AudioStreamPlayer DoorSound;
 	AudioStreamPlayer TaserSound;
 	AudioStreamPlayer VentSound;
-	
+
 	bool door;
 	bool taser;
 	bool vent;
 	double DeltaFlag;
-	
+
 	public override void _Ready()
 	{
-		if (saves.NightSelected <= 2) 
+		if (saves.NightSelected < 2) 
 			QueueFree();
 		DoorSound = GetNode<AudioStreamPlayer>("../../Door/OpenCloseSound");
 		TaserSound = GetNode<AudioStreamPlayer>("../CameraOutput/TaserButton/TaserSound");
 		if (!(saves.NightSelected == 1 || saves.NightSelected == 5)) 
 			VentSound = GetNode<AudioStreamPlayer>($"../CameraOutput/SoapZhumaysynba/VentSound");
 	}
-	
+
 	public override void _Process(double delta)
 	{
 		Value = saves.Noise;
+
 		if (DoorSound.Playing && !door )
 		{
 			DeltaFlag = delta; 
@@ -52,13 +53,13 @@ public partial class NoiseTabel : ProgressBar
 		if (VentSound.Playing && !vent )
 		{
 			DeltaFlag = delta; 
-			saves.Noise += 30;
+			saves.Noise += 35;
 			vent = true;
 		}
 		else if (!VentSound.Playing && vent)
 		{
 			vent = false;
-			saves.Noise -= 30;
+			saves.Noise -= 35;
 		}
 	}
 }

@@ -121,7 +121,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"up",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tmmb4"]
@@ -302,6 +302,7 @@ sprite_frames = SubResource("SpriteFrames_qvebb")
 animation = &"up"
 
 [node name="CameraOutput" type="Sprite2D" parent="UI"]
+visible = false
 self_modulate = Color(0.772549, 0.772549, 0.772549, 1)
 top_level = true
 z_index = 2
@@ -311,6 +312,7 @@ texture = ExtResource("6_1yo0r")
 script = ExtResource("7_qi18e")
 
 [node name="TemperatureLabel" type="Label" parent="UI/CameraOutput"]
+visible = false
 offset_left = 515.858
 offset_top = -349.221
 offset_right = 972.858
@@ -389,17 +391,18 @@ flip_h = true
 flip_v = true
 
 [node name="SoapZhumaysynba" type="Sprite2D" parent="UI/CameraOutput"]
-position = Vector2(379.483, 128.982)
-scale = Vector2(1.44554, 1.44554)
+self_modulate = Color(0.695503, 0.695503, 0.695503, 1)
+position = Vector2(218.477, 52.455)
+scale = Vector2(0.96365, 0.96365)
 texture = ExtResource("32_7rydq")
 script = ExtResource("32_3y5jv")
 
 [node name="VentPower" type="Button" parent="UI/CameraOutput/SoapZhumaysynba"]
-offset_left = -410.746
-offset_top = 75.8058
-offset_right = 1145.25
-offset_bottom = 284.806
-scale = Vector2(0.201124, 0.201124)
+offset_left = -374.831
+offset_top = 196.856
+offset_right = 1061.17
+offset_bottom = 438.856
+scale = Vector2(0.251083, 0.251083)
 theme_override_font_sizes/font_size = 200
 theme_override_styles/focus = SubResource("StyleBoxEmpty_u5ee3")
 text = "Вентеляция"
@@ -408,18 +411,18 @@ flat = true
 expand_icon = true
 
 [node name="ColorRect" type="ColorRect" parent="UI/CameraOutput/SoapZhumaysynba"]
-offset_left = -691.0
-offset_top = -326.0
-offset_right = -496.0
-offset_bottom = -246.0
+offset_left = -841.0
+offset_top = -400.0
+offset_right = -601.0
+offset_bottom = -305.0
 color = Color(0.32, 0.32, 0.32, 0.533333)
 
 [node name="Phone" type="VBoxContainer" parent="UI/CameraOutput/SoapZhumaysynba"]
-offset_left = -682.456
-offset_top = -314.905
-offset_right = 873.544
-offset_bottom = 241.095
-scale = Vector2(0.171326, 0.171326)
+offset_left = -835.545
+offset_top = -393.712
+offset_right = 201.455
+offset_bottom = -37.7115
+scale = Vector2(0.221271, 0.221271)
 theme_override_constants/separation = 50
 
 [node name="Name" type="Label" parent="UI/CameraOutput/SoapZhumaysynba/Phone"]
@@ -454,6 +457,7 @@ bus = &"Sound"
 
 [node name="Mime" type="Sprite2D" parent="UI/CameraOutput"]
 visible = false
+modulate = Color(0.548963, 0.548963, 0.548963, 1)
 position = Vector2(7.65703, -4.31139)
 scale = Vector2(1.85101, 1.85101)
 texture = ExtResource("42_vu88e")
@@ -633,6 +637,7 @@ offset_right = 2125.0
 offset_bottom = 1165.0
 
 [node name="Door" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0.796243, 0.796243, 0.796243, 1)
 z_index = -2
 position = Vector2(987, 487)
 scale = Vector2(0.674479, 0.664062)

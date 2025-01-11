@@ -14,7 +14,7 @@ public partial class UI : Control
 		cameraOutput = GetNode<Sprite2D>("CameraOutput");
 		changeCameraButton = GetNode<CanvasItem>("ChangeCameraButton");
 		soundPlayer = GetNode<AudioStreamPlayer>("LaptopUp");
-		if (saves.NightSelected >= 2) 
+		if (saves.NightSelected > 2) 
 			NoiseBar = GetNode<ProgressBar>("NoiseTabel");
 	}
 
@@ -31,7 +31,7 @@ public partial class UI : Control
 		{
 			cameraOutput.Visible = false;
 			changeCameraButton.Visible = false;
-			if (saves.NightSelected >= 2) 
+			if (saves.NightSelected > 2) 
 				NoiseBar.Visible = false;
 			laptop.Play("down");
 		}
@@ -49,7 +49,7 @@ public partial class UI : Control
 		{
 			GD.Print("Laptop up alt");
 			cameraOutput.Visible = true;
-			if (saves.NightSelected >= 2) 
+			if (saves.NightSelected > 2) 
 				NoiseBar.Visible = true;
 			changeCameraButton.Visible = true;
 		}
