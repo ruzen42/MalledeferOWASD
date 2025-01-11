@@ -311,12 +311,12 @@ texture = ExtResource("6_1yo0r")
 script = ExtResource("7_qi18e")
 
 [node name="TemperatureLabel" type="Label" parent="UI/CameraOutput"]
-offset_left = 485.699
-offset_top = -338.442
-offset_right = 1095.7
-offset_bottom = -89.4423
+offset_left = 515.858
+offset_top = -349.221
+offset_right = 972.858
+offset_bottom = -163.221
 scale = Vector2(0.225882, 0.225882)
-theme_override_font_sizes/font_size = 200
+theme_override_font_sizes/font_size = 150
 text = "18.0°C"
 script = ExtResource("61_8cxx8")
 
@@ -379,7 +379,7 @@ frame_progress = 1.0
 [node name="Interference2" type="AnimatedSprite2D" parent="UI/CameraOutput"]
 self_modulate = Color(1, 0.309804, 0.321569, 0.207843)
 z_index = 1
-position = Vector2(0.325211, 3.60654)
+position = Vector2(10.1699, 2.15569)
 scale = Vector2(0.87037, 0.989982)
 sprite_frames = SubResource("SpriteFrames_sv442")
 autoplay = "default"
@@ -585,6 +585,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_cojxc")
 flat = true
 
 [node name="NoiseTabel" type="ProgressBar" parent="UI"]
+visible = false
 z_index = 4
 layout_mode = 0
 offset_left = 34.0
@@ -616,6 +617,7 @@ texture = ExtResource("2_jsi82")
 
 [node name="DiareyVirus" type="Sprite2D" parent="UI"]
 visible = false
+z_index = 7
 script = ExtResource("50_mps8b")
 
 [node name="ColorRect2" parent="." instance=ExtResource("32_7whfx")]

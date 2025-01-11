@@ -13,7 +13,7 @@ public partial class saves : Node
 	public static int SelectedCamera;
 	public static bool Power = true;
 	public static float Noise = 20.0f;
-	public static float Temp = 20.0f;
+	public static float Temp = 16.0f;
 
 	public static long GameOpen, Deaths, Saves;
 	public static byte NightsCompleted;

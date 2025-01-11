@@ -45,7 +45,7 @@ public partial class NoiseTabel : ProgressBar
 		}
 		else if (!TaserSound.Playing && taser)
 		{
-			door = false;
+			taser = false;
 			saves.Noise -= 30;
 		}
 		

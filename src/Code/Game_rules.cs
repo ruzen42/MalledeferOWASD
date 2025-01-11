@@ -9,7 +9,14 @@ public partial class Game_rules : Node2D
 
 	public void OnTempTimerTimeout()
 	{
+		if (saves.Temp > 32) 
+		{
+			return;
+		}
+		
 		saves.Temp += (float)Rand.NextDouble() * max;
+		Temp.WaitTime = Rand.Next(0, max*7)+0.1;
+		Temp.Start();
 	}
 
 	public override void _Ready()
@@ -18,10 +25,10 @@ public partial class Game_rules : Node2D
 		Temp = new Timer
 		{
 			Autostart = true,
-			WaitTime = Rand.Next(max*7)+0.1,
+			WaitTime = Rand.Next(0, max*7)+0.1,
 			OneShot = false
 		};
-
+		
 		Temp.Connect("timeout", new Callable(this, nameof(OnTempTimerTimeout)));
 		AddChild(Temp);
 	}

@@ -394,7 +394,8 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Разработчики:
 - Ruzen42
-- Gigle Frigle"
+- Gigle Frigle
+- Zint Zero"
 
 [node name="StatisticsContainer" type="VBoxContainer" parent="Options_Menu/GridContainer"]
 visible = false
