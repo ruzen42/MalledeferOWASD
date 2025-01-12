@@ -21,6 +21,8 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 boot_splash/use_filter=false
 config/icon="res://Sprites/Icon_game.png"
+config/macos_native_icon="/home/ruzen42/Documents/Programming/MalledeferOWASD/Icon_game_macos.icns"
+config/windows_native_icon="/home/ruzen42/Documents/Programming/MalledeferOWASD/Icon_game.ico"
 
 [audio]
 

@@ -303,6 +303,7 @@ sprite_frames = SubResource("SpriteFrames_qvebb")
 animation = &"up"
 
 [node name="CameraOutput" type="Sprite2D" parent="UI"]
+visible = false
 self_modulate = Color(0.772549, 0.772549, 0.772549, 1)
 top_level = true
 z_index = 2
@@ -651,7 +652,7 @@ z_index = -2
 position = Vector2(987, 487)
 scale = Vector2(0.674479, 0.664062)
 sprite_frames = SubResource("SpriteFrames_e5qm1")
-animation = &"Close"
+animation = &"Null"
 script = ExtResource("38_ma2kb")
 
 [node name="DieSound" type="AudioStreamPlayer" parent="Door"]
