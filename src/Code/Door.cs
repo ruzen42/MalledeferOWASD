@@ -105,9 +105,7 @@ public partial class Door : AnimatedSprite2D
 	public override void _Process(double delta)
 	{
 		if (Input.IsActionJustPressed("door"))
-		{
 			DoorBor();
-		}
 	}
 
 	private void OnLimerTimeout()

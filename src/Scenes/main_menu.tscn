@@ -48,14 +48,15 @@
 
 [node name="Main_menu" type="Node2D"]
 texture_filter = 1
+position = Vector2(192, 0)
 
 [node name="Game_Name" type="Label" parent="."]
 z_index = 1
-offset_left = 74.0
+offset_left = -130.0
 offset_top = 82.0
-offset_right = 1233.0
+offset_right = 1029.0
 offset_bottom = 287.0
-scale = Vector2(0.810796, 0.810796)
+scale = Vector2(1.02372, 1.02372)
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 100
 text = "Одна неделя с 
@@ -67,24 +68,24 @@ anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 1446.0
-offset_top = 1030.0
-offset_right = 1902.0
-offset_bottom = 1069.0
+offset_left = 1329.0
+offset_top = 1032.0
+offset_right = 2134.0
+offset_bottom = 1071.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_vertical = 8
 theme_override_colors/font_color = Color(0.913725, 0.913725, 0.913725, 1)
 theme_override_fonts/font = ExtResource("1_d3pxi")
 theme_override_font_sizes/font_size = 35
-text = "Malledefer Studio  2019-2025 v0.1.2.9"
+text = "Malledefer Studio  2019-2025 v0.1.2.9 Android"
 
 [node name="Main_Menu_Buttons" type="VBoxContainer" parent="."]
-offset_left = 71.0
-offset_top = 304.0
-offset_right = 485.0
-offset_bottom = 600.0
-scale = Vector2(0.732553, 0.732553)
+offset_left = -141.0
+offset_top = 369.0
+offset_right = 273.0
+offset_bottom = 665.0
+scale = Vector2(1.21098, 1.21098)
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_constants/separation = 10
@@ -118,11 +119,11 @@ alignment = 0
 
 [node name="Night_Menu_selector" type="VBoxContainer" parent="."]
 visible = false
-offset_left = 73.0
-offset_top = 306.0
-offset_right = 562.0
-offset_bottom = 923.0
-scale = Vector2(0.760869, 0.760869)
+offset_left = -137.0
+offset_top = 370.0
+offset_right = 352.0
+offset_bottom = 987.0
+scale = Vector2(1.09931, 1.09931)
 theme_override_constants/separation = 10
 script = ExtResource("4_q1pns")
 
@@ -134,6 +135,7 @@ text = "Выбор ночи"
 
 [node name="NightContainer" type="GridContainer" parent="Night_Menu_selector"]
 layout_mode = 2
+theme_override_constants/v_separation = 30
 
 [node name="Night_1_Button" type="Button" parent="Night_Menu_selector/NightContainer"]
 layout_mode = 2
@@ -219,11 +221,11 @@ text_direction = 1
 
 [node name="Options_Menu" type="VBoxContainer" parent="."]
 visible = false
-offset_left = 62.0
-offset_top = 265.0
-offset_right = 1076.0
-offset_bottom = 970.0
-scale = Vector2(0.736499, 0.736499)
+offset_left = -143.0
+offset_top = 372.0
+offset_right = 1279.0
+offset_bottom = 1207.0
+scale = Vector2(1.01265, 1.01265)
 theme_override_constants/separation = 50
 script = ExtResource("5_sgbwa")
 
@@ -235,9 +237,9 @@ text = "Параметры"
 
 [node name="GridContainer" type="GridContainer" parent="Options_Menu"]
 layout_mode = 2
-theme_override_constants/h_separation = 100
+theme_override_constants/h_separation = 200
 theme_override_constants/v_separation = 50
-columns = 2
+columns = 4
 
 [node name="SoundContainer" type="VBoxContainer" parent="Options_Menu/GridContainer"]
 layout_mode = 2
@@ -291,6 +293,7 @@ ticks_on_borders = true
 
 [node name="ContactsContainer" type="VBoxContainer" parent="Options_Menu/GridContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="Other" type="Label" parent="Options_Menu/GridContainer/ContactsContainer"]
 layout_mode = 2
@@ -343,6 +346,7 @@ alignment = 0
 expand_icon = true
 
 [node name="DisplaySettingsContainer" type="VBoxContainer" parent="Options_Menu/GridContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Res" type="Label" parent="Options_Menu/GridContainer/DisplaySettingsContainer"]
@@ -386,8 +390,8 @@ text = "На весь экран"
 flat = true
 
 [node name="DeveloperList" type="VBoxContainer" parent="Options_Menu/GridContainer"]
-visible = false
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="Options_Menu/GridContainer/DeveloperList"]
 layout_mode = 2
@@ -434,15 +438,11 @@ bus = &"Music"
 [node name="Shampoo" type="Sprite2D" parent="."]
 z_index = -2
 texture_filter = 1
-position = Vector2(1403, 536)
+position = Vector2(1573, 536)
 texture = ExtResource("6_g5i2g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(960, 540)
-limit_left = -10
-limit_top = -10
-limit_right = 1930
-limit_bottom = 1090
+position = Vector2(978, 537)
 limit_smoothed = true
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
@@ -450,9 +450,9 @@ script = ExtResource("7_w4yyh")
 
 [node name="ColorRect2" parent="." instance=ExtResource("8_0a5y1")]
 visible = false
-offset_left = -15.0
+offset_left = -235.0
 offset_top = -4.0
-offset_right = 1939.0
+offset_right = 2433.0
 offset_bottom = 1083.0
 
 [connection signal="button_up" from="Main_Menu_Buttons/PlayButton" to="Main_Menu_Buttons" method="_on_play_button_button_up"]

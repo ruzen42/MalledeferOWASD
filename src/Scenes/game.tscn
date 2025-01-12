@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://3tt480sq44fy"]
+[gd_scene load_steps=78 format=3 uid="uid://3tt480sq44fy"]
 
 [ext_resource type="Script" path="res://Code/Game_rules.cs" id="1_hqfnc"]
 [ext_resource type="Texture2D" uid="uid://dna01de68rt04" path="res://Sprites/newoffice.png" id="2_0ahtm"]
@@ -63,6 +63,7 @@
 [ext_resource type="AudioStream" uid="uid://bfbv117i24bc4" path="res://Music/Door_Is_Blocked.mp3" id="51_yl2us"]
 [ext_resource type="AudioStream" uid="uid://j4n5ntl7fht8" path="res://Music/DoorOpen.mp3" id="53_0c0pb"]
 [ext_resource type="Script" path="res://Code/TemperatureLabel.cs" id="61_8cxx8"]
+[ext_resource type="Texture2D" uid="uid://ksmniyv5tssd" path="res://Sprites/android_resolution_fixxer.png" id="64_j6ag7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qvebb"]
 animations = [{
@@ -93,7 +94,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"down",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 0.1,
@@ -122,7 +123,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"up",
-"speed": 4.0
+"speed": 6.0
 }]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tmmb4"]
@@ -246,6 +247,7 @@ animations = [{
 }]
 
 [node name="Game" type="Node2D"]
+position = Vector2(211, 0)
 script = ExtResource("1_hqfnc")
 metadata/_edit_vertical_guides_ = [89.0]
 
@@ -278,7 +280,7 @@ scale = Vector2(1.56555, 1.56014)
 zoom = Vector2(1.1, 1.1)
 limit_left = 0
 limit_top = 0
-limit_right = 1920
+limit_right = 2340
 limit_bottom = 1040
 limit_smoothed = true
 position_smoothing_enabled = true
@@ -307,7 +309,7 @@ visible = false
 self_modulate = Color(0.772549, 0.772549, 0.772549, 1)
 top_level = true
 z_index = 2
-position = Vector2(960.5, 532)
+position = Vector2(1173, 531)
 scale = Vector2(1.42578, 1.39167)
 texture = ExtResource("6_1yo0r")
 script = ExtResource("7_qi18e")
@@ -339,12 +341,12 @@ mix_target = 2
 bus = &"Sound"
 
 [node name="TaserButton" type="Button" parent="UI/CameraOutput"]
-z_index = 1
-offset_left = -102.751
-offset_top = 244.311
-offset_right = 207.249
-offset_bottom = 328.311
-scale = Vector2(0.665537, 0.665537)
+z_index = 3
+offset_left = -616.505
+offset_top = 146.586
+offset_right = -306.505
+offset_bottom = 230.586
+scale = Vector2(0.908641, 0.908641)
 theme_override_font_sizes/font_size = 75
 theme_override_styles/focus = SubResource("StyleBoxEmpty_tmmb4")
 text = "Шокер"
@@ -399,33 +401,35 @@ texture = ExtResource("32_7rydq")
 script = ExtResource("32_3y5jv")
 
 [node name="VentPower" type="Button" parent="UI/CameraOutput/SoapZhumaysynba"]
-offset_left = -374.831
-offset_top = 196.856
-offset_right = 1061.17
-offset_bottom = 438.856
-scale = Vector2(0.251083, 0.251083)
-theme_override_font_sizes/font_size = 200
+z_index = 2
+offset_left = -862.839
+offset_top = 97.6822
+offset_right = 430.161
+offset_bottom = 286.682
+scale = Vector2(0.366878, 0.366878)
+theme_override_font_sizes/font_size = 180
 theme_override_styles/focus = SubResource("StyleBoxEmpty_u5ee3")
 text = "Вентеляция"
 icon = ExtResource("34_41fn7")
 flat = true
+alignment = 2
 expand_icon = true
 
 [node name="ColorRect" type="ColorRect" parent="UI/CameraOutput/SoapZhumaysynba"]
 z_index = 2
-offset_left = -830.451
-offset_top = -385.509
-offset_right = -590.451
-offset_bottom = -290.509
+offset_left = -855.0
+offset_top = -401.0
+offset_right = -516.0
+offset_bottom = -269.0
 color = Color(0.32, 0.32, 0.32, 0.533333)
 
 [node name="Phone" type="VBoxContainer" parent="UI/CameraOutput/SoapZhumaysynba"]
 z_index = 2
-offset_left = -823.172
-offset_top = -378.798
-offset_right = 213.828
-offset_bottom = -22.7979
-scale = Vector2(0.221271, 0.221271)
+offset_left = -845.0
+offset_top = -391.0
+offset_right = 192.0
+offset_bottom = -35.0
+scale = Vector2(0.315524, 0.315524)
 theme_override_constants/separation = 50
 
 [node name="Name" type="Label" parent="UI/CameraOutput/SoapZhumaysynba/Phone"]
@@ -477,11 +481,11 @@ texture = ExtResource("44_nj4yp")
 self_modulate = Color(1, 1, 1, 0.686275)
 z_index = 4
 layout_mode = 0
-offset_left = 551.0
-offset_top = 942.0
-offset_right = 1159.0
-offset_bottom = 1010.0
-scale = Vector2(1.1036, 0.6299)
+offset_left = 342.0
+offset_top = 933.0
+offset_right = 950.0
+offset_bottom = 1001.0
+scale = Vector2(1.8236, 0.679301)
 theme_type_variation = &"FlatButton"
 theme_override_colors/icon_hover_color = Color(0.505344, 0.505344, 0.505344, 1)
 theme_override_constants/outline_size = 0
@@ -492,8 +496,8 @@ flat = true
 [node name="ChangeCameraButton" type="Sprite2D" parent="UI"]
 visible = false
 z_index = 4
-position = Vector2(1411.58, 532.444)
-scale = Vector2(1.86128, 1.86128)
+position = Vector2(1510, 302)
+scale = Vector2(2.08855, 2.08855)
 texture = ExtResource("8_87s05")
 
 [node name="First_Camera_Button" type="Button" parent="UI/ChangeCameraButton"]
@@ -595,10 +599,10 @@ bus = &"Sound"
 [node name="Door_Button" type="Button" parent="UI"]
 z_index = -1
 layout_mode = 0
-offset_left = 596.0
+offset_left = 640.0
 offset_top = 60.0
-offset_right = 1194.0
-offset_bottom = 785.0
+offset_right = 1161.0
+offset_bottom = 771.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_cojxc")
 flat = true
 
@@ -606,10 +610,11 @@ flat = true
 visible = false
 z_index = 4
 layout_mode = 0
-offset_left = 34.0
-offset_top = 902.0
-offset_right = 414.0
-offset_bottom = 955.0
+offset_left = 1.0
+offset_top = 897.0
+offset_right = 252.0
+offset_bottom = 950.0
+scale = Vector2(1.19497, 1.19497)
 step = 0.1
 value = 20.0
 script = ExtResource("46_bcymg")
@@ -666,6 +671,10 @@ stream = ExtResource("53_0c0pb")
 volume_db = -8.0
 mix_target = 2
 bus = &"Sound"
+
+[node name="AndroidResolutionFixxer" type="Sprite2D" parent="."]
+position = Vector2(958, 540)
+texture = ExtResource("64_j6ag7")
 
 [connection signal="timeout" from="WinTime" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="UI/LaptopAnimation" to="UI" method="_on_laptop_animation_finished"]
