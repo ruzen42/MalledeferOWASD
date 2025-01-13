@@ -16,10 +16,12 @@ public partial class ColorRect : Godot.ColorRect
 	// Сам эффект
 	public override void _Process(double delta)
 	{
-		modulate = modulate - 1;
-		if (modulate < 0)
+		if (modulate <= 0)
 			Visible = false;
 		else
+		{
 			Modulate = new Color(1, 1, 1, modulate / 255f);
+			modulate = modulate - 10;
+		}
 	}
 }

@@ -16,7 +16,7 @@ layout_mode = 0
 
 [node name="Malledefer" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(960, 540)
+position = Vector2(1207, 540)
 scale = Vector2(1.98511, 1.98511)
 texture = ExtResource("3_lucye")
 
@@ -24,4 +24,20 @@ texture = ExtResource("3_lucye")
 wait_time = 2.5
 autostart = true
 
+[node name="SkipButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.0
+offset_top = -20.0
+offset_right = 2324.0
+offset_bottom = 1055.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="button_down" from="SkipButton" to="." method="OnSkipButtonPressed"]

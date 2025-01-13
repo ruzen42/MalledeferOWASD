@@ -16,8 +16,8 @@ script = ExtResource("1_awb5g")
 
 [node name="BadEyes" type="Sprite2D" parent="."]
 z_index = 6
-position = Vector2(950, 515)
-scale = Vector2(0.764583, 0.547222)
+position = Vector2(1168, 515)
+scale = Vector2(0.991666, 0.547222)
 texture = ExtResource("2_ukrn2")
 
 [node name="Dead_Label" type="Label" parent="."]
@@ -41,9 +41,27 @@ uppercase = true
 [node name="ColorRect2" parent="." instance=ExtResource("1_lltmm")]
 visible = false
 layout_mode = 0
+offset_right = 2344.0
 
 [node name="Scream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_freee")
 autoplay = true
 mix_target = 1
 bus = &"Sound"
+
+[node name="SkipButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1170.0
+offset_top = -540.0
+offset_right = 1190.0
+offset_bottom = 532.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[connection signal="button_down" from="SkipButton" to="." method="OnSkipButtonPressed"]

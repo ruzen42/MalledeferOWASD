@@ -6,14 +6,19 @@
 [ext_resource type="AudioStream" uid="uid://bdahu2q022h25" path="res://Music/fnaf-6-am.mp3" id="4_fxqb0"]
 
 [node name="EndGame" type="Node2D"]
-position = Vector2(960, 540)
+position = Vector2(-5, -8)
 script = ExtResource("1_ef38g")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -270.0
-offset_top = -67.0
-offset_right = 657.0
-offset_bottom = 184.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 930.0
+offset_top = 485.0
+offset_right = 1866.0
+offset_bottom = 736.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.593119, 0.593119)
@@ -23,10 +28,18 @@ theme_override_font_sizes/font_size = 250
 text = "6:00 am"
 
 [node name="ColorRect2" parent="." instance=ExtResource("2_6ik3w")]
-offset_left = -962.0
-offset_top = -541.0
-offset_right = 960.0
-offset_bottom = 544.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = 2.0
+offset_right = 2357.0
+offset_bottom = 1087.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
@@ -39,4 +52,19 @@ volume_db = -0.84
 autoplay = true
 bus = &"Sound"
 
+[node name="SkipButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 2348.0
+offset_bottom = 1085.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="button_down" from="SkipButton" to="." method="OnSkipButtonPressed"]

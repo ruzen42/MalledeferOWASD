@@ -40,6 +40,11 @@ public partial class UI : Control
 			
 		soundPlayer.Play();
 	}
+	
+	private void OnCamerasButtonPressed() 
+	{
+		_on_cameras_button_mouse_entered();
+	}
 
 	private void _on_laptop_animation_finished()
 	{

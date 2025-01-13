@@ -266,7 +266,6 @@ bus = &"Sound"
 [node name="Fan_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_86l55")
 volume_db = -27.71
-autoplay = true
 mix_target = 1
 bus = &"Music"
 
@@ -683,6 +682,7 @@ texture = ExtResource("64_j6ag7")
 [connection signal="finished" from="UI/CameraOutput/SoapZhumaysynba/VentilSound" to="UI/CameraOutput/SoapZhumaysynba" method="OnVentilSoundFinished"]
 [connection signal="finished" from="UI/CameraOutput/SoundForKill" to="UI/CameraOutput/Mime" method="DIE"]
 [connection signal="mouse_entered" from="UI/Cameras_Button" to="UI" method="_on_cameras_button_mouse_entered"]
+[connection signal="pressed" from="UI/Cameras_Button" to="UI" method="OnCamerasButtonPressed"]
 [connection signal="button_down" from="UI/ChangeCameraButton/First_Camera_Button" to="UI/CameraOutput" method="_on_first_camera_button_button_down"]
 [connection signal="button_down" from="UI/ChangeCameraButton/Second_Camera_Button" to="UI/CameraOutput" method="_on_second_camera_button_button_down"]
 [connection signal="button_down" from="UI/ChangeCameraButton/Three_Camera_Button" to="UI/CameraOutput" method="_on_three_camera_button_button_down"]

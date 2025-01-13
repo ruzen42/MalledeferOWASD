@@ -28,4 +28,9 @@ public partial class GameLoad : Control
 		newScene = GD.Load<PackedScene>("res://Scenes/main_menu.tscn");
 		sceneTree = GetTree();
 	}
+	
+	private void OnSkipButtonPressed() 
+	{
+		_on_timer_timeout();
+	}
 }

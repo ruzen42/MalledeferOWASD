@@ -15,6 +15,11 @@ public partial class EndGame : Node2D
 	{
 		ChangeScene();
 	}
+	
+	private void OnSkipButtonPressed()
+	{
+		_on_timer_timeout();
+	}
 
 	public override void _Process(double delta)
 	{

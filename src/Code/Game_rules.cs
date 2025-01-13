@@ -10,9 +10,7 @@ public partial class Game_rules : Node2D
 	public void OnTempTimerTimeout()
 	{
 		if (saves.Temp > 32) 
-		{
 			return;
-		}
 		
 		saves.Temp += (float)Rand.NextDouble() * max;
 		Temp.WaitTime = Rand.Next(0, max*7)+0.1;
@@ -21,6 +19,7 @@ public partial class Game_rules : Node2D
 
 	public override void _Ready()
 	{
+		GetNode<AudioStreamPlayer>("Fan_Sound").Play();
 		max = 2;
 		Temp = new Timer
 		{

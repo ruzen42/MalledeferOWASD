@@ -35,7 +35,7 @@ public partial class Mime : Sprite2D
 			Visible = false;
 		}
 		
-		if (saves.Noise > 60)
+		if (saves.Noise > 60 && killflag)
 			Kill();
 	}
 

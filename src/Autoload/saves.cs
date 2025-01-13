@@ -45,13 +45,9 @@ public partial class saves : Node
 		DisplayServer.WindowSetSize(saves.Resolution);
 
 		if (FullScreen)
-		{
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen); 
-		}
 		else
-		{
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
-		}
 	}
 
 	public static void LoadSave()
