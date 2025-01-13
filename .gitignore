@@ -1,3 +1,5 @@
+*.xz
+*.apk
 *.zip
 *.pck
 *.iss
