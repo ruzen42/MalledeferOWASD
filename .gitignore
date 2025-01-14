@@ -56,3 +56,5 @@ Mkfile.old
 dkms.conf
 *.apk
 *.xz
+*.pck
+/build/data_OWASDsharp_windows_x86_64
