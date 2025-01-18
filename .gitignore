@@ -58,3 +58,4 @@ dkms.conf
 *.xz
 *.pck
 /build/data_OWASDsharp_windows_x86_64
+/build
