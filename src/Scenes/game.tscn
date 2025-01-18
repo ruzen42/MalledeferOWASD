@@ -59,7 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://ddkvpbwm2q6w5" path="res://Sprites/Mime/MimeSprite1.png" id="44_nj4yp"]
 [ext_resource type="Script" path="res://Code/NoiseTabel.cs" id="46_bcymg"]
 [ext_resource type="Script" path="res://Code/Grandmother.cs" id="47_o0a61"]
-[ext_resource type="Script" path="res://DiareyVirus.cs" id="50_mps8b"]
+[ext_resource type="Script" path="res://Code/DiareyVirus.cs" id="50_mps8b"]
 [ext_resource type="AudioStream" uid="uid://bfbv117i24bc4" path="res://Music/Door_Is_Blocked.mp3" id="51_yl2us"]
 [ext_resource type="AudioStream" uid="uid://j4n5ntl7fht8" path="res://Music/DoorOpen.mp3" id="53_0c0pb"]
 [ext_resource type="Script" path="res://Code/TemperatureLabel.cs" id="61_8cxx8"]

@@ -20,16 +20,16 @@ public partial class Night_Menu_selector : VBoxContainer
 			switch (saves.NightsCompleted)
 			{
 				case 6:
-					nights[5].SetDisabled(false);
+					nights[5].SetDisabled(true);
 					goto case 5;  // Переход к следующему case
 				case 5:
-					nights[4].SetDisabled(false);
+					nights[4].SetDisabled(true);
 					goto case 4;
 				case 4:
-					nights[3].SetDisabled(false);
+					nights[3].SetDisabled(true);
 					goto case 3;
 				case 3:
-					nights[2].SetDisabled(true);
+					nights[2].SetDisabled(false);
 					goto case 2;
 				case 2:
 					nights[1].SetDisabled(false);

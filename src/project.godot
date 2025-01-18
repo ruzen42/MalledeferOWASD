@@ -26,7 +26,7 @@ config/windows_native_icon="/home/ruzen42/Documents/Programming/MalledeferOWASD/
 
 [audio]
 
-buses/default_bus_layout="res://Sound_Parameters.tres"
+buses/default_bus_layout="res://Nodes/Sound_Parameters.tres"
 
 [autoload]
 
@@ -36,7 +36,6 @@ Saves="*res://Autoload/saves.cs"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
