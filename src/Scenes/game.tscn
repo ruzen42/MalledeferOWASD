@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://3tt480sq44fy"]
+[gd_scene load_steps=76 format=3 uid="uid://3tt480sq44fy"]
 
 [ext_resource type="Script" path="res://Code/Game_rules.cs" id="1_hqfnc"]
 [ext_resource type="Texture2D" uid="uid://dna01de68rt04" path="res://Sprites/newoffice.png" id="2_0ahtm"]
@@ -40,7 +40,6 @@
 [ext_resource type="AudioStream" uid="uid://j2gdoo7plbhk" path="res://Music/camera-video-load.mp3" id="23_vo5ql"]
 [ext_resource type="Script" path="res://Code/SoapZhumaysynba.cs" id="32_3y5jv"]
 [ext_resource type="Texture2D" uid="uid://djxdwckngnyii" path="res://Sprites/Soap.png" id="32_7rydq"]
-[ext_resource type="PackedScene" uid="uid://boklucnk7vuii" path="res://Nodes/color_rect_2.tscn" id="32_7whfx"]
 [ext_resource type="Texture2D" uid="uid://bvv67csdlp02h" path="res://Sprites/VentSprite.png" id="34_41fn7"]
 [ext_resource type="FontFile" uid="uid://dx41wl4cvdlyl" path="res://Fonts/Monocraft.otf" id="35_ipepd"]
 [ext_resource type="AudioStream" uid="uid://3hdhsvbnnf2e" path="res://Music/Please_Vent.mp3" id="37_n7vbb"]
@@ -637,14 +636,6 @@ texture = ExtResource("2_jsi82")
 visible = false
 z_index = 7
 script = ExtResource("50_mps8b")
-
-[node name="ColorRect2" parent="." instance=ExtResource("32_7whfx")]
-visible = false
-z_index = 4
-offset_left = -174.0
-offset_top = -104.0
-offset_right = 2125.0
-offset_bottom = 1165.0
 
 [node name="Door" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(0.796243, 0.796243, 0.796243, 1)

@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctuw0oia3t0tk"]
+[gd_scene load_steps=4 format=3 uid="uid://ctuw0oia3t0tk"]
 
 [ext_resource type="Script" path="res://Code/DeadScreen.cs" id="1_awb5g"]
-[ext_resource type="PackedScene" uid="uid://boklucnk7vuii" path="res://Nodes/color_rect_2.tscn" id="1_lltmm"]
 [ext_resource type="Texture2D" uid="uid://cer4jyrotw2na" path="res://Sprites/BadEyes.png" id="2_ukrn2"]
 [ext_resource type="AudioStream" uid="uid://bugoi3cv4368k" path="res://Music/Game_Over_Sound.mp3" id="3_freee"]
 
@@ -35,12 +34,8 @@ offset_bottom = 78.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 150
-text = "you dead"
+text = "game over"
 uppercase = true
-
-[node name="ColorRect2" parent="." instance=ExtResource("1_lltmm")]
-visible = false
-layout_mode = 0
 
 [node name="Scream" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_freee")

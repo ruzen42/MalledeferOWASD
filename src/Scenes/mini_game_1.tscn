@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://csehfpjh3wvx5"]
+
+[ext_resource type="Texture2D" uid="uid://cot54x716otsn" path="res://Sprites/Icon_game.png" id="1_2reod"]
+[ext_resource type="Script" path="res://Code/CharacterBody2d.cs" id="1_v7f6h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nc5hs"]
+radius = 4.37533
+height = 21.6464
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y88bl"]
+size = Vector2(685, 148)
+
+[node name="mini_game_1" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.222022, 0, 0.00333419, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(806, 438)
+script = ExtResource("1_v7f6h")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_2reod")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+scale = Vector2(8.68506, 8.68506)
+shape = SubResource("CapsuleShape2D_nc5hs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(843.5, 792)
+shape = SubResource("RectangleShape2D_y88bl")

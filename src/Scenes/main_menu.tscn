@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c77mel3ucbbbu"]
+[gd_scene load_steps=30 format=3 uid="uid://c77mel3ucbbbu"]
 
 [ext_resource type="FontFile" uid="uid://dx66s8b6cr5fi" path="res://Fonts/agat-8.ttf" id="1_d3pxi"]
 [ext_resource type="Script" path="res://Code/Main_Menu_Buttons.cs" id="3_q3n2f"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://c4r4lu10uit1g" path="res://Sprites/photo_2024-05-01_09-52-21.jpg" id="6_g5i2g"]
 [ext_resource type="Texture2D" uid="uid://c0y1xoijynuhx" path="res://Sprites/Contacts/discord.jpg" id="7_co8y4"]
 [ext_resource type="Script" path="res://Code/Camera2d.cs" id="7_w4yyh"]
-[ext_resource type="PackedScene" uid="uid://boklucnk7vuii" path="res://Nodes/color_rect_2.tscn" id="8_0a5y1"]
 [ext_resource type="Texture2D" uid="uid://b2sdarydf5tyi" path="res://Sprites/Contacts/youtube.jpg" id="8_u1mpa"]
 [ext_resource type="Texture2D" uid="uid://6mh58ywkiakb" path="res://Sprites/Contacts/itch.io.png" id="9_ene7p"]
 [ext_resource type="Script" path="res://Code/Statistics.cs" id="10_fnp7d"]
@@ -443,12 +442,6 @@ limit_smoothed = true
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 script = ExtResource("7_w4yyh")
-
-[node name="ColorRect2" parent="." instance=ExtResource("8_0a5y1")]
-offset_left = -15.0
-offset_top = -4.0
-offset_right = 1939.0
-offset_bottom = 1083.0
 
 [connection signal="button_up" from="Main_Menu_Buttons/PlayButton" to="Main_Menu_Buttons" method="_on_play_button_button_up"]
 [connection signal="button_up" from="Main_Menu_Buttons/PlayButton" to="Night_Menu_selector" method="_on_play_button_button_up"]
