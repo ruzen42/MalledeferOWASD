@@ -125,39 +125,37 @@ public partial class Br3500 : Sprite2D
 		// Зависимо от ночи скорость BR3500 изменяется
 		switch (saves.NightSelected)
 		{
-			default:
-				min = 29;
-				max = 32;
-				break;
 			case 1:
-				min = 30;
-				max = 33;
+				min = 35;
+				max = 25;
 				break;
 			case 2:
-				min = 28;
-				max = 32;
+				min = 31;
+				max = 24;
 				break;
 			case 3:
 				min = 27;
-				max = 30;
+				max = 23;
 				break;
 			case 4:
-				min = 26;
-				max = 29;
+				min = 23;
+				max = 22;
 				break;
 			case 5:
-				min = 25;
-				max = 28;
+				min = 19;
+				max = 21;
 				break;
 			case 6:
-				min = 23;
-				max = 26;
+				min = 15;
+				max = 20;
 				break;
 			case 7:
-				min = 22;
-				max = 25;
+				min = 10;
+				max = 18;
 				break;
 		}
+		min/=2;
+		max/=2;
 		WaitTaser = (short)(max * 1.5);
 	}
 

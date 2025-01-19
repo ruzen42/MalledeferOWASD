@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://3tt480sq44fy"]
+[gd_scene load_steps=75 format=3 uid="uid://3tt480sq44fy"]
 
 [ext_resource type="Script" path="res://Code/Game_rules.cs" id="1_hqfnc"]
 [ext_resource type="Texture2D" uid="uid://dna01de68rt04" path="res://Sprites/newoffice.png" id="2_0ahtm"]
@@ -44,7 +44,6 @@
 [ext_resource type="FontFile" uid="uid://dx41wl4cvdlyl" path="res://Fonts/Monocraft.otf" id="35_ipepd"]
 [ext_resource type="AudioStream" uid="uid://3hdhsvbnnf2e" path="res://Music/Please_Vent.mp3" id="37_n7vbb"]
 [ext_resource type="AudioStream" uid="uid://cpuhp2oj0wemw" path="res://Music/VentSound.mp3" id="38_eyahe"]
-[ext_resource type="AudioStream" uid="uid://c6k6diislwlwq" path="res://Music/Ventil.mp3" id="38_g2itr"]
 [ext_resource type="Script" path="res://Code/Door.cs" id="38_ma2kb"]
 [ext_resource type="Texture2D" uid="uid://b81w48hfdqpgr" path="res://Sprites/DoorAnimation/Door0.png" id="38_thjxh"]
 [ext_resource type="Texture2D" uid="uid://d4hrwonsm6tt0" path="res://Sprites/DoorAnimation/Door1.png" id="39_a7ixr"]
@@ -448,11 +447,6 @@ stream = ExtResource("38_eyahe")
 volume_db = -13.945
 bus = &"Sound"
 
-[node name="VentilSound" type="AudioStreamPlayer" parent="UI/CameraOutput/SoapZhumaysynba"]
-stream = ExtResource("38_g2itr")
-volume_db = -20.0
-bus = &"Sound"
-
 [node name="SoundForKill" type="AudioStreamPlayer" parent="UI/CameraOutput"]
 stream = ExtResource("41_nvqu7")
 bus = &"Sound"
@@ -662,7 +656,6 @@ bus = &"Sound"
 [connection signal="animation_finished" from="UI/LaptopAnimation" to="UI" method="_on_laptop_animation_finished"]
 [connection signal="pressed" from="UI/CameraOutput/TaserButton" to="UI/CameraOutput/BR3500" method="_on_taser_used"]
 [connection signal="pressed" from="UI/CameraOutput/SoapZhumaysynba/VentPower" to="UI/CameraOutput/SoapZhumaysynba" method="Onvent_powerpressed"]
-[connection signal="finished" from="UI/CameraOutput/SoapZhumaysynba/VentilSound" to="UI/CameraOutput/SoapZhumaysynba" method="OnVentilSoundFinished"]
 [connection signal="finished" from="UI/CameraOutput/SoundForKill" to="UI/CameraOutput/Mime" method="DIE"]
 [connection signal="mouse_entered" from="UI/Cameras_Button" to="UI" method="_on_cameras_button_mouse_entered"]
 [connection signal="button_down" from="UI/ChangeCameraButton/First_Camera_Button" to="UI/CameraOutput" method="_on_first_camera_button_button_down"]

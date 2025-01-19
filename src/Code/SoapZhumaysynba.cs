@@ -18,7 +18,6 @@ public partial class SoapZhumaysynba : Sprite2D
 		timer.QueueFree();
 		simer.QueueFree();
 		ChangeScene("res://Scenes/dead_screen.tscn");
-		saves.Deaths++;
 	}
 	
 	public override void _Ready()
@@ -57,14 +56,16 @@ public partial class SoapZhumaysynba : Sprite2D
 
 	private void OnSimerTimeout()
 	{
-		GetNode<AudioStreamPlayer>("VentilSound").Play();
+		// GetNode<AudioStreamPlayer>("VentilSound").Play();
 	}
 
 	private void OnTimerTimeout()
 	{
-		if (IsSoapActive)	og -= 0.5f;
+		if (IsSoapActive)	
+			og -= 0.35f;
 
-		if (vent) og +=0.1f;
+		if (vent) 
+			og +=0.15f;
 
 		if (og > 20.98f)
 		{
