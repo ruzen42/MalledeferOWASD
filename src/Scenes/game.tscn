@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://3tt480sq44fy"]
+[gd_scene load_steps=76 format=3 uid="uid://3tt480sq44fy"]
 
 [ext_resource type="Script" path="res://Code/Game_rules.cs" id="1_hqfnc"]
 [ext_resource type="Texture2D" uid="uid://dna01de68rt04" path="res://Sprites/newoffice.png" id="2_0ahtm"]
@@ -54,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://bfk0looqutaf8" path="res://Sprites/DoorAnimation/Door4.png" id="42_osr4t"]
 [ext_resource type="Texture2D" uid="uid://bp0xmny7v2h1o" path="res://Sprites/Mime/MimeSprite0.png" id="42_vu88e"]
 [ext_resource type="Texture2D" uid="uid://cbp01rykhv2uo" path="res://Sprites/DoorAnimation/Door5.png" id="43_maiv6"]
+[ext_resource type="Script" path="res://Code/NightLabel.cs" id="44_2ldos"]
 [ext_resource type="Texture2D" uid="uid://ddkvpbwm2q6w5" path="res://Sprites/Mime/MimeSprite1.png" id="44_nj4yp"]
 [ext_resource type="Script" path="res://Code/NoiseTabel.cs" id="46_bcymg"]
 [ext_resource type="Script" path="res://Code/Grandmother.cs" id="47_o0a61"]
@@ -465,6 +466,16 @@ modulate = Color(0.513233, 0.513233, 0.513233, 1)
 position = Vector2(11.5726, -2.87425)
 scale = Vector2(1.90455, 1.90455)
 texture = ExtResource("44_nj4yp")
+
+[node name="NightLabel" type="Label" parent="UI/CameraOutput"]
+offset_left = 494.115
+offset_top = -354.251
+offset_right = 1339.12
+offset_bottom = -99.2507
+scale = Vector2(0.15001, 0.15001)
+theme_override_font_sizes/font_size = 200
+text = "4 ночь"
+script = ExtResource("44_2ldos")
 
 [node name="Cameras_Button" type="Button" parent="UI"]
 self_modulate = Color(1, 1, 1, 0.686275)

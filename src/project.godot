@@ -70,7 +70,7 @@ import/fbx/enabled=false
 
 [gui]
 
-theme/custom_font="res://Fonts/agat-8.ttf"
+theme/custom_font="res://Fonts/Retro Gaming.ttf"
 
 [input]
 
