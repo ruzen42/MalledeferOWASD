@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c77mel3ucbbbu"]
+[gd_scene load_steps=31 format=3 uid="uid://c77mel3ucbbbu"]
 
 [ext_resource type="Script" path="res://Code/Main_Menu_Buttons.cs" id="3_q3n2f"]
 [ext_resource type="Script" path="res://Code/Night_Menu_selector.cs" id="4_q1pns"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b2sdarydf5tyi" path="res://Sprites/Contacts/youtube.jpg" id="8_u1mpa"]
 [ext_resource type="Texture2D" uid="uid://6mh58ywkiakb" path="res://Sprites/Contacts/itch.io.png" id="9_ene7p"]
 [ext_resource type="Script" path="res://Code/Statistics.cs" id="10_fnp7d"]
+[ext_resource type="Script" path="res://Code/Guide.cs" id="10_hx5nk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_woaoh"]
 
@@ -43,6 +44,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xcav4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ufra7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pck47"]
 
 [node name="Main_menu" type="Node2D"]
 texture_filter = 1
@@ -101,19 +104,19 @@ text = "Параметры"
 flat = true
 alignment = 0
 
+[node name="GuideButton" type="Button" parent="Main_Menu_Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1j8wr")
+text = "Как играть?"
+flat = true
+alignment = 0
+
 [node name="QuitButton" type="Button" parent="Main_Menu_Buttons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1j8wr")
 text = "Выйти"
-flat = true
-alignment = 0
-
-[node name="QuitButton2" type="Button" parent="Main_Menu_Buttons"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 75
-theme_override_styles/focus = SubResource("StyleBoxEmpty_1j8wr")
-text = "Как играть?"
 flat = true
 alignment = 0
 
@@ -394,6 +397,56 @@ text = "Назад в главное меню"
 flat = true
 alignment = 0
 
+[node name="Guide" type="BoxContainer" parent="."]
+visible = false
+offset_left = 73.0
+offset_top = 281.0
+offset_right = 315.0
+offset_bottom = 448.0
+vertical = true
+script = ExtResource("10_hx5nk")
+
+[node name="Label" type="Label" parent="Guide"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 71
+text = "Guide"
+
+[node name="GridContainer" type="GridContainer" parent="Guide"]
+layout_mode = 2
+theme_override_constants/h_separation = 25
+columns = 2
+
+[node name="Label2" type="Label" parent="Guide/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "W - Дверь
+S - Камеры
+T - Шокер
+Пробел - Вентеляция
+Esc - Выход
+Tab - ???"
+
+[node name="Label3" type="Label" parent="Guide/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Жумайсынба - Ходит как Фредди
+
+БР3500 (Робот на 1 камере)  - Его нужно 
+бить шокером когда он светиться
+
+Мыло Жумайсынба (7 камера) - Когда 
+падает кислород, включай вентеляцию
+
+Мим (6 камера) - Не шуми уебок"
+
+[node name="Back" type="Button" parent="Guide"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pck47")
+text = "В меню"
+flat = true
+alignment = 0
+
 [node name="Buttons_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_bgael")
 volume_db = -20.0
@@ -426,8 +479,9 @@ script = ExtResource("7_w4yyh")
 [connection signal="button_up" from="Main_Menu_Buttons/PlayButton" to="Night_Menu_selector" method="_on_play_button_button_up"]
 [connection signal="button_up" from="Main_Menu_Buttons/OptionsButton" to="Main_Menu_Buttons" method="_on_options_button_button_up"]
 [connection signal="button_up" from="Main_Menu_Buttons/OptionsButton" to="Options_Menu" method="_on_options_button_button_up"]
+[connection signal="button_up" from="Main_Menu_Buttons/GuideButton" to="Main_Menu_Buttons" method="OnGuide"]
+[connection signal="button_up" from="Main_Menu_Buttons/GuideButton" to="Guide" method="OnGuide"]
 [connection signal="button_up" from="Main_Menu_Buttons/QuitButton" to="Main_Menu_Buttons" method="_on_quit_button_button_up"]
-[connection signal="button_up" from="Main_Menu_Buttons/QuitButton2" to="Main_Menu_Buttons" method="_on_quit_button_button_up"]
 [connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_1_Button" to="Night_Menu_selector" method="_on_night_1_button_button_down"]
 [connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_2_Button" to="Night_Menu_selector" method="_on_night_2_button_button_down"]
 [connection signal="button_down" from="Night_Menu_selector/NightContainer/Night_3_Button" to="Night_Menu_selector" method="_on_night_3_button_button_down"]
@@ -449,3 +503,5 @@ script = ExtResource("7_w4yyh")
 [connection signal="button_up" from="Options_Menu/GridContainer/DisplaySettingsContainer/Fullscreen_Button" to="Options_Menu" method="_on_fullscreen_button_button_up"]
 [connection signal="button_up" from="Options_Menu/Back" to="Main_Menu_Buttons" method="_on_back_button_up"]
 [connection signal="button_up" from="Options_Menu/Back" to="Options_Menu" method="_on_back_button_up"]
+[connection signal="button_up" from="Guide/Back" to="Main_Menu_Buttons" method="GoInScene"]
+[connection signal="button_up" from="Guide/Back" to="Guide" method="HideObj"]

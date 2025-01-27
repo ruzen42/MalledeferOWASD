@@ -28,4 +28,9 @@ public partial class Main_Menu_Buttons : VBoxContainer
 		Visible = true;
 		GetNode<AudioStreamPlayer>($"../Buttons_Sound").Play();
 	}
+	
+	private void OnGuide()
+	{
+		GoOutScene();
+	}
 }

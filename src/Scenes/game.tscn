@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://3tt480sq44fy"]
+[gd_scene load_steps=75 format=3 uid="uid://3tt480sq44fy"]
 
 [ext_resource type="Script" path="res://Code/Game_rules.cs" id="1_hqfnc"]
 [ext_resource type="Texture2D" uid="uid://dna01de68rt04" path="res://Sprites/newoffice.png" id="2_0ahtm"]
@@ -41,7 +41,6 @@
 [ext_resource type="Script" path="res://Code/SoapZhumaysynba.cs" id="32_3y5jv"]
 [ext_resource type="Texture2D" uid="uid://djxdwckngnyii" path="res://Sprites/Soap.png" id="32_7rydq"]
 [ext_resource type="Texture2D" uid="uid://bvv67csdlp02h" path="res://Sprites/VentSprite.png" id="34_41fn7"]
-[ext_resource type="FontFile" uid="uid://dx41wl4cvdlyl" path="res://Fonts/Monocraft.otf" id="35_ipepd"]
 [ext_resource type="AudioStream" uid="uid://3hdhsvbnnf2e" path="res://Music/Please_Vent.mp3" id="37_n7vbb"]
 [ext_resource type="AudioStream" uid="uid://cpuhp2oj0wemw" path="res://Music/VentSound.mp3" id="38_eyahe"]
 [ext_resource type="Script" path="res://Code/Door.cs" id="38_ma2kb"]
@@ -297,7 +296,7 @@ script = ExtResource("4_ycgao")
 
 [node name="LaptopAnimation" type="AnimatedSprite2D" parent="UI"]
 z_index = 2
-position = Vector2(876, 480)
+position = Vector2(877, 480)
 sprite_frames = SubResource("SpriteFrames_qvebb")
 animation = &"up"
 
@@ -338,11 +337,11 @@ mix_target = 2
 bus = &"Sound"
 
 [node name="TaserButton" type="Button" parent="UI/CameraOutput"]
-z_index = 1
-offset_left = -102.751
-offset_top = 244.311
-offset_right = 207.249
-offset_bottom = 328.311
+z_index = 3
+offset_left = -132.208
+offset_top = 242.874
+offset_right = 270.792
+offset_bottom = 377.874
 scale = Vector2(0.665537, 0.665537)
 theme_override_font_sizes/font_size = 75
 theme_override_styles/focus = SubResource("StyleBoxEmpty_tmmb4")
@@ -398,10 +397,11 @@ texture = ExtResource("32_7rydq")
 script = ExtResource("32_3y5jv")
 
 [node name="VentPower" type="Button" parent="UI/CameraOutput/SoapZhumaysynba"]
-offset_left = -374.831
-offset_top = 196.856
-offset_right = 1061.17
-offset_bottom = 438.856
+z_index = 2
+offset_left = -453.436
+offset_top = 196.11
+offset_right = 1381.56
+offset_bottom = 459.11
 scale = Vector2(0.251083, 0.251083)
 theme_override_font_sizes/font_size = 200
 theme_override_styles/focus = SubResource("StyleBoxEmpty_u5ee3")
@@ -412,18 +412,18 @@ expand_icon = true
 
 [node name="ColorRect" type="ColorRect" parent="UI/CameraOutput/SoapZhumaysynba"]
 z_index = 2
-offset_left = -830.451
-offset_top = -385.509
-offset_right = -590.451
-offset_bottom = -290.509
+offset_left = -843.552
+offset_top = -406.388
+offset_right = -518.552
+offset_bottom = -297.388
 color = Color(0.32, 0.32, 0.32, 0.533333)
 
 [node name="Phone" type="VBoxContainer" parent="UI/CameraOutput/SoapZhumaysynba"]
 z_index = 2
-offset_left = -823.172
-offset_top = -378.798
-offset_right = 213.828
-offset_bottom = -22.7979
+offset_left = -835.545
+offset_top = -401.914
+offset_right = 585.455
+offset_bottom = 56.0859
 scale = Vector2(0.221271, 0.221271)
 theme_override_constants/separation = 50
 
@@ -435,7 +435,6 @@ text = "Насыщенность
 
 [node name="Oxygen" type="Label" parent="UI/CameraOutput/SoapZhumaysynba/Phone"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("35_ipepd")
 theme_override_font_sizes/font_size = 100
 text = "20.56%"
 
@@ -468,13 +467,15 @@ scale = Vector2(1.90455, 1.90455)
 texture = ExtResource("44_nj4yp")
 
 [node name="NightLabel" type="Label" parent="UI/CameraOutput"]
-offset_left = 494.115
-offset_top = -354.251
-offset_right = 1339.12
-offset_bottom = -99.2507
+z_index = 2
+offset_left = 501.831
+offset_top = -349.221
+offset_right = 1346.84
+offset_bottom = -94.2204
 scale = Vector2(0.15001, 0.15001)
 theme_override_font_sizes/font_size = 200
-text = "4 ночь"
+text = "0 ночь
+0 AM"
 script = ExtResource("44_2ldos")
 
 [node name="Cameras_Button" type="Button" parent="UI"]
