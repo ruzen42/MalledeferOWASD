@@ -21,6 +21,7 @@ public partial class NightLabel : Label
 	
 	private void OnRealTimerTimeout()
 	{
+		Text = saves.NightSelected + " ночь\n" + saves.Time + " AM";
 		saves.Time+=1;
 		RealTimer.Start();
 	}
