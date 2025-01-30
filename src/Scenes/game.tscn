@@ -484,10 +484,10 @@ texture = ExtResource("44_nj4yp")
 
 [node name="NightLabel" type="Label" parent="UI/CameraOutput"]
 z_index = 2
-offset_left = 489.907
-offset_top = -296.047
-offset_right = 1334.92
-offset_bottom = 216.953
+offset_left = 472.373
+offset_top = -285.987
+offset_right = 1317.39
+offset_bottom = 227.013
 scale = Vector2(0.15001, 0.15001)
 theme_override_font_sizes/font_size = 200
 text = "0 ночь
@@ -496,10 +496,10 @@ script = ExtResource("44_2ldos")
 
 [node name="REC" type="Label" parent="UI/CameraOutput"]
 z_index = 3
-offset_left = 486.4
-offset_top = -348.502
-offset_right = 576.4
-offset_bottom = -298.502
+offset_left = 470.269
+offset_top = -334.131
+offset_right = 560.269
+offset_bottom = -284.131
 theme_override_font_sizes/font_size = 39
 text = "REC"
 uppercase = true
@@ -641,6 +641,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_cojxc")
 flat = true
 
 [node name="NoiseTabel" type="ProgressBar" parent="UI"]
+visible = false
 z_index = 4
 layout_mode = 0
 offset_left = 34.0
@@ -677,6 +678,18 @@ texture = ExtResource("2_jsi82")
 visible = false
 z_index = 7
 script = ExtResource("50_mps8b")
+
+[node name="PhoneButton" type="Button" parent="UI"]
+self_modulate = Color(1, 0.750894, 0.543261, 1)
+layout_mode = 0
+offset_left = -35.0
+offset_top = 273.0
+offset_right = 573.0
+offset_bottom = 341.0
+rotation = 1.5708
+scale = Vector2(0.6, 0.63)
+icon = ExtResource("4_7ldn2")
+flat = true
 
 [node name="Door" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(0.796243, 0.796243, 0.796243, 1)

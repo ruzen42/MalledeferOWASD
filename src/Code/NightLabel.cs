@@ -8,7 +8,7 @@ public partial class NightLabel : Label
 	{
 		RealTimer = new Timer
 		{
-			Autostart = true,
+			Autostart = false,
 			WaitTime = 60,
 			OneShot = false
 		};
@@ -17,12 +17,13 @@ public partial class NightLabel : Label
 		RealTimer.Connect("timeout", new Callable(this, nameof(OnRealTimerTimeout)));
 		
 		Text = saves.NightSelected + " ночь\n" + saves.Time + " AM";
+		RealTimer.Start();
 	}
 	
 	private void OnRealTimerTimeout()
 	{
-		Text = saves.NightSelected + " ночь\n" + saves.Time + " AM";
 		saves.Time+=1;
+		Text = saves.NightSelected + " ночь\n" + saves.Time + " AM";
 		RealTimer.Start();
 	}
 }

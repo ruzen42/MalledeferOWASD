@@ -154,9 +154,8 @@ public partial class Br3500 : Sprite2D
 				max = 18;
 				break;
 		}
-		min/=3;
-		max/=2;
-		WaitTaser = (short)(max * 1.5);
+		min/=2;
+		WaitTaser = (short)max;
 	}
 
 	private void _on_taser_used()

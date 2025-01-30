@@ -7,13 +7,13 @@
 [ext_resource type="Script" path="res://Code/Options_Menu.cs" id="5_sgbwa"]
 [ext_resource type="AudioStream" uid="uid://deec2ku4swrw0" path="res://Music/Main_Menu_Music.mp3" id="6_6e1ar"]
 [ext_resource type="Texture2D" uid="uid://c2a5nw6m2pk6f" path="res://Sprites/Contacts/telegram.jpg" id="6_djuaw"]
-[ext_resource type="Texture2D" uid="uid://c4r4lu10uit1g" path="res://Sprites/photo_2024-05-01_09-52-21.jpg" id="6_g5i2g"]
 [ext_resource type="Texture2D" uid="uid://c0y1xoijynuhx" path="res://Sprites/Contacts/discord.jpg" id="7_co8y4"]
 [ext_resource type="Script" path="res://Code/Camera2d.cs" id="7_w4yyh"]
 [ext_resource type="Texture2D" uid="uid://b2sdarydf5tyi" path="res://Sprites/Contacts/youtube.jpg" id="8_u1mpa"]
 [ext_resource type="Texture2D" uid="uid://6mh58ywkiakb" path="res://Sprites/Contacts/itch.io.png" id="9_ene7p"]
 [ext_resource type="Script" path="res://Code/Statistics.cs" id="10_fnp7d"]
 [ext_resource type="Script" path="res://Code/Guide.cs" id="10_hx5nk"]
+[ext_resource type="Texture2D" uid="uid://bcomprsmsx6e" path="res://Sprites/ShampooMenu.png" id="13_rdflu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_woaoh"]
 
@@ -76,7 +76,7 @@ grow_vertical = 2
 size_flags_vertical = 8
 theme_override_colors/font_color = Color(0.913725, 0.913725, 0.913725, 1)
 theme_override_font_sizes/font_size = 35
-text = "Malledefer Studio  2019-2025 v0.1.3 (Build: 1)"
+text = "Malledefer Studio  2025 v0.1.3 (Build: 1)"
 
 [node name="Main_Menu_Buttons" type="VBoxContainer" parent="."]
 offset_left = 71.0
@@ -416,28 +416,26 @@ layout_mode = 2
 theme_override_constants/h_separation = 25
 columns = 2
 
+[node name="Label3" type="Label" parent="Guide/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Жумайсынба - Ходит как Фредди
+БР3500 (Робот на 1 камере)  - Его нужно 
+бить шокером когда он светиться
+Мыло Жумайсынба (7 камера) - Когда 
+падает кислород, включай вентеляцию
+Мим (6 камера) - Не шуми уебок"
+
 [node name="Label2" type="Label" parent="Guide/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "W - Дверь
+text = "Управление
+W - Дверь
 S - Камеры
 T - Шокер
 Пробел - Вентеляция
 Esc - Выход
 Tab - ???"
-
-[node name="Label3" type="Label" parent="Guide/GridContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "Жумайсынба - Ходит как Фредди
-
-БР3500 (Робот на 1 камере)  - Его нужно 
-бить шокером когда он светиться
-
-Мыло Жумайсынба (7 камера) - Когда 
-падает кислород, включай вентеляцию
-
-Мим (6 камера) - Не шуми уебок"
 
 [node name="Back" type="Button" parent="Guide"]
 layout_mode = 2
@@ -459,10 +457,12 @@ autoplay = true
 bus = &"Music"
 
 [node name="Shampoo" type="Sprite2D" parent="."]
+self_modulate = Color(0.481789, 0.481789, 0.481789, 1)
 z_index = -2
 texture_filter = 1
-position = Vector2(1403, 536)
-texture = ExtResource("6_g5i2g")
+position = Vector2(1535, 519)
+scale = Vector2(1.03778, 1.03778)
+texture = ExtResource("13_rdflu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)

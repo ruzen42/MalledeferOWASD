@@ -65,7 +65,9 @@ public partial class SoapZhumaysynba : Sprite2D
 			og -= 0.35f;
 
 		if (vent) 
-			og +=0.15f;
+			og += 0.15f;
+			
+		og -= 0.001f; 
 
 		if (og > 20.98f)
 		{
