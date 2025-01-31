@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bfxs3gfgt5d7w" path="res://Sprites/Interference/помеха1.png" id="10_md18g"]
 [ext_resource type="Texture2D" uid="uid://ce8dgoqj23fiv" path="res://Sprites/LaptopAnimation/планшет_5_frame.png" id="10_njpyn"]
 [ext_resource type="Texture2D" uid="uid://qcjjjhoxx6ig" path="res://Sprites/LaptopAnimation/планшет_6_frame.png" id="11_pyujr"]
-[ext_resource type="FontFile" uid="uid://dx66s8b6cr5fi" path="res://Fonts/agat-8.ttf" id="11_s757a"]
+[ext_resource type="FontFile" uid="uid://cs87pu7kcyvp1" path="res://Fonts/Retro Gaming.ttf" id="11_s757a"]
 [ext_resource type="Texture2D" uid="uid://5m5cv3uuaugu" path="res://Sprites/Interference/помеха2.png" id="11_skbxm"]
 [ext_resource type="Texture2D" uid="uid://3j12da72ijl3" path="res://Sprites/LaptopAnimation/планшет_7_frame.png" id="12_4n05e"]
 [ext_resource type="Texture2D" uid="uid://de5v5p7pl3e3b" path="res://Sprites/Interference/помеха3.png" id="12_jb0w1"]
@@ -690,6 +690,8 @@ rotation = 1.5708
 scale = Vector2(0.6, 0.63)
 icon = ExtResource("4_7ldn2")
 flat = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UI"]
 
 [node name="Door" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(0.796243, 0.796243, 0.796243, 1)
